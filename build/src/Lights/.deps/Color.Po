@@ -1,0 +1,440 @@
+Lights/Color.o: Lights/Color.cpp \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/iostream \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/c++config.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/os_defines.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/features.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sys/cdefs.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wordsize.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/gnu/stubs.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/cpu_defines.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ostream \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ios \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/iosfwd \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stringfwd.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/postypes.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cwchar \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cstddef \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/include/stddef.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/wchar.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/stdio.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/include/stdarg.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wchar.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/include/stddef.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/xlocale.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/stdint.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/exception \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/char_traits.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_algobase.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/functexcept.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/exception_defines.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/cpp_type_traits.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ext/type_traits.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ext/numeric_traits.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_pair.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_move.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/concept_check.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_iterator_base_types.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_iterator_base_funcs.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_iterator.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/debug/debug.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cstdio \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/stdio.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/types.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/typesizes.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/libio.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/_G_config.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/wchar.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/stdio_lim.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sys_errlist.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/stdio.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/localefwd.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/c++locale.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/clocale \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/locale.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/locale.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cctype \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/ctype.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/endian.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/endian.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/byteswap.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/ios_base.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ext/atomicity.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/gthr.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/gthr-default.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/pthread.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sched.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/time.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sched.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/time.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/signal.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sigset.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/pthreadtypes.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/setjmp.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sgidefs.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/unistd.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/posix_opt.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/environments.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/confname.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/getopt.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/atomic_word.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/locale_classes.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/string \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/allocator.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/c++allocator.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ext/new_allocator.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/new \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/ostream_insert.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cxxabi-forced.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_function.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/backward/binders.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/basic_string.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/basic_string.tcc \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/locale_classes.tcc \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/streambuf \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/streambuf.tcc \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/basic_ios.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/locale_facets.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cwctype \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/wctype.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/ctype_base.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/streambuf_iterator.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/ctype_inline.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/locale_facets.tcc \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/basic_ios.tcc \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/ostream.tcc \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/istream \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/istream.tcc \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/include/float.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/assert.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/stdlib.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/waitflags.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/waitstatus.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sys/types.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sys/select.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/select.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sys/sysmacros.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/alloca.h \
+  ../src/Include/Util/Misc.h ../src/Include/Util/Inclstdint.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/inttypes.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/sstream \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/sstream.tcc \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/stdexcept \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/errno.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/errno.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/linux/errno.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/asm/errno.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/asm-generic/errno-base.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/string.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/math.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/huge_val.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/huge_valf.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/huge_vall.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/inf.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/nan.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathdef.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathcalls.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathinline.h \
+  ../src/Include/Lights/Light.h ../src/Include/Util/Inclstdint.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/vector \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_construct.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_uninitialized.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_vector.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_bvector.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/vector.tcc \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/utility \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_relops.h \
+  ../src/Include/Lights/Color.h
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/iostream:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/c++config.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/os_defines.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/features.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sys/cdefs.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wordsize.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/gnu/stubs.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/cpu_defines.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ostream:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ios:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/iosfwd:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stringfwd.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/postypes.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cwchar:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cstddef:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/include/stddef.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/wchar.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/stdio.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/include/stdarg.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wchar.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/include/stddef.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/xlocale.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/stdint.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/exception:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/char_traits.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_algobase.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/functexcept.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/exception_defines.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/cpp_type_traits.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ext/type_traits.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ext/numeric_traits.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_pair.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_move.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/concept_check.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_iterator_base_types.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_iterator_base_funcs.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_iterator.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/debug/debug.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cstdio:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/stdio.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/types.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/typesizes.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/libio.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/_G_config.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/wchar.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/stdio_lim.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sys_errlist.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/stdio.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/localefwd.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/c++locale.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/clocale:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/locale.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/locale.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cctype:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/ctype.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/endian.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/endian.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/byteswap.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/ios_base.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ext/atomicity.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/gthr.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/gthr-default.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/pthread.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sched.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/time.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sched.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/time.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/signal.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sigset.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/pthreadtypes.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/setjmp.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sgidefs.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/unistd.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/posix_opt.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/environments.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/confname.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/getopt.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/atomic_word.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/locale_classes.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/string:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/allocator.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/c++allocator.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/ext/new_allocator.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/new:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/ostream_insert.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cxxabi-forced.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_function.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/backward/binders.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/basic_string.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/basic_string.tcc:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/locale_classes.tcc:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/streambuf:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/streambuf.tcc:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/basic_ios.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/locale_facets.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/cwctype:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/wctype.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/ctype_base.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/streambuf_iterator.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/mipsel-unknown-linux-gnu/bits/ctype_inline.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/locale_facets.tcc:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/basic_ios.tcc:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/ostream.tcc:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/istream:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/istream.tcc:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/include/float.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/assert.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/stdlib.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/waitflags.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/waitstatus.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sys/types.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sys/select.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/select.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sys/sysmacros.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/alloca.h:
+
+../src/Include/Util/Misc.h:
+
+../src/Include/Util/Inclstdint.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/inttypes.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/sstream:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/sstream.tcc:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/stdexcept:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/errno.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/errno.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/linux/errno.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/asm/errno.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/asm-generic/errno-base.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/string.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/math.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/huge_val.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/huge_valf.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/huge_vall.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/inf.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/nan.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathdef.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathcalls.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathinline.h:
+
+../src/Include/Lights/Light.h:
+
+../src/Include/Util/Inclstdint.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/vector:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_construct.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_uninitialized.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_vector.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_bvector.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/vector.tcc:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/utility:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/../../../../mipsel-unknown-linux-gnu/include/c++/4.3.2/bits/stl_relops.h:
+
+../src/Include/Lights/Color.h:

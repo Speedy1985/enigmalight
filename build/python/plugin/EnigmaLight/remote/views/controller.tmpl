@@ -1,0 +1,79 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>EnigmaLight WebRemote - Control</title>        
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		
+		<link rel="stylesheet" href="css/Bootstrap.css">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+
+
+        <script src="js/enigmalight.js"></script>
+
+    </head>
+    <body>
+
+    <div data-role="page" data-theme='a'>
+
+        <div data-role="header" data-position="inline">
+            <h1>Control</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="index" data-icon="home">Home</a></li>
+                    <li><a href="controller" data-icon="eye" class="ui-btn-active">Control</a></li>
+                    <li><a href="settings" data-icon="gear">Settings</a></li>
+                    <li><a href="status" data-icon="info">Status</a></li>
+                    <li><a href="about" data-icon="user">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="content" data-theme="a">
+			    
+            <ul data-role="listview" data-inset="true" data-theme="a">
+
+                <li data-role="list-divider" role="heading" data-theme="a">On/Off Lights - Dynamic/Moodlamp</li>
+                <li>
+                     <select name="on_off_el" id="on_off_el" data-role="slider" data-highlight="true">
+                        <option value="off">Off</option>
+                        <option value="on">On</option>
+                    </select>                    
+                </li>
+
+                <li data-role="list-divider" role="heading" data-theme="a">Mode - Dynamic/Moodlamp</li>
+                <li>
+                     <select name="dy_mood" id="dy_mood" width="200" data-role="slider">
+                        <option value="dynamic">Dynamic</option>
+                        <option value="moodlamp">Moodlamp</option>
+                    </select>              
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+
+    function getStatusInfo() {
+        jQuery.getJSON('/api/statusinfo')
+        .success(function(statusinfo) {
+
+            // Set On/Off
+            jQuery("#on_off_el").val(statusinfo['lights_onoff']).slider('refresh')
+
+        });
+    }
+    
+    jQuery('#mainPage').live('pageinit', function(event) {        
+        getStatusInfo();
+    });
+    </script>
+
+    
+    </body>
+</html>

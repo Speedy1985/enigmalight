@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+cd build
+printf "Running autoreconf...\n"
+autoreconf
+
+printf "Done. You may now run:\n    ./install\n"

@@ -1,0 +1,131 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>EnigmaLight WebRemote - Settings</title>        
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Cache-Control" content="no-store" />
+        
+        <link rel="stylesheet" href="css/Bootstrap.css">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile.structure-1.4.0.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.icons.min.css" />
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+
+        <script src="js/enigmalight.js?"+Math.round()></script>
+
+    </head>
+    <body>
+
+    <div data-role="page" data-theme='a'>
+
+        <div data-role="header" data-position="inline">
+            <h1>Settings</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="index" data-icon="home">Home</a></li>
+                    <li><a href="controller" data-icon="eye">Control</a></li>
+                    <li><a href="settings" data-icon="gear" class="ui-btn-active">Settings</a></li>
+                    <li><a href="status" data-icon="info">Status</a></li>
+                    <li><a href="about" data-icon="user">About</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div data-role="content" data-theme="a">
+            
+            <div data-role="collapsible-set" data-theme="a">
+                <div data-role="collapsible" role="heading" data-theme="a">
+
+
+                <h3>Color tuning</h3>
+                    <table width="100%">
+                        <tr>
+                            <td>Brightness<input type="range" name="slider_brightness" value="1.0" min="0" max="20" step="0.1" id="slider_brightness" data-highlight="true"></td>
+                            <td width="50"><img id="brightness_image" src="/images/brightness.png" border="0" alt="" /></td>
+                        </tr>
+                         <tr>
+                            <td>Minimal Brightness<input type="range" name="slider_brightnessmin" value="0.0" min="0" max="1.0" step="0.1" id="slider_brightnessmin" data-highlight="true"></td>
+                            <td width="50"><img id="brightness_image" src="/images/brightness.png" border="0" alt="" /></td>
+                        </tr>
+                         <tr>
+                            <td>Maximal Brightness<input type="range" name="slider_brightnessmax" value="1.0" min="0" max="1.0" step="0.1" id="slider_brightnessmax" data-highlight="true"></td>
+                            <td width="50"><img id="brightness_image" src="/images/brightness.png" border="0" alt="" /></td>
+                        </tr>
+                    </table>
+                    <table width="100%">
+                        <tr>
+                            <td>Saturation<input type="range" name="slider_saturation" value="1.0" min="0" max="20" step="0.1" id="slider_saturation" data-highlight="true"></td>
+                            <td width="50"><img id="saturation_image" src="/images/saturation.png" border="0" alt="" /></td>
+                        </tr>
+                        <tr>
+                            <td>Minimal Saturation<input type="range" name="slider_saturationmin" value="0.0" min="0" max="1.0" step="0.1" id="slider_saturationmin" data-highlight="true"></td>
+                            <td width="50"><img id="saturation_image" src="/images/saturation.png" border="0" alt="" /></td>
+                        </tr>
+                        <tr>
+                            <td>Maximal Saturation<input type="range" name="slider_saturationmax" value="1.0" min="0" max="1.0" step="0.1" id="slider_saturationmax" data-highlight="true"></td>
+                            <td width="50"><img id="saturation_image" src="/images/saturation.png" border="0" alt="" /></td>
+                        </tr>
+                    </table>
+                    <table width="100%">
+                        <tr>
+                            <td>Speed<input type="range" name="slider_speed" value="50" min="0" max="100" step="1" id="slider_speed" data-highlight="true"></td>
+                            <td width="50"><img id="speed_image" src="/images/speed.png" border="0" alt="" /></td>
+                        </tr>
+                    </table>
+                    <table width="100%">
+                        <tr>
+                            <td>Gamma<input type="range" name="slider_gamma" value="2.2" min="0" max="20" step="0.1" id="slider_gamma" data-highlight="true"></td>
+                            <td width="50"><img id="speed_image" src="/images/speed.png" border="0" alt="" /></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div data-role="collapsible" role="heading"><h3>Adjust colortuning</h3>
+                </div>
+                <div data-role="collapsible" role="heading"><h3>Blackbar detection</h3>
+                </div>
+                <div data-role="collapsible" role="heading"><h3>Moodlamp settings</h3>
+                </div>            
+
+            </div>
+
+        </div>
+    </div>
+
+
+    <script>
+
+    function getStatusInfo() {
+        jQuery.getJSON('/api/statusinfo')
+        .success(function(statusinfo) {
+
+            // Set Brightness
+            jQuery("#slider_brightness").val(statusinfo['option_brightness']).slider('refresh');
+            // Set Maximal Brightness
+            jQuery("#slider_brightnessmax").val(statusinfo['option_brightnessmax']).slider('refresh');
+            // Set Minimal Brightness
+            jQuery("#slider_brightnessmin").val(statusinfo['option_brightnessmin']).slider('refresh');
+            //Set Saturation
+            jQuery("#slider_saturation").val(statusinfo['option_saturation']).slider('refresh');
+            //Set Minimal Saturation
+            jQuery("#slider_saturationmin").val(statusinfo['option_saturationmin']).slider('refresh');
+            //Set Maximal Saturation
+            jQuery("#slider_saturationmax").val(statusinfo['option_saturationmax']).slider('refresh');
+            //Set Speed
+            jQuery("#slider_speed").val(statusinfo['option_speed']).slider('refresh');
+            //Set Gamma
+            jQuery("#slider_gamma").val(statusinfo['option_gamma']).slider('refresh');
+
+        });
+    }
+    
+    jQuery('#mainPage').live('pageinit', function(event) {        
+        getStatusInfo();
+    });
+    </script>
+
+    
+    </body>
+</html>

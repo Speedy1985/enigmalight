@@ -1,0 +1,75 @@
+util/modp_numtoa.o: util/modp_numtoa.c util/modp_numtoa.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/lib/gcc/mipsel-unknown-linux-gnu/4.8.2/include/stdint.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/stdint.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/features.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/sys/cdefs.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wordsize.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/gnu/stubs.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wchar.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/stdio.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/lib/gcc/mipsel-unknown-linux-gnu/4.8.2/include/stddef.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/types.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/typesizes.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/libio.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/_G_config.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/wchar.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/lib/gcc/mipsel-unknown-linux-gnu/4.8.2/include/stdarg.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/stdio_lim.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sys_errlist.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/stdio.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/math.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/huge_val.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathdef.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/sgidefs.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathcalls.h \
+ /opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathinline.h
+
+util/modp_numtoa.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/lib/gcc/mipsel-unknown-linux-gnu/4.8.2/include/stdint.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/stdint.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/features.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/sys/cdefs.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wordsize.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/gnu/stubs.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wchar.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/stdio.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/lib/gcc/mipsel-unknown-linux-gnu/4.8.2/include/stddef.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/types.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/typesizes.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/libio.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/_G_config.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/wchar.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/lib/gcc/mipsel-unknown-linux-gnu/4.8.2/include/stdarg.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/stdio_lim.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sys_errlist.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/stdio.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/math.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/huge_val.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathdef.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/sgidefs.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathcalls.h:
+
+/opt/tools/mipsel-unknown-linux-gnu-oe2.0/mipsel-unknown-linux-gnu/sysroot/usr/include/bits/mathinline.h:

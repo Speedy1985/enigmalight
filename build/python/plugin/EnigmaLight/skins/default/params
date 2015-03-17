@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<xml>
+
+	<!-- MAIN MENU ORIENTATION -->
+	<orientation name="main_menu" type="horizontal" />
+
+	<!-- FONTS SECTION -->
+	<font path="/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/skins/default/OpenSans.ttf" size="100" name="OpenSans" />
+
+	<!-- GUI ELEMENTS -->
+	<guiElement name="key_red" path="/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/skins/default/buttons/btn_red-fs8.png" />
+	<guiElement name="key_green" path="/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/skins/default/buttons/btn_green-fs8.png" />
+	<guiElement name="key_blue" path="/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/skins/default/buttons/btn_blue-fs8.png" />
+	<guiElement name="key_yellow" path="/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/skins/default/buttons/btn_yellow-fs8.png"/>
+
+</xml>

@@ -1,0 +1,81 @@
+Util/Mutex.o: Util/Mutex.cpp \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/time.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/features.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sys/cdefs.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wordsize.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/gnu/stubs.h \
+  /home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/include/stddef.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/time.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/types.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/typesizes.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/xlocale.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/assert.h \
+  ../src/Include/Util/Mutex.h ../src/Include/Util/Inclstdint.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/stdint.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wchar.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/inttypes.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/pthread.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/endian.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/endian.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/byteswap.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sched.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sched.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/signal.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sigset.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/pthreadtypes.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/setjmp.h \
+  /home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sgidefs.h
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/time.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/features.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sys/cdefs.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wordsize.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/gnu/stubs.h:
+
+/home/martijn/dev/compiler/bin/../lib/gcc/mipsel-unknown-linux-gnu/4.3.2/include/stddef.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/time.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/types.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/typesizes.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/xlocale.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/assert.h:
+
+../src/Include/Util/Mutex.h:
+
+../src/Include/Util/Inclstdint.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/stdint.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/wchar.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/inttypes.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/pthread.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/endian.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/endian.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/byteswap.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sched.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sched.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/signal.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/sigset.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/pthreadtypes.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/bits/setjmp.h:
+
+/home/martijn/dev/compiler/bin/../mipsel-unknown-linux-gnu/sysroot/usr/include/sgidefs.h:
