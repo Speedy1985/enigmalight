@@ -91,11 +91,9 @@ config.plugins.enigmalight.sampleBackground_mvi = ConfigSelection(default = "rgb
 config.plugins.enigmalight.checkForUpdateOnStartup  = ConfigYesNo(default = True)
 config.plugins.enigmalight.version  = ConfigText(default = currentVersion)
 
-config.plugins.enigmalight.bintype  = ConfigSelection(default = "enigmalight_oe20_hf", choices = [
-("enigmalight_oe20_hf", _("Enigmalight OE2.0 with fpu support")),
-("enigmalight_oe20_sf", _("Enigmalight OE2.0")),
-("enigmalight_oe16_hf", _("Enigmalight OE1.6 with fpu support")),
-("enigmalight_oe16_sf", _("Enigmalight OE1.6 "))])
+config.plugins.enigmalight.bintype  = ConfigSelection(default = "enigmalight_hf", choices = [
+("enigmalight_hf", _("Enigmalight with fpu support")),
+("enigmalight_sf", _("Enigmalight softfloat"))])
 
 config.plugins.enigmalight.arch = ConfigText(default = "")
 
