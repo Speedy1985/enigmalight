@@ -1,0 +1,36 @@
+23:34:15.988935 [InitLog]                        start of log /home/elight-addons/.enigmalight/enigmalight.log
+23:34:15.993270 [CConfig::LoadConfigFromFile]    Opening /etc/enigmalight.conf
+23:34:16.059006 [CConfig::CheckConfig]           checking config lines
+23:34:16.186114 [CConfig::CheckConfig]           config lines valid
+23:34:16.187405 [CConfig::LoadConfigFromFile]    Opening /etc/enigmalight.conf
+23:34:16.248025 [CConfig::BuildConfig]           building config
+23:34:16.449362 [CConfig::BuildConfig]           built config successfully
+23:34:16.450574 [main]                           Start device 1 from 1
+23:34:16.454417 [CDevice::Process]               ambilight: starting with output "/dev/ttyUSB0"
+23:34:16.455587 [CDevice::Process]               ambilight: setting up
+23:34:16.486164 [CDevice::Process]               ambilight: setup succeeded
+23:34:16.510460 [CEnigmaLight::SetColorSequence] Set colorsequence to RGB
+23:34:16.512979 [CGuiServer::Process]            Start GuiServer
+23:34:16.513441 [CGuiServer::Process]            Opening listening socket for Enigma2 GUI on 127.0.0.1:6767
+23:34:16.516173 [CFlagManager::SetVideoGamma]    Gamma not set, using 2.2 since this is default for video
+23:34:16.517007 [CMainLoop::Process]             Starting grabber..
+23:34:16.517462 [CGrabber::Setup]                Lights: 92, Cluster leds: 1 as one led
+23:34:16.517842 [CGrabber::Setup]                Channels: 276
+23:34:16.518342 [CGrabber::Setup]                Interval: 0.10
+23:34:16.518787 [CGrabber::Run]                  Mode -> Dynamic
+23:34:16.519591 [CStb::DetectSTB]                Detect STB-Type...
+23:34:16.521251 [CStb::DetectSTB]                Detected STB-Type: BCM7405
+23:34:16.521835 [CFrameGrabber::Setup]           Open memory /dev/mem
+23:34:16.531741 [CFrameGrabber::CheckRes]        Set Scanrange to 88x72 (Source 704x576)
+23:34:16.844290 [CGuiServer::Process]            GuiClient 127.0.0.1:59409 connected successful.
+23:34:28.104691 [SignalHandler]                  caught SIGINT
+23:34:28.105212 [CFrameGrabber::~CFrameGrabber()] Close memory /dev/mem
+23:34:28.105598 [CBitmap::~CBitmap()]            [Bitmap] Destroy bitmaps..
+23:34:28.107589 [CGuiServer::Cleanup]            Removing clients
+23:34:28.108110 [CGuiServer::Cleanup]            Closing listening socket
+23:34:28.112677 [main]                           Signaling devices to stop
+23:34:28.113191 [main]                           Waiting for devices to stop
+23:34:28.113502 [main]                           Stop device 1 from 1
+23:34:28.184100 [CDevice::Process]               ambilight: closed
+23:34:28.184720 [CDevice::Process]               ambilight: stopped
+23:34:28.187763 [main]                           Exiting EnigmaLight...
