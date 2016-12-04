@@ -25,7 +25,7 @@ You should have received a copy of the GNU General Public License
 from Plugins.Plugin import PluginDescriptor
 
 from Components.config import config, configfile
-
+from . import _
 from __init__ import getCrashFilePath, Prepare, _ # _ is translation
 from __common__ import checkSymbolic, showError, rmFile, EnigmaLight_log as log
 

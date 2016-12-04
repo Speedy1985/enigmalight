@@ -430,9 +430,9 @@ def checkSymbolic():
 		if arch != "unknown":
 			if not checkBinary():
 				if fpu == True:
-					config.plugins.enigmalight.bintype.setValue("enigmalight_hf") #hardfloat, fpu support
+					config.plugins.enigmalight.bintype.setValue("enigmalight_" + arch + "_hf") #hardfloat, fpu support
 				else:
-					config.plugins.enigmalight.bintype.setValue("enigmalight_sf") #softfloat for receivers without fpu
+					config.plugins.enigmalight.bintype.setValue("enigmalight_" + arch + "_sf") #softfloat for receivers without fpu
 
 				config.plugins.enigmalight.save()
 

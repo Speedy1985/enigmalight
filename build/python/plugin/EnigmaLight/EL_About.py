@@ -145,7 +145,7 @@ class EL_Screen_About(Screen):
 		content += "EnigmaLight - Ambilight for Enigma2 \n\n" 
 		content += "Version: \t" + getVersion() + "\n\n"
 		content += "Autors: \t Speedy1985 and Oktay Oeztueter\n"
-		content += "Translations: \t HolyMoly and Speedy1985\n"
+		content += "Translations: \t HolyMoly and Speedy1985 and Dimitrij\n"
 		content += "Some GUI Code: \t DonDavici (c) 2012\n"
 		content += "\n"
 		content += "For support you can send me an email or use the chat function at http://www.enigmalight.net/\n\n"

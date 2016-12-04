@@ -63,7 +63,7 @@ def_end = mktime(now)
 
 # the currentVersion should be renewed every major update
 enigmalight_config = "/etc/enigma2/enigmalight_config"
-currentVersion  = "0.2-rc1"
+currentVersion  = "0.3-rc0"
 defaultURL  = "http://www.enigmalight.net/updates/"
 defaultUpdateXML= "update.xml"
 crashFile= "/tmp/enigmalight_gui_crash.txt"
@@ -73,6 +73,32 @@ defaultSkinsFolderPath= resolveFilename(SCOPE_PLUGINS, "Extensions/EnigmaLight/s
 defaultConfigfilePath   = "/etc/enigmalight.conf"
 
 ###################################################################################################################
+
+#===============================================================================
+# 
+#===============================================================================
+def localeInit():
+	#log("",None,"__init__::localeInit()")
+	lang = language.getLanguage()
+	os.environ["LANGUAGE"] = lang[:2]
+	gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
+	gettext.textdomain("enigma2")
+	gettext.bindtextdomain("EnigmaLight", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/EnigmaLight/locale/"))
+
+localeInit()
+language.addCallback(localeInit)
+
+#===============================================================================
+# 
+#===============================================================================
+def _(txt):
+	if len(txt) == 0:
+		return ""
+	text = gettext.dgettext("EnigmaLight", txt)
+	if text == txt:
+		text = gettext.gettext(txt)
+	return text
+
 
 config.plugins.enigmalight = ConfigSubsection()
 
@@ -91,9 +117,11 @@ config.plugins.enigmalight.sampleBackground_mvi = ConfigSelection(default = "rgb
 config.plugins.enigmalight.checkForUpdateOnStartup  = ConfigYesNo(default = True)
 config.plugins.enigmalight.version  = ConfigText(default = currentVersion)
 
-config.plugins.enigmalight.bintype  = ConfigSelection(default = "enigmalight_hf", choices = [
-("enigmalight_hf", _("Enigmalight with fpu support")),
-("enigmalight_sf", _("Enigmalight softfloat"))])
+config.plugins.enigmalight.bintype  = ConfigSelection(default = "enigmalight_oe20_hf", choices = [
+("enigmalight_oe20_hf", _("Enigmalight OE2.0 with fpu support")),
+("enigmalight_oe20_sf", _("Enigmalight OE2.0")),
+("enigmalight_oe16_hf", _("Enigmalight OE1.6 with fpu support")),
+("enigmalight_oe16_sf", _("Enigmalight OE1.6 "))])
 
 config.plugins.enigmalight.arch = ConfigText(default = "")
 
@@ -420,27 +448,6 @@ def registerSkinParamsInstance():
 	
 	Singleton().getSkinParamsInstance(configXml)
 
-#===============================================================================
-# 
-#===============================================================================
-def localeInit():
-	log("",None,"__init__::localeInit()")
-	lang = language.getLanguage()
-	os.environ["LANGUAGE"] = lang[:2]
-	gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-	gettext.textdomain("enigma2")
-	gettext.bindtextdomain("EnigmaLight", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/EnigmaLight/locale/"))
-
-#===============================================================================
-# 
-#===============================================================================
-def _(txt):
-	if len(txt) == 0:
-		return ""
-	text = gettext.dgettext("EnigmaLight", txt)
-	if text == txt:
-		text = gettext.gettext(txt)
-	return text
 
 #===============================================================================
 # EXECUTE ON STARTUP
@@ -450,7 +457,7 @@ def Prepare():
 		log("",None,"__init__::Prepare()")
 		
 		getBoxInformation()
-		localeInit()
+		#localeInit()
 		registerSkinParamsInstance()
 		loadEnigmalightSkin()
 		registerEnigmalightFonts()
