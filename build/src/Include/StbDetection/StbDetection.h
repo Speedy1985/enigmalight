@@ -56,8 +56,8 @@
 #define BRCM7241    7241
 #define BRCM7362    7362
 #define BRCM7376    7376
-#define BRCM7251s   7251s
-#define BRCM7252s   7252s
+#define BRCM7251s   7251
+#define BRCM7252s   7252
 #define BRCM73625   73625
 #define GIGABLUE    0//12
 
