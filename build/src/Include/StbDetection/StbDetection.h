@@ -52,9 +52,13 @@
 #define BRCM7405    7405
 #define BRCM7424    7424
 #define BRCM7425    7425
-#define BRCM7435	7435
-#define BRCM7241	7241
-#define BRCM7362	7362
+#define BRCM7435    7435
+#define BRCM7241    7241
+#define BRCM7362    7362
+#define BRCM7376    7376
+#define BRCM7251s   7251s
+#define BRCM7252s   7252s
+#define BRCM73625   73625
 #define GIGABLUE    0//12
 
 class CStb
