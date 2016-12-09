@@ -137,6 +137,26 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7435;
 					break;
 				}
+				else if (strstr(buf,"7376"))
+				{
+					stb_type = BRCM7376;
+					break;
+				}
+				else if (strstr(buf,"7251s"))
+				{
+					stb_type = BRCM7251s;
+					break;
+				}
+				else if (strstr(buf,"7252s"))
+				{
+					stb_type = BRCM7252s;
+					break;
+				}
+				else if (strstr(buf,"73625"))
+				{
+					stb_type = BRCM73625;
+					break;
+				}
 			}
 			fclose(file);
 		}
@@ -171,10 +191,10 @@ bool CStb::DetectSTB()
 					break;
 				}
 				else if (strcasestr(buf,"Gigablue"))
-                {
-                   stb_type = BRCM7335;
-                   break;
-                }
+				{
+					stb_type = BRCM7335;
+					break;
+				}
 			}
 			fclose(file);
 		}
@@ -240,6 +260,10 @@ bool CStb::DetectSTB()
 			mem2memdma_register = 0;
 			break;
 		case BRCM7435:
+		case BRCM7376:
+		case BRCM7251s:
+		case BRCM7252s:
+		case BRCM73625:
 			registeroffset = 0x10600000;
 			chr_luma_stride = 0x80;
 			chr_luma_register_offset = 0x34;
