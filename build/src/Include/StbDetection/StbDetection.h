@@ -51,6 +51,7 @@
 #define BRCM7403    7403
 #define BRCM7405    7405
 #define BRCM7424    7424
+#define BRCM7252    7252
 #define BRCM7425    7425
 #define BRCM7435	7435
 #define BRCM7241	7241
