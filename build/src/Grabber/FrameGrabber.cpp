@@ -117,7 +117,21 @@ bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
     unsigned char* memory_tmp;
     				
 	//grab pic from decoder memory
-	const unsigned char* data = open("/dev/dvb/adapter0/video0", O_RDONLY);
+	if (stb_type == BRCM7252)
+	{
+		int fd_video = open("/dev/dvb/adapter0/video0", O_RDONLY);
+		if (fd_video < 0)
+		{
+			fprintf(stderr, "could not open /dev/dvb/adapter0/video0");
+			return;
+		}
+
+		ssize_t r = read(fd_video, video, 1920 * 1080 * 3);
+		close(fd_video);
+		*xres = 1920;
+		*yres = 1080;
+		return;
+	}
    
     if(data == MAP_FAILED){
 	  if(m_errorGiven != true)
