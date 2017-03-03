@@ -171,9 +171,9 @@ bool CStb::DetectSTB()
 					break;
 				}
 				// Dreambox 900 ARM
-				else if (strcasestr(buf,"dm900"))
+				else if (strcasestr(buf,"DM900"))
 				{
-					stb_type = BRCM7252S;
+					stb_type = BRCM7252;
 					break;
 				}
 				else if (strcasestr(buf,"Gigablue"))
@@ -251,7 +251,7 @@ bool CStb::DetectSTB()
 			chr_luma_register_offset = 0x34;
 			mem2memdma_register = 0;
 			break;
-		case BRCM7252S:
+		case BRCM7252:
 			registeroffset = 0x10600000;
 			chr_luma_stride = 0x80;
 			chr_luma_register_offset = 0x3c;
