@@ -117,7 +117,7 @@ bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
     unsigned char* memory_tmp;
     				
 	//grab pic from decoder memory
-	const unsigned char* data = (unsigned char*)mmap(0, 100, PROT_READ, MAP_SHARED, mem_fd, m_stb.registeroffset);
+	const unsigned char* data = open("/dev/dvb/adapter0/video0", O_RDONLY);
    
     if(data == MAP_FAILED){
 	  if(m_errorGiven != true)
