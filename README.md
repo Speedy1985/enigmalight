@@ -2,7 +2,9 @@ Enigmalight
 An Ambilight clone for broadcom based linux receivers.
 
 You have to set compiler path manualy like in install file
+
 -- obsolete --
+
 -How to compile on Ubuntu
 ./bootstrap
 ./install
@@ -11,6 +13,7 @@ When [install] is started, it will download the needed compiler and compile the 
 After build it's found in your enigmalight_workdir/elight-addons/usr/bin/.
 there are three files [elighttalk],[enigmalight_sf],[enigmalight_hf] mostly you need the hf version because this is for 
 receivers with FPU support.
+
 --- obsolete ---
 
 - If you need to know if your receiver has the FPU support, then type in your terminal cat /proc/cpuinfo.
