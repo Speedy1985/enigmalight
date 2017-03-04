@@ -252,7 +252,7 @@ bool CStb::DetectSTB()
 			mem2memdma_register = 0;
 			break;
 		case BRCM7252:
-			registeroffset = 0x10600000;
+			registeroffset = 0xf0600000;
 			chr_luma_stride = 0x40;
 			chr_luma_register_offset = 0x20;
 			mem2memdma_register = 0x10c02000;
