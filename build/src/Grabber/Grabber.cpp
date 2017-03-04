@@ -51,10 +51,10 @@ CGrabber::CGrabber(CGuiServer& g_guiserver, CEnigmaLight* g_enigmalight, CClient
 	stopLoop		= false;
 	m_3d_mode       = 1;        // Normal mode
 	m_delay         = 0;		// Video Delay	
-	m_blackbar_h	= false;	//
-	m_blackbar_v	= false;	//
-	m_vscan_depth	= 0;
-	m_hscan_depth	= 0;
+	m_blackbar_h	= true;	//
+	m_blackbar_v	= true;	//
+	m_vscan_depth	= 5;
+	m_hscan_depth	= 5;
 	m_blackbar_f	= 10;
 }
 
