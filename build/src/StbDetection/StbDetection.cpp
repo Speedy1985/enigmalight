@@ -255,7 +255,7 @@ bool CStb::DetectSTB()
 			registeroffset = 0xf0600000;
 			chr_luma_stride = 0x40;
 			chr_luma_register_offset = 0x20;
-			mem2memdma_register = 0x10c02000;
+			mem2memdma_register = 0;
 			break;
 		default:
 			break;
