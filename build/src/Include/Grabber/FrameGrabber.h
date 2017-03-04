@@ -61,6 +61,7 @@ class CFrameGrabber
                 int             mem_fd;                         // handle to the memory
                 int             xres_tmp, yres_tmp;             // store resolution                
                 int             m_old_3d_mode;
+		int 		chr_luma_register_offset;
 
                 bool            m_noVideo;
                 bool            m_errorGiven;
