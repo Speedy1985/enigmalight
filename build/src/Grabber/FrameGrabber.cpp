@@ -145,13 +145,13 @@ bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
     //
     // Get data from decoder, offset, adres and stride(x resolution)
     //
-	ofs 	= data[m_stb.chr_luma_register_offset + 8] << 4;      /* luma lines */
-	ofs2 	= data[m_stb.chr_luma_register_offset + 12] << 4;    /* chroma lines */	
-	adr 	= (data[0x1f] << 24 | data[0x1e] << 16 | data[0x1d] << 8); /* start of videomem */
-	adr2 	= (data[m_stb.chr_luma_register_offset + 3] << 24 | data[m_stb.chr_luma_register_offset + 2] << 16 | data[m_stb.chr_luma_register_offset + 1] << 8);	
-	stride 	= data[0x15] << 8 | data[0x14];
-	
-	//
+	chr_luma_register_offset = 0x3c;
+
+	ofs = data[chr_luma_register_offset + 24] << 4; /* luma lines */
+	ofs2 = data[chr_luma_register_offset + 28] << 4; /* chroma lines */
+	adr2 = data[chr_luma_register_offset + 3] << 24 | data[chr_luma_register_offset + 2] << 16 | data[chr_luma_register_offset + 1] << 8;
+	stride = data[0x19] << 8 | data[0x18];
+	adr = data[0x37] << 24 | data[0x36] << 16 | data[0x35] << 8; /* start of videomem */
 	// Get actual resolution and save it.
 	//
 	getResolution(bitmap, stride, GetTimeSec<long double>());	
