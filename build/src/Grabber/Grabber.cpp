@@ -53,8 +53,8 @@ CGrabber::CGrabber(CGuiServer& g_guiserver, CEnigmaLight* g_enigmalight, CClient
 	m_delay         = 0;		// Video Delay	
 	m_blackbar_h	= true;	//
 	m_blackbar_v	= true;	//
-	m_vscan_depth	= 60;
-	m_hscan_depth	= 60;
+	m_vscan_depth	= 0;
+	m_hscan_depth	= 0;
 	m_blackbar_f	= 10;
 }
 
