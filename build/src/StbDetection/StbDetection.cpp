@@ -132,6 +132,21 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7425;
 					break;
 				}
+				else if (strstr(buf,"7251"))
+				{
+					stb_type = BRCM7251;
+					break;
+				}
+				else if (strstr(buf,"7376"))
+				{
+					stb_type = BRCM7376;
+					break;
+				}
+				else if (strstr(buf,"7444"))
+				{
+					stb_type = BRCM7444;
+					break;
+				}
 				else if (strstr(buf,"7435"))
 				{
 					stb_type = BRCM7435;
@@ -174,6 +189,12 @@ bool CStb::DetectSTB()
 				else if (strcasestr(buf,"DM900"))
 				{
 					stb_type = BRCM7252;
+					break;
+				}
+				// AX 4K HD51
+				else if (strcasestr(buf,"hd51"))
+				{
+					stb_type = BRCM7251;
 					break;
 				}
 				else if (strcasestr(buf,"Gigablue"))
@@ -252,6 +273,9 @@ bool CStb::DetectSTB()
 			mem2memdma_register = 0;
 			break;
 		case BRCM7252:
+		case BRCM7444:
+		case BRCM7376:
+		case BRCM7251:
 			registeroffset = 0xf0600000;
 			chr_luma_stride = 0x80;
 			chr_luma_register_offset = 0x3C;
