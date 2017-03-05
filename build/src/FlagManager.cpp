@@ -77,7 +77,7 @@ CFlagManager::CFlagManager()
   
   m_color_sequence  = 0;              // Default 0 = RGB
   m_cluster         = 1;              // Default set 1 for cluster
-  m_blackbar        = false;	        // Blackbar detection, default disabled
+  m_blackbar        = true; 	        // Blackbar detection, default disabled
   m_interval        = 0.1;   	        // default interval is 100 milliseconds
   m_delay           = 0;
   m_debug 	        = false; 	        // no debugging by default
