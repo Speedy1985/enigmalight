@@ -198,10 +198,10 @@ bool CStb::DetectSTB()
 					break;
 				}
 				else if (strcasestr(buf,"Gigablue"))
-                {
-                   stb_type = BRCM7335;
-                   break;
-                }
+                		{
+                   			stb_type = BRCM7335;
+                   			break;
+                		}
 			}
 			fclose(file);
 		}
