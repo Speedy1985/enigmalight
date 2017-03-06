@@ -273,6 +273,7 @@ bool CStb::DetectSTB()
 		case BRCM7356:
 		case BRCM7424:
 		case BRCM7425:
+		case BRCM73625:
 			registeroffset = 0x10600000;
 			chr_luma_stride = 0x80;
 			chr_luma_register_offset = 0x34;
