@@ -1,14 +1,4 @@
 #!/bin/sh
-
-echo
-echo "###############################################################"
-echo "#                                                             #"
-echo "#                        Build ARM              	            #"
-echo "#                                                             #"
-echo "###############################################################"
-echo ""
-echo ""
-
 set -e
 BUILD_DIR=$(pwd)
 PREFIX=${BUILD_DIR}"/usr/"
@@ -38,6 +28,17 @@ make clean -i
 echo "[Hardfloat] Configure..."
 ./configure CC=${CC} CXX=${CXX} --host=${HOST} CPPFLAGS="${CPPFLAGS}" --prefix=${PREFIX}
 
+
+echo
+echo "###############################################################"
+echo "#                                                             #"
+echo "#                        Build ARM              	            #"
+echo "#                                                             #"
+echo "###############################################################"
+echo ""
+echo ""
+
+
 echo "[Hardfloat] Make..."
 make  -j2
 make install
@@ -46,15 +47,6 @@ echo "[Hardfloat] >>>> Build Hard-FPU Finisched <<<<"
 
 mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_arm
 
-
-echo
-echo "###############################################################"
-echo "#                                                             #"
-echo "#                        Build MIPS              	            #"
-echo "#                                                             #"
-echo "###############################################################"
-echo ""
-echo ""
 
 set -e
 BUILD_DIR=$(pwd)
@@ -84,6 +76,15 @@ make clean -i
 
 echo "[Hardfloat] Configure..."
 ./configure CC=${CC} CXX=${CXX} --host=${HOST} CPPFLAGS="${CPPFLAGS}" --prefix=${PREFIX}
+
+echo
+echo "###############################################################"
+echo "#                                                             #"
+echo "#                        Build MIPS              	            #"
+echo "#                                                             #"
+echo "###############################################################"
+echo ""
+echo ""
 
 echo "[Hardfloat] Make..."
 make  -j2
