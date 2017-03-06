@@ -52,26 +52,31 @@
 #define BRCM7405    7405
 #define BRCM7424    7424
 #define BRCM7425    7425
-#define BRCM7435	7435
-#define BRCM7241	7241
-#define BRCM7362	7362
+#define BRCM7435    7435
+#define BRCM7241    7241
+#define BRCM7362    7362
+#define BRCM73625   73625
+#define BRCM73465   73465
 #define GIGABLUE    0//12
+// arm box
+#define BRCM7251s   7251
+#define BRCM7252s   7252
+#define BRCM7444s   7444
+#define BRCM7376    7376
+#define BRCM7439    7439
 
 class CStb
 {
 	public:
 		CStb();
 		~CStb();
-
 		bool DetectSTB();
-		
-		int             stb_type;
-
-		int             buffer_size;
-        int             chr_luma_stride;
-        int             chr_luma_register_offset;
-        unsigned int    registeroffset;
-        unsigned int    mem2memdma_register;
+		int stb_type;
+		int buffer_size;
+		int chr_luma_stride;
+		int chr_luma_register_offset;
+		unsigned int registeroffset;
+		unsigned int mem2memdma_register;
 
 	private:
 

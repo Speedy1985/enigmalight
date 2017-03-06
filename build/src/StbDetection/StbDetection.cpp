@@ -51,7 +51,7 @@ bool CStb::DetectSTB()
 		Log("No framebuffer, unknown STB .. quit.");
 		return false;
 	}
-	
+
 	stb_type = UNKNOWN;
 
 	if (stb_type == UNKNOWN)
@@ -76,7 +76,7 @@ bool CStb::DetectSTB()
 				{
 					stb_type = BRCM7401;
 					break;
-				}				
+				}
 				else if (strstr(buf,"7405"))
 				{
 					stb_type = BRCM7405;
@@ -137,6 +137,31 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7435;
 					break;
 				}
+				else if (strstr(buf,"73625"))
+				{
+					stb_type = BRCM73625;
+					break;
+				}
+				else if (strstr(buf,"7376"))
+				{
+					stb_type = BRCM7376;
+					break;
+				}
+				else if (strstr(buf,"7251s"))
+				{
+					stb_type = BRCM7251s;
+					break;
+				}
+				else if (strstr(buf,"7252s"))
+				{
+					stb_type = BRCM7252s;
+					break;
+				}
+				else if (strstr(buf,"7444"))
+				{
+					stb_type = BRCM7444s;
+					break;
+				}
 			}
 			fclose(file);
 		}
@@ -160,7 +185,7 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7400;
 					break;
 				}
-				else if (strcasestr(buf,"DM7080"))
+				else if (strcasestr(buf,"DM7080") || strcasestr(buf,"DM820"))
 				{
 					stb_type = BRCM7435;
 					break;
@@ -170,11 +195,22 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7401;
 					break;
 				}
+				// Dreambox 900 ARM
+				else if (strcasestr(buf,"DM900"))
+				{
+					stb_type = BRCM7439;
+					break;
+				}
+				else if (strcasestr(buf, "DM520") || strcasestr(buf,"DM525"))
+				{
+					stb_type = BRCM73625;
+					break;
+				}
 				else if (strcasestr(buf,"Gigablue"))
-                {
-                   stb_type = BRCM7335;
-                   break;
-                }
+				{
+					stb_type = BRCM7335;
+					break;
+				}
 			}
 			fclose(file);
 		}
@@ -234,15 +270,31 @@ bool CStb::DetectSTB()
 		case BRCM7356:
 		case BRCM7424:
 		case BRCM7425:
+		case BRCM7435:
 			registeroffset = 0x10600000;
 			chr_luma_stride = 0x80;
 			chr_luma_register_offset = 0x34;
 			mem2memdma_register = 0;
 			break;
-		case BRCM7435:
+		case BRCM73625:
 			registeroffset = 0x10600000;
+			chr_luma_stride = 0x40;
+			chr_luma_register_offset = 0x3c;
+			mem2memdma_register = 0;
+			break;
+		case BRCM7439:
+			registeroffset = 0xf0600000;
 			chr_luma_stride = 0x80;
-			chr_luma_register_offset = 0x34;
+			chr_luma_register_offset = 0x3c;
+			mem2memdma_register = 0;
+			break;
+		case BRCM7376:
+		case BRCM7251s:
+		case BRCM7252s:
+		case BRCM7444s:
+			registeroffset = 0xf0600000;
+			chr_luma_stride = 0x80;
+			chr_luma_register_offset = 0x3c;
 			mem2memdma_register = 0;
 			break;
 		default:
