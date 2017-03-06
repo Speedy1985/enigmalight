@@ -6,11 +6,11 @@ PREFIX=${BUILD_DIR}"/usr/"
 #check if compiler exists
 clear
 
-OE_PATH=/opt/cross/mipsel-unknown-linux-gnu/bin
+OE_PATH=/opt/toolchain/toolchains/dreambox_fpu/bin
 printf "Set Compiler Path... '"${OE_PATH}"'\n\n"
 export PATH=$PATH:$OE_PATH
 
-HOST=mipsel-unknown-linux-gnu
+HOST=mipsel-newnigma2-linux-gnu
 GCC=${HOST}"-gcc"
 GPP=${HOST}"-g++"
 CC=${GCC}
