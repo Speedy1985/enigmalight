@@ -6,29 +6,11 @@ PREFIX=${BUILD_DIR}"/usr/"
 #check if compiler exists
 clear
 
-printf "Checking if compiler is found...  "
-if [ ! -f compiler.tar.gz ]; then
-	if [ ! -f compiler/bin/mipsel-unknown-linux-gnu-gcc ]; then
-		printf "Not found!, Downloading compiler...\n"
-		wget http://www.enigmalight.net/tools/compiler.tar.gz
-		tar xzf compiler.tar.gz
-	else
-		printf "Ok!\n"
-	fi
-else
-	printf "Ok!\n"
-	#compiler found, chck if it unpacked
-	if [ ! -f compiler/bin/mipsel-unknown-linux-gnu-gcc ]; then
-		printf "Unpacking compiler...\n"
-		tar xzf compiler.tar.gz
-	fi	
-fi
-
-OE_PATH=${BUILD_DIR}"/compiler/bin"
+OE_PATH=/home/socma/versetc/boxmake/simple3/support/toolchains/arm_dream/bin
 printf "Set Compiler Path... '"${OE_PATH}"'\n\n"
 export PATH=$PATH:$OE_PATH
 
-HOST=mipsel-unknown-linux-gnu
+HOST=arm-newnigma2-linux-gnueabihf
 GCC=${HOST}"-gcc"
 GPP=${HOST}"-g++"
 CC=${GCC}
@@ -63,40 +45,6 @@ echo "[Hardfloat] >>>> Build Hard-FPU Finisched <<<<"
 
 mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_oe20_hf
 
-echo
-echo
-echo "###############################################################"
-echo "#                                                             #"
-echo "# 	                Build  Soft-FPU               	    #"
-echo "#                                                             #"
-echo "###############################################################"
-echo ""
-echo ""
 
-sleep 1
-
-CPPFLAGS="-msoft-float"
-
-echo "[Softfloat] Clean directory..."
-make clean -i
-
-echo "[Softfloat] Configure..."
-./configure CC=${CC} CXX=${CXX} --host=${HOST} CPPFLAGS="${CPPFLAGS}" --prefix=${PREFIX}
-
-echo "[Softfloat] Make..."
-make -j2
-make install
-
-echo "[Softfloat] >>>> Build Soft-FPU Finisched <<<<"
-
-make clean -i -s
-
-mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_oe20_sf
-
-cd ..
-
-printf "Build finisched!!\n"
-printf "Files are found in build/usr/bin, SF means softfloat for dm800 etc.. and HF for the devices with FPU support\n"
-printf "Exit.."
 
 exit 0;
