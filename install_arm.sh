@@ -45,7 +45,7 @@ make install
 
 echo "[Hardfloat] >>>> Build Hard-FPU Finisched <<<<"
 
-mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_mips
+mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_arm
 
 
 
