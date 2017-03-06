@@ -152,6 +152,11 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7435;
 					break;
 				}
+				else if (strstr(buf,"73625"))
+				{
+					stb_type = BRCM73625;
+					break;
+				}
 			}
 			fclose(file);
 		}
@@ -197,11 +202,18 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7251;
 					break;
 				}
+				// Gigablue
 				else if (strcasestr(buf,"Gigablue"))
                 		{
                    			stb_type = BRCM7335;
                    			break;
                 		}
+				// DM52X
+				else if (strcasestr(buf, "DM520") || strcasestr(buf,"DM525"))
+				{
+					stb_type = BRCM73625;
+					break;
+				}
 			}
 			fclose(file);
 		}
