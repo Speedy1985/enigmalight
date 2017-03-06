@@ -6,11 +6,11 @@ PREFIX=${BUILD_DIR}"/usr/"
 #check if compiler exists
 clear
 
-OE_PATH=/home/socma/versetc/boxmake/simple3/support/toolchains/arm_dream/bin
+OE_PATH=/home/socma/versetc/boxmake/simple3/support/toolchains/dreambox_fpu/bin
 printf "Set Compiler Path... '"${OE_PATH}"'\n\n"
 export PATH=$PATH:$OE_PATH
 
-HOST=arm-newnigma2-linux-gnueabihf
+HOST=mipsel-newnigma2-linux-gnu
 GCC=${HOST}"-gcc"
 GPP=${HOST}"-g++"
 CC=${GCC}
@@ -45,7 +45,7 @@ make install
 
 echo "[Hardfloat] >>>> Build Hard-FPU Finisched <<<<"
 
-mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_arm
+mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_mips
 
 
 
