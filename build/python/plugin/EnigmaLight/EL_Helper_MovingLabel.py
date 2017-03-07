@@ -104,7 +104,6 @@ class EL_Helper_HorizontalMenu(object):
 
 				self[self.translatePositionToName(-i)].setText(content[secondResult][0])
 
-		
 		return True
 
 	_translatePositionToName = {}
@@ -117,5 +116,3 @@ class EL_Helper_HorizontalMenu(object):
 			return self._translatePositionToName[name]
 		else:
 			self._translatePositionToName[name] = value
-
-		

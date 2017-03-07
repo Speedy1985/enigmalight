@@ -48,7 +48,7 @@ from EL_ThreadHelper import callOnMainThread
 
 #===============================================================================
 #
-#===============================================================================		
+#===============================================================================
 class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 	_session = None
 
@@ -66,24 +66,24 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 			self.controller = None
 
 			#globals
-			self.createfile = False		
+			self.createfile = False
 			self.controller = None
 			self.devicepath = None
 
-			self.begin 		= None
-			self.floor 		= None
-			self.seqq  		= None
-			self.leds_top 	= None
+			self.begin = None
+			self.floor = None
+			self.seqq = None
+			self.leds_top = None
 			self.leds_right = None
-			self.leds_left 	= None
+			self.leds_left = None
 			self.leds_bottom = None
 			self.leds_bottom_left = None
 			self.leds_bottom_right = None
 			self.leds_bottom_center = None
-			self.channels 	= None
-			self.total		= None
-			self.current 	= None
-			self.selected 	= None
+			self.channels = None
+			self.total = None
+			self.current = None
+			self.selected = None
 
 			self["infoblock"] 		= Label()
 			self["btn_greenText"] 	= Label()
@@ -99,9 +99,9 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 			self["pic_rightb"] 		= Pixmap()
 			self["pic_botr"] 		= Pixmap()
 			self["pic_botml"] 		= Pixmap()
-			self["pic_botmr"] 		= Pixmap()
-			self["pic_botl"]		= Pixmap()   
-			self["pic_floor"] 		= Pixmap()
+			self["pic_botmr"] = Pixmap()
+			self["pic_botl"] = Pixmap()
+			self["pic_floor"] = Pixmap()
 
 			self["setupActions"] = ActionMap(["SetupActions", "ColorActions"],
 			{
@@ -110,7 +110,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				"yellow":	self.keyYellow,
 				"ok":		self.keyOk,
 			}, -2)
-			
+
 			self.onLayoutFinish.append(self.finishLayout)
 		except:
 			from traceback import format_exc
@@ -142,7 +142,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 		self["btn_greenText"].setText(_("Create configfile"))
 		self["btn_yellowText"].setText(_("Create and Test this config with [RGB Test]"))
 
-		self.createSetup()			
+		self.createSetup()
 		self.setTv()
 
 		if self.current != None:
@@ -166,7 +166,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 	#===========================================================================
 	def createSetup(self):
 		separator = "".ljust(120,"_")
-		
+
 		self.cfglist = []
 
 		# COLOR SETTINGS
@@ -182,25 +182,24 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 			else:
 				self.devicepath = getConfigListEntry(_('- Device output:'), config.plugins.enigmalight.output)
 				self.cfglist.append(self.devicepath)
-				self.cfglist.append(getConfigListEntry(_('- Device rate:'), config.plugins.enigmalight.rate))		   				
-			
+				self.cfglist.append(getConfigListEntry(_('- Device rate:'), config.plugins.enigmalight.rate))
+
 			if config.plugins.enigmalight.type.value == "Ambioder":
 				self.cfglist.append(getConfigListEntry(_('- Ambioder precision:'), config.plugins.enigmalight.precision))
 			else:
-				self.cfglist.append(getConfigListEntry(_("[ Lights ]") , config.plugins.enigmalight.about, _(" ")))					   
+				self.cfglist.append(getConfigListEntry(_("[ Lights ]") , config.plugins.enigmalight.about, _(" ")))
 				self.cfglist.append(getConfigListEntry(_('- With (floor) stand:'), config.plugins.enigmalight.floorstand))
 				if config.plugins.enigmalight.floorstand.value == str(2):
 					self.cfglist.append(getConfigListEntry(_('-- How many lights Bottom-left:'), config.plugins.enigmalight.lights_bottom_left))
 					self.cfglist.append(getConfigListEntry(_('-- Bottom center (how many places are empty):'), config.plugins.enigmalight.lights_bottom_center))
 					self.cfglist.append(getConfigListEntry(_('-- How many lights Bottom-right:'), config.plugins.enigmalight.lights_bottom_right))
 				else:
-					self.cfglist.append(getConfigListEntry(_('- How many lights Bottom:'), config.plugins.enigmalight.lights_bottom))					   
-						
+					self.cfglist.append(getConfigListEntry(_('- How many lights Bottom:'), config.plugins.enigmalight.lights_bottom))
+
 				self.cfglist.append(getConfigListEntry(_('- How many lights Top:'), config.plugins.enigmalight.lights_top))
 				self.cfglist.append(getConfigListEntry(_('- How many lights Left:'), config.plugins.enigmalight.lights_left))
-				self.cfglist.append(getConfigListEntry(_('- How many lights Right:'), config.plugins.enigmalight.lights_right))								   
+				self.cfglist.append(getConfigListEntry(_('- How many lights Right:'), config.plugins.enigmalight.lights_right))
 
-				
 				if config.plugins.enigmalight.clockwise.value is str(1):
 					self.cfglist.append(getConfigListEntry(_('- Where starts led 1:'), config.plugins.enigmalight.begincount_cw))
 				elif config.plugins.enigmalight.clockwise.value is str(2):
@@ -233,7 +232,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 		self.selected = self["config"].getCurrent()[1]
 
 	def setTv(self):
-		
+
 		self.begin = None
 
 		if config.plugins.enigmalight.clockwise.value is str(1):
@@ -248,9 +247,9 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 		self.leds_left = config.plugins.enigmalight.lights_left.value
 		self.leds_bottom = config.plugins.enigmalight.lights_bottom.value
 		self.leds_bottom_center = config.plugins.enigmalight.lights_bottom_center.value
-		
+
 		if config.plugins.enigmalight.type.value == "WifiLight":
-			self.leds_top 	= 1
+			self.leds_top = 1
 
 
 		if self.floor == str(2):
@@ -259,10 +258,10 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 		elif self.floor == str(1):
 			self.leds_bottom_left = 0
 			self.leds_bottom_right = 0
-					
+
 		self.total = self.leds_top + self.leds_right + self.leds_left + self.leds_bottom + self.leds_bottom_left + self.leds_bottom_right
 		self.channels = (self.total)*3
-		
+
 		if self.begin == "left-bottom":
 			if self.current != None:
 				self.current.hide()
@@ -303,38 +302,38 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				self.current.hide()
 				self["pic_botr"].show()
 			self.current = self["pic_botr"]
-		elif self.begin == "bottom-middle-left":						
+		elif self.begin == "bottom-middle-left":
 			if self.current != None:
 				self.current.hide()
 				self["pic_botml"].show()
 			self.current = self["pic_botml"]
-		elif self.begin == "bottom-middle-right":			
+		elif self.begin == "bottom-middle-right":
 			if self.current != None:
 				self.current.hide()
 				self["pic_botmr"].show()
 			self.current = self["pic_botmr"]
 
 		if self.floor == str(2):
-			self["pic_floor"].show()	
+			self["pic_floor"].show()
 		elif self.floor == str(1):
-			self["pic_floor"].hide()  
-		
+			self["pic_floor"].hide()
+
 		if self.seqq == str(1):
 			seq = "clockwise"
 		else:
 			seq = "backwards"
-		
+
 		self["infoblock"].setText("Leds: %s | Channels %s" %(str(self.total),str(self.channels)))
 
 	def changedEntry(self):
-		if self["config"].getCurrent()[1] == config.plugins.enigmalight.type:
+		if self["config"].getCurrent() and self["config"].getCurrent()[1] == config.plugins.enigmalight.type:
 
 			config.plugins.enigmalight.threadpriority.setValue(1)
 
 			if config.plugins.enigmalight.type.value == "Oktolight":
 				config.plugins.enigmalight.rate.setValue(57600)
 				config.plugins.enigmalight.color_order.setValue("1")
-				config.plugins.enigmalight.output.setValue("/dev/ttyUSB0")			 
+				config.plugins.enigmalight.output.setValue("/dev/ttyUSB0")
 			elif config.plugins.enigmalight.type.value == "Karatelight":
 				config.plugins.enigmalight.rate.setValue(57600)
 				config.plugins.enigmalight.color_order.setValue("1")
@@ -359,7 +358,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				config.plugins.enigmalight.output.setValue("/dev/ttyUSB0")
 			elif config.plugins.enigmalight.type.value == "Sedulight 5A B0 A5":
 				config.plugins.enigmalight.rate.setValue(500000)
-				config.plugins.enigmalight.output.setValue("/dev/ttyUSB0")					
+				config.plugins.enigmalight.output.setValue("/dev/ttyUSB0")
 			elif config.plugins.enigmalight.type.value == "iBelight":
 				config.plugins.enigmalight.output.setValue("/dev/usb/hiddev0")
 			elif config.plugins.enigmalight.type.value == "Ambioder":
@@ -377,23 +376,22 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				config.plugins.enigmalight.scanr.setValue(0)
 				config.plugins.enigmalight.scant.setValue(100)
 				config.plugins.enigmalight.scanb.setValue(0)
-		
-		
+
 		self.setTv()
-		
-		self.save()	   
+
+		self.save()
 		self.createSetup()
 		self["config"].setList(self.cfglist)
-	  
+
 	def save(self):
 		self.saveAll()
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
 	def keyOk(self):
 		cur = self["config"].getCurrent()
-		
+
 		if cur == self.devicepath:
 			self.session.openWithCallback(self.SavePath,EL_Screen_PathSelector,self.devicepath[1].value, "devicepath", "Select devicepath")
 
@@ -421,13 +419,13 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 		self.createfile = True
 		self.test = True
 		self.BuildConfig(False) #start and give no message after complete
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
 	def keyCancel(self):
 		self.close()
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -440,77 +438,72 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 	#	Build configfile
 	#===========================================================================
 	def BuildConfig(self,message):
+		prefix  = ""
 
-		#print("[Boblight] BuildConfig() ...")
-		
-		#
-		# Set default values
-		#
-		
 		if self.createfile:
-			postfix		 = ""
-			type			= ""
-			blacklevel	  = str(config.plugins.enigmalight.blacklevel.value[0])+"."+str(config.plugins.enigmalight.blacklevel.value[1])
-			interval		= "interval  	20000\n"
+			postfix = ""
+			type = ""
+			blacklevel = str(config.plugins.enigmalight.blacklevel.value[0])+"."+str(config.plugins.enigmalight.blacklevel.value[1])
+			interval= "interval  	20000\n"
 			delayafteropen  = ""
-			
+
 		#
 		# Set sections and depth
 		#
-		
-		leds_bottom	 = config.plugins.enigmalight.lights_bottom.value
-		leds_top	 = config.plugins.enigmalight.lights_top.value
-		leds_left	 = config.plugins.enigmalight.lights_left.value
-		leds_right	 = config.plugins.enigmalight.lights_right.value
-		scanl		 = config.plugins.enigmalight.scanl.value
-		scanr		 = config.plugins.enigmalight.scanr.value
-		scant		 = config.plugins.enigmalight.scant.value
-		scanb		 = config.plugins.enigmalight.scanb.value
-		
+
+		leds_bottom = config.plugins.enigmalight.lights_bottom.value
+		leds_top = config.plugins.enigmalight.lights_top.value
+		leds_left = config.plugins.enigmalight.lights_left.value
+		leds_right = config.plugins.enigmalight.lights_right.value
+		scanl = config.plugins.enigmalight.scanl.value
+		scanr = config.plugins.enigmalight.scanr.value
+		scant = config.plugins.enigmalight.scant.value
+		scanb = config.plugins.enigmalight.scanb.value
+
 		#
 		# Bottom values, for tv's with floorstand.
 		#
-		
+
 		leds_bottom_center = config.plugins.enigmalight.lights_bottom_center.value
-		leds_bottom_left   = config.plugins.enigmalight.lights_bottom_left.value
-		leds_bottom_right  = config.plugins.enigmalight.lights_bottom_right.value
-		leds_bottom_total  = (leds_bottom_left + leds_bottom_right + leds_bottom_center)
-		
+		leds_bottom_left = config.plugins.enigmalight.lights_bottom_left.value
+		leds_bottom_right = config.plugins.enigmalight.lights_bottom_right.value
+		leds_bottom_total = (leds_bottom_left + leds_bottom_right + leds_bottom_center)
+
 		#
 		# Total channels
 		#
-		
-		channels		= (leds_top + leds_left + leds_right + leds_bottom)*3
+
+		channels = (leds_top + leds_left + leds_right + leds_bottom)*3
 
 		#
 		# Floorstand calculation
 		#
-		
+
 		if config.plugins.enigmalight.floorstand.value == str(2):
 			#print("[Boblight] Clockwise")
 			#print("[Boblight] Set floorstand to true")
-			
-			channels	= (leds_top + leds_left + leds_right + leds_bottom_total - leds_bottom_center)*3
+
+			channels = (leds_top + leds_left + leds_right + leds_bottom_total - leds_bottom_center)*3
 			#print("[Boblight] Channels: "+str(channels))
-			
+ 
 			# total step
-			hScanStep	= 100 / leds_bottom_total;			 # 100 / 20 lights = 5
-			hScan_center = (hScanStep*leds_bottom_center)	   # total center hscan // floorstand //  emptyplaces*hScanStep = ... 50
-			hScan_right  = (hScanStep*leds_bottom_right)		# total right hscan /// light rights*hScanStep = ... 25
-				
+			hScanStep = 100 / leds_bottom_total; # 100 / 20 lights = 5
+			hScan_center = (hScanStep*leds_bottom_center) # total center hscan // floorstand //  emptyplaces*hScanStep = ... 50
+			hScan_right  = (hScanStep*leds_bottom_right) # total right hscan /// light rights*hScanStep = ... 25
+ 
 			hScanCurrent = 0 + (hScan_center - hScan_right);	# 25 
-				
-			hScanBottom_left  = hScanCurrent;				   # = 25 is plus
-			hScanBottom_right = 100							 # = 25 + 50 = 75 is min
-			
+ 
+			hScanBottom_left  = hScanCurrent; # = 25 is plus
+			hScanBottom_right = 100 # = 25 + 50 = 75 is min
+
 			# debug
 			#print("[Boblight] hScanBottom_left:"+str(hScanBottom_left)+" hScanBottom_right:"+str(hScanBottom_right))
-				
+
 			if config.plugins.enigmalight.clockwise.value == str(2):   #backwards
 				#print("[Boblight] Backwards")
 				#print("[Boblight] Set floorstand to true")
-			
-				channels	= (leds_top + leds_left + leds_right + leds_bottom_total - leds_bottom_center)*3
+
+				channels = (leds_top + leds_left + leds_right + leds_bottom_total - leds_bottom_center)*3
 				#print("[Boblight] channels:"+str(channels))
 
 				#total step
@@ -518,47 +511,46 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				hScan_center = (hScanStep*leds_bottom_center)			# total center hscan // floorstand //  emptyplaces*hScanStep = ... 50
 				hScan_left   = (hScanStep*leds_bottom_left)			  # total left hscan /// light left*hScanStep = ... 25
 				hScan_right  = (hScanStep*leds_bottom_right)
-				
+
 				hScanCurrent = (hScan_center + hScan_left);		 # 75
-					
+
 				hScanBottom_left  = 0.0;							  # = 75
 				hScanBottom_right = hScanCurrent;				   # = 75 + 50 = 25
 
 				#print("[Boblight] hScanBottom_left:"+str(hScanBottom_left)+" hScanBottom_right:"+str(hScanBottom_right))
-		
+
 		elif self.begin == "bottom-right" or self.begin == "bottom-middle-right" or self.begin == "bottom-middle-left" or self.begin == "bottom-left":
 			leds_bottom_right = leds_bottom/2;
 			leds_bottom_left = leds_bottom/2;
-						
+
 			if config.plugins.enigmalight.clockwise.value == str(2):
-				
+
 				hScanStep	= 100 / leds_bottom;
 				hScan_left   = (hScanStep*leds_bottom)			  # total left hscan /// light left*hScanStep = ... 25
 				hScan_right  = (hScanStep*leds_bottom)
-				
+
 				hScanCurrent = (hScan_left);		 # 75
-					
+
 				hScanBottom_left  = 0.0;							  # = 75
 				hScanBottom_right = hScanCurrent;				   # = 75 + 50 = 25
 			elif config.plugins.enigmalight.clockwise.value == str(1):
 				hScanStep	= 100 / leds_bottom;
 				hScan_left   = (hScanStep*leds_bottom)			  # total left hscan /// light left*hScanStep = ... 25
 				hScan_right  = (hScanStep*leds_bottom)
-				
+
 				hScanCurrent = (hScan_right);		 # 75
-					
+
 				hScanBottom_left  = hScanCurrent;							  # = 75
 				hScanBottom_right = 100.0;				   # = 75 + 50 = 25
 		#
 		# Atmolight need 4 channels more.
 		#
-		
+
 		if config.plugins.enigmalight.type.value == "Atmolight":
 			channels += 4
-		
-						  
+
 		total_lights = channels / 3;
-		
+
 		if self.createfile:
 			#
 			# Set some vars
@@ -567,7 +559,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 			colorr = ""
 			colorg = ""
 			colorb = ""
-			
+
 			if config.plugins.enigmalight.color_order.value == "1":
 				colorr = "0000FF"
 				colorg = "00FF00"
@@ -580,11 +572,11 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				colorr = "00FF00"
 				colorg = "0000FF"
 				colorb = "FF0000"
-			
+
 			#
 			# Set prefix, type and interval
 			#
-			
+
 			if config.plugins.enigmalight.type.value == "Lightpack":
 				type	= "lightpack\n"
 				interval= "interval  	20000\n"
@@ -606,25 +598,26 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				type	= "momo\n"
 				interval= "interval  	20000\n"
 				#delayafteropen = "delayafteropen  1000000\n"
-				prefix  = "\n"		
-				
+				prefix  = "\n"
+
 				#
 				# Prefix calculation [This only works for arduino boards]
 				#
-				
+
 				os.system("/home/elight-addons/prefix "+str(total_lights)+" > /tmp/prefix.txt")
-		
+
 				fo = open("/tmp/prefix.txt", "r")
 				reading = fo.read(1000)
 				fo.close()
-				
+
 				# remove tmpfile
 				os.system("rm /tmp/prefix.txt")
-		
+
 				reading = reading.split("LEDS:  ")
-				prefix = "prefix		"+str(reading[1]);	
+				if len(reading) > 1:
+					prefix = "prefix		"+str(reading[1])
 				#print("[Boblight] Reading prefixfile for "+str(total_lights)+" leds: "+prefix)
-			
+
 			if config.plugins.enigmalight.type.value == "iBelight":
 				type	= "ibelight\n"
 				interval= "interval  	20000\n"
@@ -657,15 +650,15 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 
 
 			#
-			# set the name			
+			# set the name
 			#
-			
-			name = "ambilight"			
-	
+
+			name = "ambilight"
+
 		#
 		# Create file
 		#
-		
+
 		if self.createfile:
 
 			fo = None
@@ -676,7 +669,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 			fo.write("interface	127.0.0.1\n")
 			fo.write("port		19333\n")
 			fo.write("\n")
-			
+
 			fo.write("[device]\n")
 
 			if config.plugins.enigmalight.type.value == "WifiLight":
@@ -695,22 +688,22 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				fo.write(prefix)
 				fo.write(postfix)
 				fo.write("channels	"+str(channels)+"\n")
-			
+
 			if config.plugins.enigmalight.type.value != "iBelight" and config.plugins.enigmalight.type.value != "Lightpack":
 				fo.write("rate		"+str(config.plugins.enigmalight.rate.value)+"\n")
-			
+
 			fo.write("debug		off\n")
 			fo.write(delayafteropen)
 			fo.write("\n")
-			
+
 			fo.write("[color]\n")
 			fo.write("name		red\n")
-			fo.write("rgb		"+colorr+"\n")		
+			fo.write("rgb		"+colorr+"\n")
 			fo.write("gamma		"+str(config.plugins.enigmalight.config_r_gamma.value[0])+"."+str(config.plugins.enigmalight.config_r_gamma.value[1])+"\n")
 			fo.write("adjust		"+str(config.plugins.enigmalight.config_r_adjust.value[0])+"."+str(config.plugins.enigmalight.config_r_adjust.value[1])+"\n")
 			fo.write("blacklevel	"+str(config.plugins.enigmalight.config_r_blacklevel.value[0])+"."+str(config.plugins.enigmalight.config_r_blacklevel.value[1])+"\n")
 			fo.write("\n")
-			
+
 			fo.write("[color]\n")
 			fo.write("name		green\n")
 			fo.write("rgb		"+colorg+"\n")
@@ -718,7 +711,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 			fo.write("adjust		"+str(config.plugins.enigmalight.config_g_adjust.value[0])+"."+str(config.plugins.enigmalight.config_g_adjust.value[1])+"\n")
 			fo.write("blacklevel	"+str(config.plugins.enigmalight.config_g_blacklevel.value[0])+"."+str(config.plugins.enigmalight.config_b_blacklevel.value[1])+"\n")
 			fo.write("\n")
-			
+
 			fo.write("[color]\n")
 			fo.write("name		blue\n")
 			fo.write("rgb		"+colorb+"\n")
@@ -726,7 +719,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 			fo.write("adjust		"+str(config.plugins.enigmalight.config_b_adjust.value[0])+"."+str(config.plugins.enigmalight.config_b_adjust.value[1])+"\n")
 			fo.write("blacklevel	"+str(config.plugins.enigmalight.config_b_blacklevel.value[0])+"."+str(config.plugins.enigmalight.config_b_blacklevel.value[1])+"\n")
 			fo.write("\n")
-		
+
 		#
 		# begin to create lights section
 		#
@@ -734,31 +727,31 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 		# Set lightCount to 1
 		lightCount   = 1
 		channelCount = 1
-		
+
 		# Atmolight need to start @ 4
 		if config.plugins.enigmalight.type.value == "Atmolight":
 			channelCount = 4
-		
+
 		# Set v and h to 0
 		vScanCurrent = 0
 		hScanCurrent = 0
-		
+
 		#
 		# Set the section order
 		#
-		
+
 		if self.begin == "left-bottom" or self.begin == "left-top":
 			if config.plugins.enigmalight.clockwise.value == str(1):
 				order = "left,top,right,bottom" # Clockwise
 			else:
 				order = "left,bottom,right,top" # Backwards
-				
+
 			if config.plugins.enigmalight.floorstand.value == str(2):
 				if config.plugins.enigmalight.clockwise.value == str(1):
 					order = "left,top,right,bottom-right,bottom-center,bottom-left" # Clockwise
 				else:
 					order = "left,bottom-left,bottom-center,bottom-right,right,top" # Backwards
-		
+
 		if self.begin == "top-left" or self.begin == "top-right":
 			if config.plugins.enigmalight.clockwise.value == str(1):
 				order = "top,right,bottom,left" # Clockwise
@@ -770,21 +763,21 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 					order = "top,right,bottom-right,bottom-center,bottom-left,left" # Clockwise
 				else:
 					order = "top,left,bottom-left,bottom-center,bottom-right,right" # Backwards
-		 
+
 		if self.begin == "right-top" or self.begin == "right-bottom":
 			if config.plugins.enigmalight.clockwise.value == str(1):
 				order = "right,bottom,left,top" # Clockwise
 			else:
 				order = "right,top,left,bottom" # Backwards
-			
+
 			if config.plugins.enigmalight.floorstand.value == str(2):
 				if config.plugins.enigmalight.clockwise.value == str(1):
 					order = "right,bottom-right,bottom-center,bottom-left,left,top" # Clockwise
 				else:
 					order = "right,top,left,bottom-left,bottom-center,bottom-right" # Backwards
-		 
+
 		if self.begin == "bottom-right" or self.begin == "bottom-middle-left" or self.begin == "bottom-middle-right" or self.begin == "bottom-left":
-			
+
 			if self.begin == "bottom-middle-left":
 				if config.plugins.enigmalight.clockwise.value == str(1):
 					order = "bottom-left,left,top,right,bottom-right" # Clockwise
@@ -802,10 +795,10 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				else:
 					order = "bottom-center,bottom-right,right,top,left,bottom-left" # Backwards
 
-		
-		# Split the orderarray	   
+
+		# Split the orderarray
 		order = order.split(",")
-		
+
 		# Debug
 		#print("[Boblight] order   = "+str(order))
 		#print("[Boblight] begincount = "+config.plugins.enigmalight.begincount.value)
@@ -816,7 +809,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 		#
 		# order loop
 		#
-		
+
 		totalCount = 1
 		for section in order:
 
@@ -825,7 +818,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				vScanCurrent = 100.00 # From LEFT-bottom to LEFT-top	   # Clockwise
 				if config.plugins.enigmalight.clockwise.value == str(2): 
 					vScanCurrent = 0.00 # From LEFT-top to LEFT-bottom	 # Backwards
-				
+
 			if section == "top":
 				lights = leds_top
 				hScanCurrent = 0.00 # From TOP-left to TOP-right		   # Clockwise
@@ -843,130 +836,119 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				hScanCurrent = 100.00 # From BOTTOM-right to BOTTOM-left   # Clockwise
 				if config.plugins.enigmalight.clockwise.value == str(2): 
 					hScanCurrent = 0.00 # From BOTTOM-left to BOTTOM-right # Backwards
-			
+
 			if section == "bottom-right":
 				lights = leds_bottom_right
 				hScanCurrent = float(hScanBottom_right)
 				if config.plugins.enigmalight.clockwise.value == str(2): 
 					hScanCurrent = float(hScanBottom_right)
-					
+
 			if section == "bottom-left":
 				lights = leds_bottom_left
 				hScanCurrent = float(hScanBottom_left)
 				if config.plugins.enigmalight.clockwise.value == str(2): 
 					hScanCurrent = float(hScanBottom_left)
-			
+
 			'''###################  Bottom Center  ####################'''
-			   
-			
+
 			if self.begin == "bottom-middle-left" or self.begin == "bottom-middle-right":
 				if section == "bottom":
 					lights = leds_bottom
 					lights = lights/2; # we start at middle so we need to deceide it.
 					hScanCurrent = 50
-					
+
 				if section == "bottom-left":
 					lights = leds_bottom_left
 					hScanCurrent = hScanBottom_left 
-					
+
 				if section == "bottom-right":
 					lights = leds_bottom_right
 					hScanCurrent = hScanBottom_right 
-				
+
 			'''########################################################'''
-		
+
 			#
 			# Set start value
 			#
-		
+
 			if section == "left" and self.begin   == "left-bottom":
 				vScanCurrent = 100.00  # Start @ LEFT-bottom
-						
+
 			if section == "left" and self.begin   == "left-top":
 				vScanCurrent = 0.00	# Start @ LEFT-top
 
 			if section == "top" and self.begin	== "top-left":
 				hScanCurrent = 0.00	# Start @ TOP-left
-						
+
 			if section == "top" and self.begin	== "top-right":
 				hScanCurrent = 100.00  # Start @ TOP-right
-						
+
 			if section == "right" and self.begin  == "right-bottom":
 				vScanCurrent = 100.00  # Start @ RIGHT-bottom
-						
+
 			if section == "right" and self.begin  == "right-top":
 				vScanCurrent = 0.00	# Start @ RIGHT-top
-					
+
 			if section == "bottom" and self.begin == "bottom-left":
 				hScanCurrent = 0.00	# Start @ BOTTOM-left
-						
+
 			if section == "bottom" and self.begin == "bottom-right":
 				hScanCurrent = 100.00  # Start @ BOTTOM-right
-			
-			
+
+
 			lightCount = 1 #lights counter
-			
+
 			# Atmolight need to start @ 4
 			if config.plugins.enigmalight.type.value == "Atmolight":
 				lightCount = 4
-			
+
 			# Empty places for floorstand option
 			if section == "bottom-center":
 				lights = 0; #Set lights to 0, we want not into loop.
-		
-			# Debug
-			##print("[Boblight] Overlap			   :  "+str(overlap))
-			#print("[Boblight] Start section		 :  "+str(section))
-			#print("[Boblight] Start lights		  :  "+str(lights))
-			#print("[Boblight] Start HscanCurrent	:  "+str(hScanCurrent))
-			#print("[Boblight] Start VscanCurrent	:  "+str(vScanCurrent))
-			
+
 			#
 			# check if section contains more then 0 lights
 			#
-			
+
 			if lights > 0:
-				
+
 				# Steps
 				vScanStep  = 100.00 / lights;
 				hScanStep  = 100.00 / lights;
-				
-				# Debug
-				#print("[Boblight] vScanStep  100/"+str(lights)+" :  "+str(vScanStep))
-				#print("[Boblight] hScanStep  100/"+str(lights)+" :  "+str(hScanStep))
-				
+
+
 				# Set other step for floorstand option
 				if config.plugins.enigmalight.floorstand.value == str(2):
 					if section == "bottom-left" or section == "bottom-right" or section == "bottom-center":
 						hScanStep  = 100.00 / leds_bottom_total; 
-				elif self.begin == "bottom-middle-left" or self.begin == "bottom-middle-right":					
+				elif self.begin == "bottom-middle-left" or self.begin == "bottom-middle-right":
 					if section == "bottom-left" or section == "bottom-right":
 						hScanStep  = 100.00 / leds_bottom; 
-						
+
 				# Loop
 				while(lightCount <= lights):
-					
+
 					if section == "right" or section == "top":
-						vScanEnd	 = vScanCurrent
-						hScanEnd	 = hScanCurrent
-						
+						vScanEnd = vScanCurrent
+						hScanEnd = hScanCurrent
+
 						if config.plugins.enigmalight.clockwise.value == str(2): #backwards
-							vScanStart   = vScanCurrent - vScanStep
-							hScanStart   = hScanCurrent - hScanStep
+							vScanStart = vScanCurrent - vScanStep
+							hScanStart = hScanCurrent - hScanStep
 						else:
-							vScanStart   = vScanCurrent + vScanStep
-							hScanStart   = hScanCurrent + hScanStep
-						
+							vScanStart = vScanCurrent + vScanStep
+							hScanStart = hScanCurrent + hScanStep
+
 						vScanCurrent = vScanStart
 						hScanCurrent = hScanStart
 
 					if section == "left" or section == "bottom" or section == "bottom-left" or section == "bottom-right":
-						vScanStart   = vScanCurrent
-						hScanStart   = hScanCurrent
-						
+						vScanStart = vScanCurrent
+						hScanStart = hScanCurrent
+
 						if config.plugins.enigmalight.clockwise.value == str(2): #backwards
-							vScanEnd	 = vScanCurrent + vScanStep
-							hScanEnd	 = hScanCurrent + hScanStep
+							vScanEnd = vScanCurrent + vScanStep
+							hScanEnd = hScanCurrent + hScanStep
 							if section == "bottom-right" and self.begin == "bottom-middle":
 								hScanEnd	 = hScanCurrent - hScanStep
 						else:
@@ -975,22 +957,21 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 						
 						vScanCurrent = vScanEnd
 						hScanCurrent = hScanEnd
-					
+
 					if self.createfile:
 						fo.write("\n")
 						fo.write("\n")
-					
-					
+
 					# Light name must be 3 chars
 					s = str(totalCount)
 					s += "XX"
-					
-					length  = len(s)
-					mini	= length -3
-					
+
+					length = len(s)
+					mini = length -3
+
 					if length is 4 or length > 4:
-						s = s[:-mini]										
-					
+						s = s[:-mini]
+
 					if self.createfile:
 						fo.write("[light]\n")
 						fo.write("position	 "+str(section)+"\n")
@@ -1004,7 +985,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 
 						fo.write("color		 blue	"+name+" "+str(channelCount)+"\n")
 						channelCount += 1;
-					
+
 					# Swap end and start if it's clockwise
 					if config.plugins.enigmalight.clockwise.value == str(1):
 						v = vScanEnd;vScanEnd = vScanStart;vScanStart = v;
@@ -1022,11 +1003,11 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 						#step = i * (300 / config.plugins.enigmalight.lights_right.value)
 						#self.c.fill(390, vs*2, 5, 5, RGB(000,000,255))
 						#print "step-right %s" %(str(vs*2))	
-				
+
 						# Debug
 						#print("[Boblight] vScanStart  :  "+str(vs))
 						#print("[Boblight] vScanEnd	:  "+str(ve))
-					
+
 					if section == "bottom" or section == "bottom-left" or section == "bottom-right":
 						hs = abs(round(hScanStart,2))
 						he = abs(round(hScanEnd,2))
@@ -1044,39 +1025,37 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 						hs = abs(round(hScanStart,2))
 						he = abs(round(hScanEnd,2))	   
 						vd = scant
-						
+
 						if self.createfile:
 							fo.write("hscan		 "+str(hs)+" "+str(he)+"\n")
 							fo.write("vscan		 0 "+str(vd)+"\n")
-						
+
 						#self.c.fill(hs*4, 0, 5, 5, RGB(255,000,000))
 						#print "step-top %s" %(str(hs*4))
-						
+
 						# Debug
 						#print("[Boblight] hScanStart  :  "+str(hs))
 						#print("[Boblight] hScanEnd	:  "+str(he))
-					
+
 					if section == "left":
 						vs = abs(round(vScanStart,2))
 						ve = abs(round(vScanEnd,2))
 						hd = scanl
-						
+
 						if self.createfile:
 							fo.write("hscan		 0 "+str(hd)+"\n")
 							fo.write("vscan		 "+str(vs)+" "+str(ve)+"\n")
-						
+
 						#self.c.fill(0, vs*2, 5, 5, RGB(000,255,000))
 						#print "step-left %s" %(str(vs*2))
-						
+
 						# Debug
 						#print("[Boblight] vScanStart  :  "+str(vs))
 						#print("[Boblight] vScanEnd	:  "+str(ve))
-						
+
 					lightCount  += 1; # Counter for sections
 					totalCount  += 1;
-			   
 				# End loop
-		
 		#self.c.flush()
 
 		if config.plugins.enigmalight.type.value == "WifiLight":
@@ -1084,8 +1063,8 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				fowifi = open("/home/elight-addons/wifilight/wifilight.conf", "wb")
 				fowifi.write(str(config.plugins.enigmalight.wifilight_ip.getText())+"|")
 				fowifi.write(str(config.plugins.enigmalight.wifilight_port.getText()))
-				fowifi.close();
-				
+				fowifi.close()
+
 			except:
 				from traceback import format_exc
 				log("Error:" +format_exc(),self)
@@ -1094,12 +1073,12 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 					showMessage(self._session,_("Can't write settings to /home/elight-addons/wifilight/wifilight.conf...", "W", timeout = 10))
 				except:
 					pass
-		
-		fo.close();
-		
+
+		fo.close()
+
 		if self.test:
 			#kill enigmalight and start the test
-			self.controller.killEnigmalight(None,self.doTest)	
+			self.controller.killEnigmalight(None,self.doTest)
 		else:
 			self.MovetoEtc(True,True)
 
@@ -1124,7 +1103,5 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				os.system("mv /tmp/enigmalight.conf.new /etc/enigmalight.conf")
 				if message:
 					self.session.open(MessageBox, _("enigmalight.conf succesfull saved in /etc/"), MessageBox.TYPE_INFO, timeout=4)
-		
 		self.createfile = False
 		self.test = False
-

@@ -37,6 +37,7 @@ from Screens.Screen import Screen
 from Screens.HelpMenu import HelpableScreen
 
 from __common__ import EnigmaLight_log as log, showMessage, validIP, Clamp, getAspect
+from . import _
 from __init__ import getCrashFilePath, _ # _ is translation
 
 from EL_PathSelector import EL_Screen_PathSelector
@@ -127,7 +128,7 @@ class EL_Screen_Adjust(Screen, ConfigListScreen, HelpableScreen):
 		if config.plugins.enigmalight.showstatusbar.value == True: #remove it
 			self["statusbar"].hide()
 			self["txt_statusbar"].hide()
-			self["txt_statusbar_info"].hide()			
+			self["txt_statusbar_info"].hide()
 		else:
 			self["statusbar"].show()
 			self["txt_statusbar"].show()
@@ -201,7 +202,7 @@ class EL_Screen_Adjust(Screen, ConfigListScreen, HelpableScreen):
 	#===========================================================================
 	def createSetup(self):
 		log("",self)
-		
+
 		self.list = []
 
 		self.list.append(getConfigListEntry(_('- Use live Adjust Settings:'), config.plugins.enigmalight.use_live_adjust))
@@ -241,18 +242,14 @@ class EL_Screen_Adjust(Screen, ConfigListScreen, HelpableScreen):
 		self.list.append(getConfigListEntry(_('- Show background sample picture:'), config.plugins.enigmalight.sampleBackground))
 		if config.plugins.enigmalight.sampleBackground.getValue() == True:
 			self.list.append(getConfigListEntry(_('- Sample picture:'), config.plugins.enigmalight.sampleBackground_mvi))
-			
+
 		self["config"].list = self.list
 		#self["config"].l.setList(self.cfglist)
-		
-		
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
 	def _changed(self):
-		
-		
 		self._hasChanged = True
 		self.selected = self["config"].getCurrent()[1]
 
@@ -261,9 +258,9 @@ class EL_Screen_Adjust(Screen, ConfigListScreen, HelpableScreen):
 				self.showBackground()
 			else:
 				self.showOldService()
-  
+
 		self.controller.changeValue(self["config"].getCurrent()[1])
-		
+
 
 	def showOldService(self):
 		log("",self)
@@ -282,10 +279,10 @@ class EL_Screen_Adjust(Screen, ConfigListScreen, HelpableScreen):
 				open("/proc/stb/video/alpha", "w").write(str(config.av.osd_alpha.value))
 			except:
 				print "Set OSD Transparacy failed"
-		
+
 	def showBackground(self):
 		log("",self)
-		### TEST ###	
+		### TEST ###
 		self.session.nav.stopService()
 
 		# Disable OSD Transparency
@@ -296,10 +293,10 @@ class EL_Screen_Adjust(Screen, ConfigListScreen, HelpableScreen):
 		
 		if self.can_osd_alpha:
 			open("/proc/stb/video/alpha", "w").write(str("255"))
-		
+
 		# Show Background MVI
 		os.system("/usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/mvi/"+str(config.plugins.enigmalight.sampleBackground_mvi.getValue())+".mvi &")
-			
+
 		### END TEST ###
 
 	#===========================================================================
@@ -344,7 +341,7 @@ class EL_Screen_Adjust(Screen, ConfigListScreen, HelpableScreen):
 		log("",self)
 		ConfigListScreen.keyLeft(self)
 		self.createSetup()
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -352,7 +349,7 @@ class EL_Screen_Adjust(Screen, ConfigListScreen, HelpableScreen):
 		log("",self)
 		ConfigListScreen.keyRight(self)
 		self.createSetup()
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -366,5 +363,3 @@ class EL_Screen_Adjust(Screen, ConfigListScreen, HelpableScreen):
 	def keyBouquetDown(self):
 		log("",self)
 		self["config"].instance.moveSelection(self["config"].instance.pageDown)
-
-		

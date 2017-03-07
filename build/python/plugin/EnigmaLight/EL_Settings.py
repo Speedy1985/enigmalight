@@ -108,11 +108,11 @@ class EL_Screen_Settings(Screen, ConfigListScreen, HelpableScreen):
 		log("",self,"Layout finisched..")
 
 		self.setTitle(_("Settings"))
-		
-		if not config.plugins.enigmalight.showstatusbar.getValue():			
+
+		if not config.plugins.enigmalight.showstatusbar.getValue():
 			self["statusbar"].hide()
 			self["txt_statusbar"].hide()
-			self["txt_statusbar_info"].hide()			
+			self["txt_statusbar_info"].hide()
 		else:
 			self["statusbar"].show()
 			self["txt_statusbar"].show()
@@ -164,64 +164,64 @@ class EL_Screen_Settings(Screen, ConfigListScreen, HelpableScreen):
 
 		# GENERAL SETTINGS
 		self.cfglist.append(getConfigListEntry(_("[ General Settings ]"), config.plugins.enigmalight.about, _(" ")))
-		self.cfglist.append(getConfigListEntry(_('- Type of EnigmaLight binary:\r'),config.plugins.enigmalight.bintype, _("Here you can select the type of enigmalight, the most receivers can use the fpu version but some receivers can't. For then use the normal version")))     
+		#self.cfglist.append(getConfigListEntry(_('- Type of EnigmaLight binary:'),config.plugins.enigmalight.bintype, _("Here you can select the type of enigmalight, the most receivers can use the fpu version but some receivers can't. For then use the normal version")))     
 		self.configfilepath = getConfigListEntry(_("- Configuration File"), config.plugins.enigmalight.configfilepath, _("Select your configfile, default /etc/enigmalight.conf will be used "))
 		self.cfglist.append(self.configfilepath)
 
-		self.cfglist.append(getConfigListEntry(_('- Run EnigmaLight as server when lights are off:\r'),config.plugins.enigmalight.server, _("Run EnigmaLight as Server for Boblight or other clients ")))     
-		self.cfglist.append(getConfigListEntry(_('- Check for update, press OK\r'),config.plugins.enigmalight.clickOK, _("Press OK to check for update.. "))),
-		self.cfglist.append(getConfigListEntry(_('- Show message when turn on/off lights:\r'),config.plugins.enigmalight.message_onoff, _("Show a messagebox when you turn on/off the lights ")))
-		self.cfglist.append(getConfigListEntry(_('- Enable lights on boot:\r'),config.plugins.enigmalight.autostart, _("Automatic turn on lights on boot ")))
-		self.cfglist.append(getConfigListEntry(_('- Cluster Leds:\r'),config.plugins.enigmalight.cluster, _("Cluster [X] Leds as one led.\nDefault each led had is own color, with this option you can bundle/cluster this to 2 -> 10 leds.")))
-		self.cfglist.append(getConfigListEntry(_('- Delay: \r'), config.plugins.enigmalight.delay, _(" Some tv's are slower then the lights. With this option you can make the output 1 -> 20 frames later.")))
-		self.cfglist.append(getConfigListEntry(_('- Interval:\r'), config.plugins.enigmalight.interval, _("How fast Enigmalight wil run.\n0.01 = 15 -> 40fps | 0.10 = 10fps | 0.20 = 5fps: "))) 
-		self.cfglist.append(getConfigListEntry(_('- 3D Mode:\r'), config.plugins.enigmalight.m_3dmode, _("Turn on/off 3D Mode, SBS or TAB")))
-		self.cfglist.append(getConfigListEntry(_('- Default lightmode:\r'),config.plugins.enigmalight.mode, _(" ")))
-		self.cfglist.append(getConfigListEntry(_('- Standby Mode:\r'),config.plugins.enigmalight.standbymode, _("Turn off lights or use moodlamp in standby ")))
+		self.cfglist.append(getConfigListEntry(_('- Run EnigmaLight as server when lights are off:'),config.plugins.enigmalight.server, _("Run EnigmaLight as Server for Boblight or other clients ")))     
+		#self.cfglist.append(getConfigListEntry(_('- Check for update, press OK\r'),config.plugins.enigmalight.clickOK, _("Press OK to check for update.. "))),
+		self.cfglist.append(getConfigListEntry(_('- Show message when turn on/off lights:'),config.plugins.enigmalight.message_onoff, _("Show a messagebox when you turn on/off the lights ")))
+		self.cfglist.append(getConfigListEntry(_('- Enable lights on boot:'),config.plugins.enigmalight.autostart, _("Automatic turn on lights on boot ")))
+		self.cfglist.append(getConfigListEntry(_('- Cluster Leds:'),config.plugins.enigmalight.cluster, _("Cluster [X] Leds as one led.\nDefault each led had is own color, with this option you can bundle/cluster this to 2 -> 10 leds.")))
+		self.cfglist.append(getConfigListEntry(_('- Delay:'), config.plugins.enigmalight.delay, _(" Some tv's are slower then the lights. With this option you can make the output 1 -> 20 frames later.")))
+		self.cfglist.append(getConfigListEntry(_('- Interval:'), config.plugins.enigmalight.interval, _("How fast Enigmalight wil run.\n0.01 = 15 -> 40fps | 0.10 = 10fps | 0.20 = 5fps: "))) 
+		self.cfglist.append(getConfigListEntry(_('- 3D Mode:'), config.plugins.enigmalight.m_3dmode, _("Turn on/off 3D Mode, SBS or TAB")))
+		self.cfglist.append(getConfigListEntry(_('- Default lightmode:'),config.plugins.enigmalight.mode, _(" ")))
+		self.cfglist.append(getConfigListEntry(_('- Standby Mode:'),config.plugins.enigmalight.standbymode, _("Turn off lights or use moodlamp in standby ")))
 		self.cfglist.append(getConfigListEntry(_('- Color order:'), config.plugins.enigmalight.color_order,  _(" Set the order as given in enigmalight.conf.")))
 		
 		self.cfglist.append(getConfigListEntry(_("[ Blackbars ]"), config.plugins.enigmalight.about, _(" ")))
-		self.cfglist.append(getConfigListEntry(_('- Remove Blackbars top and bottom:\r'),config.plugins.enigmalight.blackbar_h, _("Remove horizontal blackbars from lights.")))
-		self.cfglist.append(getConfigListEntry(_('- Remove Blackbars left and right:\r'),config.plugins.enigmalight.blackbar_v, _("Remove vertical blackbars from lights.")))
-		self.cfglist.append(getConfigListEntry(_('- Delay before remove:\r'), config.plugins.enigmalight.blackbar_f, _("Count from 0 to given number\nif the blackbars are still there then remove them.\nif enigmalight runs on 10fps and you will wait 10sec before remove, then set it to 100")))
+		self.cfglist.append(getConfigListEntry(_('- Remove Blackbars top and bottom:'),config.plugins.enigmalight.blackbar_h, _("Remove horizontal blackbars from lights.")))
+		self.cfglist.append(getConfigListEntry(_('- Remove Blackbars left and right:'),config.plugins.enigmalight.blackbar_v, _("Remove vertical blackbars from lights.")))
+		self.cfglist.append(getConfigListEntry(_('- Delay before remove:'), config.plugins.enigmalight.blackbar_f, _("Count from 0 to given number\nif the blackbars are still there then remove them.\nif enigmalight runs on 10fps and you will wait 10sec before remove, then set it to 100")))
 		#getConfigListEntry(_('Switch on/off lights when TV turns on/off:'), config.plugins.enigmalight.hdmicec_enabled),
 
-				#Network
+		#Network
 		self.cfglist.append(getConfigListEntry(_("[ Network Settings ]"), config.plugins.enigmalight.about, _(" ")))
-		self.cfglist.append(getConfigListEntry(_('- Enable network mode (connect with other daemon):\r'), config.plugins.enigmalight.network_onoff, _("Use enigmalight as client and connect with other daemon over network (not for local use)")))
+		self.cfglist.append(getConfigListEntry(_('- Enable network mode (connect with other daemon):'), config.plugins.enigmalight.network_onoff, _("Use enigmalight as client and connect with other daemon over network (not for local use)")))
 		
 		if config.plugins.enigmalight.network_onoff.value is True: 
-			self.cfglist.append(getConfigListEntry(_('- Host ipaddress:\r'), config.plugins.enigmalight.address, _(" ")))
-			self.cfglist.append(getConfigListEntry(_('- Daemon port:\r'), config.plugins.enigmalight.port, _(" ")))
+			self.cfglist.append(getConfigListEntry(_('- Host ipaddress:'), config.plugins.enigmalight.address, _(" ")))
+			self.cfglist.append(getConfigListEntry(_('- Daemon port:'), config.plugins.enigmalight.port, _(" ")))
 
 		#Timer
 		self.cfglist.append(getConfigListEntry(_("[ Timer Settings ]"), config.plugins.enigmalight.about, _(" ")))
-		self.cfglist.append(getConfigListEntry(_('- Use Timer:\r'), config.plugins.enigmalight.timer_onoff, _("Turn on/off lights @ given time ")))
+		self.cfglist.append(getConfigListEntry(_('- Use Timer:'), config.plugins.enigmalight.timer_onoff, _("Turn on/off lights @ given time ")))
 
 		if config.plugins.enigmalight.timer_onoff.value is True:
-			self.cfglist.append(getConfigListEntry(_('- Don\'t turn lights off/on in standby:\r'), config.plugins.enigmalight.timer_standby_onoff, _("Disable timer function in standbymode ")))
-			self.cfglist.append(getConfigListEntry(_("- Enable lights:\r"), config.plugins.enigmalight.time_start, _("Time when lights go on ")))
-			self.cfglist.append(getConfigListEntry(_("- Disable lights:\r"), config.plugins.enigmalight.time_end, _("Time when lights go off ")))
+			self.cfglist.append(getConfigListEntry(_('- Don\'t turn lights off/on in standby:'), config.plugins.enigmalight.timer_standby_onoff, _("Disable timer function in standbymode ")))
+			self.cfglist.append(getConfigListEntry(_("- Enable lights:"), config.plugins.enigmalight.time_start, _("Time when lights go on ")))
+			self.cfglist.append(getConfigListEntry(_("- Disable lights:"), config.plugins.enigmalight.time_end, _("Time when lights go off ")))
 
 		#server
 		self.cfglist.append(getConfigListEntry(_("[ Remote ]"), config.plugins.enigmalight.about, _(" ")))
-		self.cfglist.append(getConfigListEntry(_("- Use remoteserver:\r"), config.plugins.enigmalight.remote_server, _("Control EnigmaLight from browser")))
+		self.cfglist.append(getConfigListEntry(_("- Use remoteserver:"), config.plugins.enigmalight.remote_server, _("Control EnigmaLight from browser")))
 		if config.plugins.enigmalight.remote_server.value:
-			self.cfglist.append(getConfigListEntry(_("- Remoteserver Port:\r"), config.plugins.enigmalight.remote_port, _("Show status at bottomscreen fps, cpu usage and currentmode")))
+			self.cfglist.append(getConfigListEntry(_("- Remoteserver Port:"), config.plugins.enigmalight.remote_port, _("Show status at bottomscreen fps, cpu usage and currentmode")))
 		#Debug
 		self.cfglist.append(getConfigListEntry(_("[ Misc ]"), config.plugins.enigmalight.about, _(" ")))
-		self.cfglist.append(getConfigListEntry(_("- Show statusbar on bottom of screen:\r"), config.plugins.enigmalight.showstatusbar, _("Show status at bottomscreen fps, currentmode and other info")))
-		if config.plugins.enigmalight.showstatusbar.getValue():			
-			self.cfglist.append(getConfigListEntry(_("- Remove statusbar from tuningscreen:\r"), config.plugins.enigmalight.showstatusbar_tuning, _("Remove the statusbar from colortuning screen")))
-		self.cfglist.append(getConfigListEntry(_("- Show errormessages:\r"), config.plugins.enigmalight.message_error_onoff, _("Turn on if you want to see error information")))		
-		self.cfglist.append(getConfigListEntry(_("- Debug-Logging > /tmp/enigmalight_gui.log:\r"), config.plugins.enigmalight.EnableEventLog, _("")))
+		self.cfglist.append(getConfigListEntry(_("- Show statusbar on bottom of screen:"), config.plugins.enigmalight.showstatusbar, _("Show status at bottomscreen fps, currentmode and other info")))
+		if config.plugins.enigmalight.showstatusbar.getValue():
+			self.cfglist.append(getConfigListEntry(_("- Remove statusbar from tuningscreen:"), config.plugins.enigmalight.showstatusbar_tuning, _("Remove the statusbar from colortuning screen")))
+		self.cfglist.append(getConfigListEntry(_("- Show errormessages:"), config.plugins.enigmalight.message_error_onoff, _("Turn on if you want to see error information")))
+		self.cfglist.append(getConfigListEntry(_("- Debug-Logging > /tmp/enigmalight_gui.log:"), config.plugins.enigmalight.EnableEventLog, ""))
 
-		#	self.cfglist.append(getConfigListEntry(_("- Log folder path:\r"), config.plugins.enigmalight.logfolderpath		, _("Default log wil be saved at /tmp/enigmalight_gui.log")))
-		#	self.cfglist.append(self.logfolderpath)		
+		#	self.cfglist.append(getConfigListEntry(_("- Log folder path:"), config.plugins.enigmalight.logfolderpath, _("Default log wil be saved at /tmp/enigmalight_gui.log")))
+		#	self.cfglist.append(self.logfolderpath)
 
 		self["config"].list = self.cfglist
 		#self["config"].l.setList(self.cfglist)
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -249,19 +249,19 @@ class EL_Screen_Settings(Screen, ConfigListScreen, HelpableScreen):
 	#===========================================================================
 	def updateHelp(self):
 		cur = self["config"].getCurrent()
-		self["help"].text = cur and cur[2] or "empty"
+		self["help"].text = cur and cur[2] or " "
 		
 	#===========================================================================
 	# 
 	#===========================================================================
 	def ok(self):
 		cur = self["config"].getCurrent()
-		
+
 		if cur == self.configfilepath:
 			self.session.openWithCallback(self.savePathConfig,EL_Screen_PathSelector,self.configfilepath[1].value, "configfile", "Select configfile")
 		elif self["config"].getCurrent()[1] == config.plugins.enigmalight.clickOK:
 			EL_Screen_Check(self.session).checkForUpdate(self.controller)
-			self.controller.setStatusBarInfo("Check for update...")
+			self.controller.setStatusBarInfo(_("Check for update..."))
 			self.controller.checkedForUpdates = True
 
 	#===========================================================================
@@ -343,7 +343,7 @@ class EL_Screen_Settings(Screen, ConfigListScreen, HelpableScreen):
 	def startClient(self, answer):
 		log("",self)
 		if answer is True:
-			self.controller.killEnigmalight(None,self.controller.switchtoNetwork())			
+			self.controller.killEnigmalight(None,self.controller.switchtoNetwork())
 		else:
 			self.close()
 
@@ -369,19 +369,16 @@ class EL_Screen_Settings(Screen, ConfigListScreen, HelpableScreen):
 		log("",self)
 		ConfigListScreen.keyRight(self)
 		self.createSetup()
-		
 	#===========================================================================
 	# 
 	#===========================================================================
 	def keyBouquetUp(self):
 		log("",self)
 		self["config"].instance.moveSelection(self["config"].instance.pageUp)
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
 	def keyBouquetDown(self):
 		log("",self)
 		self["config"].instance.moveSelection(self["config"].instance.pageDown)
-
-		

@@ -47,6 +47,7 @@ from EL_Check import EL_Screen_Check
 
 from __common__ import checkSymbolic, EnigmaLight_log as log, showMessage, showError
 from __plugin__ import Plugin
+from . import _
 from __init__ import getCrashFilePath, _ # _ is translation
 
 from threading import currentThread
@@ -71,9 +72,9 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 			#check if enigmalight is pointed to good OE Version, if not then make the link
 			checkSymbolic()
 
-			Screen.__init__(self, session)		
+			Screen.__init__(self, session)
 			self.session = session
-			
+
 			#Set screen
 			self.currentScreen = self
 
@@ -166,15 +167,13 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 
 			self.refreshMenu()
 
-			if not config.plugins.enigmalight.showstatusbar.getValue():			
-				self["statusbar"].hide()
+			if not config.plugins.enigmalight.showstatusbar.getValue():
 				self["txt_statusbar"].hide()
-				self["txt_statusbar_info"].hide()			
+				self["txt_statusbar_info"].hide()
 			else:
 				self["statusbar"].show()
 				self["txt_statusbar"].show()
-				self["txt_statusbar_info"].show()			
-			
+				self["txt_statusbar_info"].show()
 			log("",self,"Layout Finisched!")
 
 		except:
@@ -194,9 +193,9 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 	def okbuttonClick(self):
 		log("",self)
 		selection = self["menu"].getCurrent()
-			
+
 		if selection is not None:
-			
+
 			self.selectedEntry = selection[1]
 
 			if type(self.selectedEntry) is str:
@@ -228,7 +227,7 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 
 				elif selection[1] == "EL_Screen_Help":
 					self.currentScreen = self.session.openWithCallback(self.refreshMenu,EL_Screen_Help)
-					self.currentScreen.setController(self.controller)					
+					self.currentScreen.setController(self.controller)
 
 				self.controller.setScreen(self.currentScreen)
 
@@ -259,7 +258,7 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 		#self.printWithThread("showButtons())")
 		if self.controller != None:
 			if self.controller.lightsEnabled == True:
-				self["txt_check"].hide()					
+				self["txt_check"].hide()
 				self["btn_green"].hide()
 				self["txt_green"].hide()
 				self["btn_red"].show()
@@ -421,10 +420,8 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 		self["btn_green"].show()
 		self["txt_green"].show()
 
-		self.controller.Control("grabber", "stop")		
+		self.controller.Control("grabber", "stop")
 
-		
-		
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -436,15 +433,14 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 			self["txt_yellow"].show()
 			self["btn_blue"].hide()
 			self["txt_blue"].hide()
-								
 			config.plugins.enigmalight.mode.setValue(2)
 			config.plugins.enigmalight.mode.save()
 			configfile.save()
 
-			self.controller.Control("start", "dynamic")	
+			self.controller.Control("start", "dynamic")
 		else:
-			showMessage(self.session,"Can't switch mode, Lights are disabled.","I",3)
-		
+			showMessage(self.session, _("Can't switch mode, Lights are disabled."),"I",3)
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -457,14 +453,13 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 			self["btn_blue"].show()
 			self["txt_blue"].show()
 			self.controller.Control("grabber", "moodlamp")
-		
+
 			config.plugins.enigmalight.mode.setValue(1)
 			config.plugins.enigmalight.mode.save()
 			configfile.save()
 		else:
-			showMessage(self.session,"Can't switch mode, Lights are disabled.","I",3)
-		
-	
+			showMessage(self.session,_("Can't switch mode, Lights are disabled."),"I",3)
+
 	#===========================================================================
 	# 
 	#===========================================================================

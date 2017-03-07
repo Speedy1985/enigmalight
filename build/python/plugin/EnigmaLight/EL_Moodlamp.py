@@ -39,6 +39,7 @@ from Screens.HelpMenu import HelpableScreen
 from EL_Control import Controller
 
 from __common__ import EnigmaLight_log as log, showMessage, Clamp, getRGB
+from . import _
 from __init__ import _ # _ is translation
 
 from EL_PathSelector import EL_Screen_PathSelector
@@ -116,15 +117,15 @@ class EL_Screen_Moodlamp(Screen, ConfigListScreen, HelpableScreen):
 		log("",self,"Layout finsched..")
 		self.setBackground()
 		self.setTitle(_("Moodlamp configuration"))
-		
-		if not config.plugins.enigmalight.showstatusbar.getValue():			
+
+		if not config.plugins.enigmalight.showstatusbar.getValue():
 			self["statusbar"].hide()
 			self["txt_statusbar"].hide()
-			self["txt_statusbar_info"].hide()			
+			self["txt_statusbar_info"].hide()
 		else:
 			self["statusbar"].show()
 			self["txt_statusbar"].show()
-			self["txt_statusbar_info"].show()		
+			self["txt_statusbar_info"].show()
 
 	#==========================================================================
 	# Functions for use from others thread
@@ -177,7 +178,7 @@ class EL_Screen_Moodlamp(Screen, ConfigListScreen, HelpableScreen):
 	#==========================================================================
 	def setStatusBarTxt(self,text):
 			self["txt_statusbar"].setText(text)
-	
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -352,4 +353,3 @@ class EL_Screen_Moodlamp(Screen, ConfigListScreen, HelpableScreen):
 			config.plugins.enigmalight.moodlamp_static_color_b.setValue(Clamp(config.plugins.enigmalight.moodlamp_static_color_b.getValue()-10,0,255))
 		self._changed() #Refresh list
 		self.createList()
-		

@@ -1,5 +1,5 @@
 DESCRIPTION = "An Ambilight clone for broadcom based linux receivers."
-HOMEPAGE = "https://github.com/Speedy1985/enigmalight"
+HOMEPAGE = "https://github.com/Dima73/enigmalight"
 LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://README;md5=93285fcad54271879db50c1fbf22d98b"
 
@@ -11,7 +11,6 @@ SRCREV = "${AUTOREV}"
 PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
 
-#SRC_URI = "git://github.com/Speedy1985/enigmalight.git"
 SRC_URI = "git://github.com/Dima73/enigmalight.git"
 
 S = "${WORKDIR}/git/build"

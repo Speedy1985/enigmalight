@@ -1,0 +1,1298 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-07 22:24+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: EL_Check.py:104
+msgid ""
+"\n"
+"Update to "
+msgstr ""
+
+#: EL_ConfigEditor.py:173 EL_ConfigEditor.py:190 EL_ConfigEditor.py:214
+#: EL_ConfigEditor.py:218 EL_Moodlamp.py:193 EL_Moodlamp.py:203
+#: EL_Moodlamp.py:204 EL_Moodlamp.py:205 EL_Moodlamp.py:230 EL_Settings.py:166
+#: EL_Settings.py:179 EL_Settings.py:183 EL_Settings.py:190 EL_Settings.py:194
+#: EL_Settings.py:195 EL_Settings.py:198 EL_Settings.py:207 EL_Settings.py:212
+#: EL_Tuning.py:169 EL_Tuning.py:173 EL_Tuning.py:179 EL_Tuning.py:183
+#: EL_Tuning.py:221
+msgid " "
+msgstr ""
+
+#: EL_Tuning.py:175
+msgid " Min 0.00 | Max 1.00 | Default 0.00"
+msgstr ""
+
+#: EL_Tuning.py:176
+msgid " Min 0.00 | Max 1.00 | Default 1.00"
+msgstr ""
+
+#: EL_Tuning.py:177
+msgid ""
+" Saturation:\n"
+"Simply a strengthening of the average colour planes. The best option is "
+"between 1:00 and 1:20. This is because you are going to reinforce colours "
+"and this is so unnatural. \n"
+"Example:\n"
+" many films have a colour grading over it. A well-known example is a blue "
+"tint. This affects all the colours on the screen so that even a light Gray "
+"sky has some blue tones in it. When you try saturation on 2, it will thus be "
+"seen as good this blue tint twice while it appears white on your screen."
+msgstr ""
+
+#: EL_Settings.py:181
+msgid " Set the order as given in enigmalight.conf."
+msgstr ""
+
+#: EL_Settings.py:176
+msgid ""
+" Some tv's are slower then the lights. With this option you can make the "
+"output 1 -> 20 frames later."
+msgstr ""
+
+#: EL_Moodlamp.py:192
+msgid " Use moodlamp or lights off in standby."
+msgstr ""
+
+#: EL_Check.py:104
+msgid ""
+" found!\n"
+"\n"
+"Do you want to update now?"
+msgstr ""
+
+#: EL_Settings.py:323 EL_Settings.py:333
+msgid "(Re)start client ?"
+msgstr ""
+
+#: EL_Settings.py:178
+msgid "- 3D Mode:"
+msgstr ""
+
+#: EL_ConfigEditor.py:179
+msgid "- Address:"
+msgstr ""
+
+#: EL_Tuning.py:195
+#, python-format
+msgid "- Adjust BLUE\t%s"
+msgstr ""
+
+#: EL_Adjust.py:232
+#, python-format
+msgid "- Adjust BLUE   %s\t   "
+msgstr ""
+
+#: EL_Adjust.py:220 EL_Adjust.py:222 EL_Adjust.py:227 EL_Adjust.py:239
+#, python-format
+msgid "- Adjust BLUE  %s\t   "
+msgstr ""
+
+#: EL_Adjust.py:234
+#, python-format
+msgid "- Adjust BLUE %s\t   "
+msgstr ""
+
+#: EL_Tuning.py:194
+#, python-format
+msgid "- Adjust GREEN\t%s"
+msgstr ""
+
+#: EL_Adjust.py:236 EL_Adjust.py:240
+#, python-format
+msgid "- Adjust GREEN   %s\t   "
+msgstr ""
+
+#: EL_Adjust.py:219 EL_Adjust.py:223 EL_Adjust.py:226 EL_Adjust.py:230
+#, python-format
+msgid "- Adjust GREEN %s\t   "
+msgstr ""
+
+#: EL_Tuning.py:193
+#, python-format
+msgid "- Adjust RED\t%s"
+msgstr ""
+
+#: EL_Adjust.py:218 EL_Adjust.py:224 EL_Adjust.py:228
+#, python-format
+msgid "- Adjust RED   %s\t   "
+msgstr ""
+
+#: EL_Adjust.py:231 EL_Adjust.py:235
+#, python-format
+msgid "- Adjust RED  %s\t   "
+msgstr ""
+
+#: EL_Adjust.py:238
+#, python-format
+msgid "- Adjust RED %s\t   "
+msgstr ""
+
+#: EL_ConfigEditor.py:188
+msgid "- Ambioder precision:"
+msgstr ""
+
+#: EL_Tuning.py:173
+msgid "- Auto speed:"
+msgstr ""
+
+#: EL_ConfigEditor.py:226
+msgid "- Blue Adjust:"
+msgstr ""
+
+#: EL_ConfigEditor.py:228
+msgid "- Blue Blacklevel:"
+msgstr ""
+
+#: EL_ConfigEditor.py:227
+msgid "- Blue Gamma:"
+msgstr ""
+
+#: EL_Tuning.py:174
+msgid "- Brightness:"
+msgstr ""
+
+#: EL_ConfigEditor.py:178
+msgid "- Bus:"
+msgstr ""
+
+#: EL_ConfigEditor.py:208
+msgid "- Clockwise or Backwards:"
+msgstr ""
+
+#: EL_Settings.py:175
+msgid "- Cluster Leds:"
+msgstr ""
+
+#: EL_Moodlamp.py:205
+#, python-format
+msgid "- Color BLUE\t: %s"
+msgstr ""
+
+#: EL_Moodlamp.py:204
+#, python-format
+msgid "- Color GREEN\t: %s"
+msgstr ""
+
+#: EL_Moodlamp.py:203
+#, python-format
+msgid "- Color RED\t: %s"
+msgstr ""
+
+#: EL_ConfigEditor.py:219 EL_Settings.py:181
+msgid "- Color order:"
+msgstr ""
+
+#: EL_Adjust.py:209
+msgid "- Color sequence:"
+msgstr ""
+
+#: EL_Settings.py:168
+msgid "- Configuration File"
+msgstr ""
+
+#: EL_Settings.py:195
+msgid "- Daemon port:"
+msgstr ""
+
+#: EL_Settings.py:217
+msgid "- Debug-Logging > /tmp/enigmalight_gui.log:"
+msgstr ""
+
+#: EL_Settings.py:179
+msgid "- Default lightmode:"
+msgstr ""
+
+#: EL_Settings.py:186 EL_Tuning.py:224
+msgid "- Delay before remove:"
+msgstr ""
+
+#: EL_Settings.py:176
+msgid "- Delay:"
+msgstr ""
+
+#: EL_ConfigEditor.py:183
+msgid "- Device output:"
+msgstr ""
+
+#: EL_ConfigEditor.py:185
+msgid "- Device rate:"
+msgstr ""
+
+#: EL_ConfigEditor.py:174
+msgid "- Device type:"
+msgstr ""
+
+#: EL_Settings.py:204
+msgid "- Disable lights:"
+msgstr ""
+
+#: EL_Settings.py:202
+msgid "- Don't turn lights off/on in standby:"
+msgstr ""
+
+#: EL_Settings.py:174
+msgid "- Enable lights on boot:"
+msgstr ""
+
+#: EL_Settings.py:203
+msgid "- Enable lights:"
+msgstr ""
+
+#: EL_Settings.py:191
+msgid "- Enable network mode (connect with other daemon):"
+msgstr ""
+
+#: EL_Moodlamp.py:230
+#, python-format
+msgid "- Fader brightness : %s\t"
+msgstr ""
+
+#: EL_Tuning.py:180
+msgid "- Gamma correction 1-10:"
+msgstr ""
+
+#: EL_ConfigEditor.py:223
+msgid "- Green Adjust:"
+msgstr ""
+
+#: EL_ConfigEditor.py:225
+msgid "- Green Blacklevel:"
+msgstr ""
+
+#: EL_ConfigEditor.py:224
+msgid "- Green Gamma:"
+msgstr ""
+
+#: EL_Settings.py:194
+msgid "- Host ipaddress:"
+msgstr ""
+
+#: EL_ConfigEditor.py:197
+msgid "- How many lights Bottom:"
+msgstr ""
+
+#: EL_ConfigEditor.py:200
+msgid "- How many lights Left:"
+msgstr ""
+
+#: EL_ConfigEditor.py:201
+msgid "- How many lights Right:"
+msgstr ""
+
+#: EL_ConfigEditor.py:199
+msgid "- How many lights Top:"
+msgstr ""
+
+#: EL_Settings.py:177
+msgid "- Interval:"
+msgstr ""
+
+#: EL_Tuning.py:172
+msgid "- Led speed:"
+msgstr ""
+
+#: EL_Tuning.py:176
+msgid "- Maximal Brightness:"
+msgstr ""
+
+#: EL_Tuning.py:179
+msgid "- Maximal Saturation 0.00-1.00:"
+msgstr ""
+
+#: EL_Tuning.py:175
+msgid "- Minimal Brightness:"
+msgstr ""
+
+#: EL_Tuning.py:178
+msgid "- Minimal Saturation 0.00-1.00:"
+msgstr ""
+
+#: EL_Moodlamp.py:193
+msgid "- Moodlamp Mode:"
+msgstr ""
+
+#: EL_Tuning.py:170
+msgid "- Profile:"
+msgstr ""
+
+#: EL_ConfigEditor.py:220
+msgid "- Red Adjust:"
+msgstr ""
+
+#: EL_ConfigEditor.py:222
+msgid "- Red Blacklevel:"
+msgstr ""
+
+#: EL_ConfigEditor.py:221
+msgid "- Red Gamma:"
+msgstr ""
+
+#: EL_Settings.py:210
+msgid "- Remoteserver Port:"
+msgstr ""
+
+#: EL_Settings.py:185 EL_Tuning.py:223
+msgid "- Remove Blackbars left and right:"
+msgstr ""
+
+#: EL_Settings.py:184 EL_Tuning.py:222
+msgid "- Remove Blackbars top and bottom:"
+msgstr ""
+
+#: EL_Settings.py:215
+msgid "- Remove statusbar from tuningscreen:"
+msgstr ""
+
+#: EL_Settings.py:171
+msgid "- Run EnigmaLight as server when lights are off:"
+msgstr ""
+
+#: EL_Adjust.py:244 EL_Tuning.py:219
+msgid "- Sample picture:"
+msgstr ""
+
+#: EL_Tuning.py:177
+msgid "- Saturation 0-20:"
+msgstr ""
+
+#: EL_ConfigEditor.py:212
+msgid "- Scan depth Bottom:"
+msgstr ""
+
+#: EL_ConfigEditor.py:209
+msgid "- Scan depth Left:"
+msgstr ""
+
+#: EL_ConfigEditor.py:210
+msgid "- Scan depth Right:"
+msgstr ""
+
+#: EL_ConfigEditor.py:211
+msgid "- Scan depth Top:"
+msgstr ""
+
+#: EL_ConfigEditor.py:181
+msgid "- Serial:"
+msgstr ""
+
+#: EL_Adjust.py:242
+msgid "- Show background sample picture:"
+msgstr ""
+
+#: EL_Settings.py:216
+msgid "- Show errormessages:"
+msgstr ""
+
+#: EL_Settings.py:173
+msgid "- Show message when turn on/off lights:"
+msgstr ""
+
+#: EL_Tuning.py:217
+msgid "- Show sample pictures:"
+msgstr ""
+
+#: EL_Settings.py:213
+msgid "- Show statusbar on bottom of screen:"
+msgstr ""
+
+#: EL_Settings.py:180
+msgid "- Standby Mode:"
+msgstr ""
+
+#: EL_Moodlamp.py:192
+msgid "- Standby mode:"
+msgstr ""
+
+#: EL_Tuning.py:181
+msgid "- Threshold:"
+msgstr ""
+
+#: EL_Tuning.py:184
+msgid "- Use ColorAdjust Settings:"
+msgstr ""
+
+#: EL_Settings.py:199
+msgid "- Use Timer:"
+msgstr ""
+
+#: EL_Adjust.py:208
+msgid "- Use live Adjust Settings:"
+msgstr ""
+
+#: EL_Settings.py:208
+msgid "- Use remoteserver:"
+msgstr ""
+
+#: EL_ConfigEditor.py:204 EL_ConfigEditor.py:206
+msgid "- Where starts led 1:"
+msgstr ""
+
+#: EL_ConfigEditor.py:215
+msgid "- WifiLight IP:"
+msgstr ""
+
+#: EL_ConfigEditor.py:216
+msgid "- WifiLight PORT:"
+msgstr ""
+
+#: EL_ConfigEditor.py:191
+msgid "- With (floor) stand:"
+msgstr ""
+
+#: EL_ConfigEditor.py:194
+msgid "-- Bottom center (how many places are empty):"
+msgstr ""
+
+#: EL_ConfigEditor.py:193
+msgid "-- How many lights Bottom-left:"
+msgstr ""
+
+#: EL_ConfigEditor.py:195
+msgid "-- How many lights Bottom-right:"
+msgstr ""
+
+#: EL_About.py:81
+msgid "About EnigmaLight / Box information"
+msgstr ""
+
+#: __init__.py:175
+msgid "Automatic"
+msgstr ""
+
+#: EL_Settings.py:174
+msgid "Automatic turn on lights on boot "
+msgstr ""
+
+#: __init__.py:373
+msgid "BOTTOM [left]"
+msgstr ""
+
+#: __init__.py:371 __init__.py:374
+msgid "BOTTOM [middle]"
+msgstr ""
+
+#: __init__.py:371
+msgid "BOTTOM [right]"
+msgstr ""
+
+#: __init__.py:376
+msgid "Backwards"
+msgstr ""
+
+#: __init__.py:108
+msgid "Bars Test"
+msgstr ""
+
+#: __init__.py:108
+msgid "Blackbar Test (horizontal)"
+msgstr ""
+
+#: __init__.py:108
+msgid "Blackbar Test (vertical)"
+msgstr ""
+
+#: __init__.py:108
+msgid "Blue wallpaper"
+msgstr ""
+
+#: EL_MainMenu.py:156
+msgid "Box Info & About"
+msgstr ""
+
+#: EL_Tuning.py:174
+msgid ""
+"Brightness:\n"
+"This is a nice option, especially even more important than the saturation "
+"setting. Why? Simply because there are colours like brown, turquoise, purple "
+"and eggplant that only exist with the clarity they have. Huh! Well, for "
+"example, a dark brown orange and dark turquoise aqua. So if you set the "
+"brightness to 2.0 then multiply the brightness of the colour you see with "
+"2.0 (I think) and therefore can not show brown Ambilight. A nice value is "
+"1.0 otherwise it quickly distorts the colours."
+msgstr ""
+
+#: EL_MainMenu.py:148
+msgid "Busy...."
+msgstr ""
+
+#: EL_Tuning.py:266
+msgid "Can't get settings from profile..."
+msgstr ""
+
+#: EL_MainMenu.py:442 EL_MainMenu.py:461
+msgid "Can't switch mode, Lights are disabled."
+msgstr ""
+
+#: EL_ConfigEditor.py:1073
+msgid "Can't write settings to /home/elight-addons/wifilight/wifilight.conf..."
+msgstr ""
+
+#: EL_Tuning.py:296
+msgid "Can't write settings to profile..."
+msgstr ""
+
+#: EL_PathSelector.py:90
+msgid "Cancel"
+msgstr ""
+
+#: EL_Control.py:425 EL_Control.py:435 EL_Control.py:442
+msgid "Change mode"
+msgstr ""
+
+#: EL_Check.py:76
+msgid "Check for update.."
+msgstr ""
+
+#: EL_Settings.py:264
+msgid "Check for update..."
+msgstr ""
+
+#: __init__.py:114
+msgid "Circles"
+msgstr ""
+
+#: __init__.py:376
+msgid "Clockwise"
+msgstr ""
+
+#: EL_Settings.py:175
+msgid ""
+"Cluster [X] Leds as one led.\n"
+"Default each led had is own color, with this option you can bundle/cluster "
+"this to 2 -> 10 leds."
+msgstr ""
+
+#: __init__.py:171
+msgid "Color fader"
+msgstr ""
+
+#: EL_MainMenu.py:155
+msgid "Config Editor"
+msgstr ""
+
+#: EL_Control.py:334
+msgid "Configfile not found!"
+msgstr ""
+
+#: EL_Settings.py:208
+msgid "Control EnigmaLight from browser"
+msgstr ""
+
+#: EL_Control.py:412
+msgid "Control: Lights disabled."
+msgstr ""
+
+#: EL_Control.py:447
+#, python-format
+msgid "Control: Lights enabled, mode[%s]"
+msgstr ""
+
+#: EL_Control.py:431
+msgid "Control: Lights enabled, mode[test]"
+msgstr ""
+
+#: EL_Control.py:421
+msgid "Control: Lights enabled."
+msgstr ""
+
+#: EL_Tuning.py:224
+msgid ""
+"Count from 0 to given number\n"
+"if the blackbars are still there then remove them."
+msgstr ""
+
+#: EL_Settings.py:186
+msgid ""
+"Count from 0 to given number\n"
+"if the blackbars are still there then remove them.\n"
+"if enigmalight runs on 10fps and you will wait 10sec before remove, then set "
+"it to 100"
+msgstr ""
+
+#: EL_ConfigEditor.py:143
+msgid "Create and Test this config with [RGB Test]"
+msgstr ""
+
+#: EL_ConfigEditor.py:142
+msgid "Create configfile"
+msgstr ""
+
+#: __init__.py:189
+msgid "Custom Profile 0"
+msgstr ""
+
+#: __init__.py:189
+msgid "Custom Profile 1"
+msgstr ""
+
+#: __init__.py:189
+msgid "Custom Profile 2"
+msgstr ""
+
+#: __init__.py:189
+msgid "Custom Profile 3"
+msgstr ""
+
+#: __init__.py:189
+msgid "Custom Profile 4"
+msgstr ""
+
+#: __init__.py:189
+msgid "Custom Profile 5"
+msgstr ""
+
+#: __init__.py:190
+msgid "Custom Profile 6"
+msgstr ""
+
+#: EL_Control.py:121
+#, python-format
+msgid "Daemon %s:%s"
+msgstr ""
+
+#: __init__.py:138
+msgid "Debug -> Console"
+msgstr ""
+
+#: __init__.py:138
+msgid "Debug -> Console + Logfile"
+msgstr ""
+
+#: EL_Settings.py:202
+msgid "Disable timer function in standbymode "
+msgstr ""
+
+#: __init__.py:383
+msgid "Disabled"
+msgstr ""
+
+#: EL_Settings.py:332
+msgid "Do you want to (re)start the client ?"
+msgstr ""
+
+#: EL_Settings.py:322
+#, python-format
+msgid "Do you want to (re)start the client and connect with %s:%s ?"
+msgstr ""
+
+#: EL_Control.py:705 __init__.py:145
+msgid "Dynamic"
+msgstr ""
+
+#: EL_Check.py:150
+msgid ""
+"Enigma2 must be restarted!\n"
+"Should Enigma2 now restart?"
+msgstr ""
+
+#: plugin.py:131
+msgid "EnigmaLight"
+msgstr ""
+
+#: EL_ConfigEditor.py:127
+msgid "EnigmaLight ConfigEditor"
+msgstr ""
+
+#: plugin.py:133
+msgid "EnigmaLight | Settings"
+msgstr ""
+
+#: plugin.py:132
+msgid "EnigmaLight | on/off"
+msgstr ""
+
+#: plugin.py:133
+msgid "Enigmalight GUI"
+msgstr ""
+
+#: __init__.py:123
+msgid "Enigmalight OE1.6 "
+msgstr ""
+
+#: __init__.py:122
+msgid "Enigmalight OE1.6 with fpu support"
+msgstr ""
+
+#: __init__.py:121
+msgid "Enigmalight OE2.0"
+msgstr ""
+
+#: __init__.py:120
+msgid "Enigmalight OE2.0 with fpu support"
+msgstr ""
+
+#: EL_Settings.py:318
+#, python-format
+msgid ""
+"Enigmalight can't connect with %s:%s,\n"
+"check your input and try again."
+msgstr ""
+
+#: EL_Control.py:567 EL_Control.py:570
+msgid "Enigmalight killed."
+msgstr ""
+
+#: EL_Control.py:575
+#, python-format
+msgid ""
+"Enigmalight not killed\n"
+"result: %s"
+msgstr ""
+
+#: EL_Control.py:572
+msgid "Enigmalight not killed!"
+msgstr ""
+
+#: EL_Control.py:377
+#, python-format
+msgid ""
+"Error while starting EnigmaLight:\n"
+"\n"
+"%s"
+msgstr ""
+
+#: EL_Control.py:40
+msgid "File /etc/enigmalight.conf not found."
+msgstr ""
+
+#: EL_Tuning.py:180
+msgid ""
+"Gamma correction:\n"
+" Set this to 2.2 for default, since this is a default value for movies."
+msgstr ""
+
+#: EL_Help.py:71 EL_MainMenu.py:157
+msgid "Help"
+msgstr ""
+
+#: EL_Settings.py:177
+msgid ""
+"How fast Enigmalight wil run.\n"
+"0.01 = 15 -> 40fps | 0.10 = 10fps | 0.20 = 5fps: "
+msgstr ""
+
+#: EL_Control.py:207
+msgid "Info: ["
+msgstr ""
+
+#: EL_ConfigEditor.py:141
+msgid "Infoblock, blablablabla"
+msgstr ""
+
+#: EL_Check.py:162
+msgid "Information:\n"
+msgstr ""
+
+#: EL_PathSelector.py:154
+msgid "Invalid Location"
+msgstr ""
+
+#: EL_Settings.py:314
+#, python-format
+msgid "Ip address %s is not accepted, check your input and try again."
+msgstr ""
+
+#: __init__.py:370
+msgid "LEFT [bottom]"
+msgstr ""
+
+#: __init__.py:374
+msgid "LEFT [top]"
+msgstr ""
+
+#: EL_Tuning.py:172
+msgid ""
+"Led speed/fade​​: \n"
+"General setting for the led-speed how fast is changing the colour. 40 is a "
+"nice setting."
+msgstr ""
+
+#: EL_MainMenu.py:144 __init__.py:148
+msgid "Lights off"
+msgstr ""
+
+#: EL_Control.py:162
+msgid "LightsOff"
+msgstr ""
+
+#: EL_Control.py:160
+msgid "LightsOn"
+msgstr ""
+
+#: EL_Adjust.py:126
+msgid "Live coloradjustment"
+msgstr ""
+
+#: EL_Control.py:125
+msgid "Local"
+msgstr ""
+
+#: EL_Control.py:123
+#, python-format
+msgid "Local [Wifilight] %s:%s"
+msgstr ""
+
+#: __init__.py:176
+msgid "Manual"
+msgstr ""
+
+#: EL_Tuning.py:178
+msgid ""
+"Minimal Brightness:\n"
+"If you set this as example to 0.01, then the LEDs will not completely dark "
+"is there is black but soft grey"
+msgstr ""
+
+#: EL_Control.py:701 EL_MainMenu.py:154 __init__.py:144 __init__.py:149
+msgid "Moodlamp"
+msgstr ""
+
+#: EL_Moodlamp.py:119
+msgid "Moodlamp configuration"
+msgstr ""
+
+#: EL_Check.py:102
+msgid "New update available !!"
+msgstr ""
+
+#: __init__.py:377
+msgid "No"
+msgstr ""
+
+#: EL_Check.py:119
+msgid "No Internetconnection.."
+msgstr ""
+
+#: EL_Check.py:120
+msgid "No internet connection available or curl is not installed!"
+msgstr ""
+
+#: EL_Check.py:106 EL_Check.py:108
+msgid "No update available.."
+msgstr ""
+
+#: EL_Control.py:157
+msgid "Not Running"
+msgstr ""
+
+#: __init__.py:186
+msgid "Off"
+msgstr ""
+
+#: EL_PathSelector.py:93
+msgid "Ok"
+msgstr ""
+
+#: EL_Tuning.py:170
+msgid ""
+"Profile: \n"
+"Create your own profiles."
+msgstr ""
+
+#: __init__.py:108
+msgid "RGB Test"
+msgstr ""
+
+#: __init__.py:170
+msgid "RGBTest"
+msgstr ""
+
+#: __init__.py:373
+msgid "RIGHT [bottom]"
+msgstr ""
+
+#: __init__.py:371
+msgid "RIGHT [top]"
+msgstr ""
+
+#: __init__.py:172
+msgid "Rainbow"
+msgstr ""
+
+#: EL_ConfigEditor.py:1088
+msgid ""
+"Red,Green,Blue Test Started.\n"
+"Are the lights on and are color order ok ?"
+msgstr ""
+
+#: EL_Settings.py:283
+msgid "Reload configfile ?"
+msgstr ""
+
+#: EL_Settings.py:184 EL_Tuning.py:222
+msgid "Remove horizontal blackbars from lights."
+msgstr ""
+
+#: EL_Settings.py:215
+msgid "Remove the statusbar from colortuning screen"
+msgstr ""
+
+#: EL_Settings.py:185 EL_Tuning.py:223
+msgid "Remove vertical blackbars from lights."
+msgstr ""
+
+#: __init__.py:114
+msgid "Rose"
+msgstr ""
+
+#: EL_Settings.py:171
+msgid "Run EnigmaLight as Server for Boblight or other clients "
+msgstr ""
+
+#: EL_Adjust.py:107 EL_Moodlamp.py:103 EL_Settings.py:96 EL_Tuning.py:77
+msgid "Save"
+msgstr ""
+
+#: EL_ConfigEditor.py:1096
+msgid "Save this configfile to /etc/ ?"
+msgstr ""
+
+#: EL_Settings.py:168
+msgid "Select your configfile, default /etc/enigmalight.conf will be used "
+msgstr ""
+
+#: EL_PathSelector.py:152
+#, python-format
+msgid "Selected file: %s"
+msgstr ""
+
+#: EL_Control.py:842
+msgid "Set all values.."
+msgstr ""
+
+#: EL_MainMenu.py:152 EL_Settings.py:110
+msgid "Settings"
+msgstr ""
+
+#: EL_Settings.py:173
+msgid "Show a messagebox when you turn on/off the lights "
+msgstr ""
+
+#: EL_Settings.py:210
+msgid "Show status at bottomscreen fps, cpu usage and currentmode"
+msgstr ""
+
+#: EL_Settings.py:213
+msgid "Show status at bottomscreen fps, currentmode and other info"
+msgstr ""
+
+#: __init__.py:383
+msgid "SidebySide"
+msgstr ""
+
+#: __init__.py:109
+msgid "Solid: Aquamarine"
+msgstr ""
+
+#: __init__.py:109
+msgid "Solid: Blue"
+msgstr ""
+
+#: __init__.py:113
+msgid "Solid: Dark yellow"
+msgstr ""
+
+#: __init__.py:111
+msgid "Solid: Gray"
+msgstr ""
+
+#: __init__.py:111
+msgid "Solid: Green"
+msgstr ""
+
+#: __init__.py:112
+msgid "Solid: Lightgray"
+msgstr ""
+
+#: __init__.py:112
+msgid "Solid: Magenta"
+msgstr ""
+
+#: __init__.py:110
+msgid "Solid: Red"
+msgstr ""
+
+#: __init__.py:110
+msgid "Solid: Royalblue"
+msgstr ""
+
+#: __init__.py:108
+msgid "Solid: White"
+msgstr ""
+
+#: __init__.py:113
+msgid "Solid: Yellow"
+msgstr ""
+
+#: EL_Settings.py:336
+msgid "Start ?"
+msgstr ""
+
+#: __init__.py:186
+msgid "Start Dynamic on boot"
+msgstr ""
+
+#: __init__.py:186
+msgid "Start Moodlamp on boot"
+msgstr ""
+
+#: EL_Control.py:416
+msgid "Start lights.."
+msgstr ""
+
+#: __init__.py:186
+msgid "Start server on boot"
+msgstr ""
+
+#: __init__.py:169
+msgid "Static color"
+msgstr ""
+
+#: EL_Moodlamp.py:105
+msgid "Static color:"
+msgstr ""
+
+#: EL_Control.py:167
+#, python-format
+msgid "Status: %s | Current mode: %s | FPS: %s"
+msgstr ""
+
+#: EL_Control.py:399
+msgid "Stop lights.."
+msgstr ""
+
+#: EL_MainMenu.py:145
+msgid "Switch to dynamic mode"
+msgstr ""
+
+#: EL_MainMenu.py:146
+msgid "Switch to moodlamp mode"
+msgstr ""
+
+#: __init__.py:370
+msgid "TOP [left]"
+msgstr ""
+
+#: __init__.py:374
+msgid "TOP [right]"
+msgstr ""
+
+#: plugin.py:131 plugin.py:132
+msgid "TV backlight"
+msgstr ""
+
+#: EL_Settings.py:320
+#, python-format
+msgid "Test Connection with %s:%s, succesfull!"
+msgstr ""
+
+#: EL_Tuning.py:181
+msgid ""
+"Threshold:\n"
+"Filter/Remove the almost dark pixels, 15 is a nice value."
+msgstr ""
+
+#: EL_Settings.py:204
+msgid "Time when lights go off "
+msgstr ""
+
+#: EL_Settings.py:203
+msgid "Time when lights go on "
+msgstr ""
+
+#: EL_Settings.py:282
+msgid "To reload the configfile EnigmaLight needs a restart, restart now ?"
+msgstr ""
+
+#: __init__.py:383
+msgid "Top and Bottom"
+msgstr ""
+
+#: EL_MainMenu.py:153 EL_Tuning.py:118
+msgid "Tuning"
+msgstr ""
+
+#: EL_MainMenu.py:143
+msgid "Turn lights on"
+msgstr ""
+
+#: EL_Settings.py:180
+msgid "Turn off lights or use moodlamp in standby "
+msgstr ""
+
+#: EL_Settings.py:216
+msgid "Turn on if you want to see error information"
+msgstr ""
+
+#: EL_Settings.py:178
+msgid "Turn on/off 3D Mode, SBS or TAB"
+msgstr ""
+
+#: EL_Settings.py:199
+msgid "Turn on/off lights @ given time "
+msgstr ""
+
+#: EL_Settings.py:335
+msgid "Type of enigmalight has changed, Start this type of Enigmalight ?"
+msgstr ""
+
+#: __common__.py:725
+msgid ""
+"UNEXPECTED ERROR: \n"
+"\n"
+msgstr ""
+
+#: EL_Control.py:967
+msgid "Unknown option"
+msgstr ""
+
+#: EL_Tuning.py:78
+msgid "Use < > to jump with 10 in slider"
+msgstr ""
+
+#: EL_Settings.py:191
+msgid ""
+"Use enigmalight as client and connect with other daemon over network (not "
+"for local use)"
+msgstr ""
+
+#: EL_Control.py:799
+msgid "Write settings."
+msgstr ""
+
+#: __init__.py:377
+msgid "Yes"
+msgstr ""
+
+#: EL_Check.py:104
+msgid "Your current Version is "
+msgstr ""
+
+#: EL_Tuning.py:221
+msgid "[ Blackbar detection]"
+msgstr ""
+
+#: EL_Settings.py:183
+msgid "[ Blackbars ]"
+msgstr ""
+
+#: EL_Tuning.py:183
+msgid "[ Color Adjustment, only local ]"
+msgstr ""
+
+#: EL_Tuning.py:169
+msgid "[ Color Tuning ]"
+msgstr ""
+
+#: EL_ConfigEditor.py:218
+msgid "[ Color ]"
+msgstr ""
+
+#: EL_ConfigEditor.py:173
+msgid "[ Device ]"
+msgstr ""
+
+#: EL_Settings.py:166
+msgid "[ General Settings ]"
+msgstr ""
+
+#: EL_ConfigEditor.py:190
+msgid "[ Lights ]"
+msgstr ""
+
+#: EL_Settings.py:212
+msgid "[ Misc ]"
+msgstr ""
+
+#: EL_Settings.py:190
+msgid "[ Network Settings ]"
+msgstr ""
+
+#: EL_Settings.py:207
+msgid "[ Remote ]"
+msgstr ""
+
+#: EL_Settings.py:198
+msgid "[ Timer Settings ]"
+msgstr ""
+
+#: EL_ConfigEditor.py:214
+msgid "[ WifiLight ]"
+msgstr ""
+
+#: EL_Control.py:137
+#, python-format
+msgid "[Dynamic] %s | %s"
+msgstr ""
+
+#: EL_Control.py:143
+#, python-format
+msgid "[Moodlamp] %s | ColorFader"
+msgstr ""
+
+#: EL_Control.py:140
+#, python-format
+msgid "[Moodlamp] %s | RGBtest"
+msgstr ""
+
+#: EL_Control.py:146
+#, python-format
+msgid "[Moodlamp] %s | Rainbow"
+msgstr ""
+
+#: EL_Control.py:134
+#, python-format
+msgid "[Moodlamp] %s | Static color"
+msgstr ""
+
+#: EL_Control.py:131
+#, python-format
+msgid "[Server] Client connected (%s)"
+msgstr ""
+
+#: EL_Control.py:128
+msgid "[Server] Idle"
+msgstr ""
+
+#: EL_Control.py:695
+msgid "changeValue"
+msgstr ""
+
+#: EL_ConfigEditor.py:1105
+msgid "enigmalight.conf succesfull saved in /etc/"
+msgstr ""
+
+#: EL_Control.py:522
+msgid "killEnigmalight.."
+msgstr ""
+
+#: __init__.py:138
+msgid "off"
+msgstr ""
+
+#: EL_Control.py:675
+msgid "writeAdjust"
+msgstr ""
+
+#: EL_Control.py:654
+msgid "writeDynamic"
+msgstr ""
+
+#: EL_Control.py:665
+msgid "writeServer"
+msgstr ""

@@ -74,11 +74,11 @@ class EL_Screen_PathSelector(Screen):
 			
 		}, -1)
 
-		self["btn_red"]			= Pixmap()
-		self["btn_redText"]		= Label()
+		self["btn_red"] = Pixmap()
+		self["btn_redText"] = Label()
 
-		self["btn_green"]		= Pixmap()
-		self["btn_greenText"]   = Label()
+		self["btn_green"] = Pixmap()
+		self["btn_greenText"] = Label()
 
 		self.onLayoutFinish.append(self.finishLayout)
 
@@ -99,7 +99,7 @@ class EL_Screen_PathSelector(Screen):
 	#===========================================================================
 	def cancel(self):
 		self.close(None, self.myType)
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -112,21 +112,21 @@ class EL_Screen_PathSelector(Screen):
 	def up(self):
 		self["filelist"].up()
 		self.updateTarget()
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
 	def down(self):
 		self["filelist"].down()
 		self.updateTarget()
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
 	def left(self):
 		self["filelist"].pageUp()
 		self.updateTarget()
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -141,7 +141,7 @@ class EL_Screen_PathSelector(Screen):
 		if self["filelist"].canDescent():
 			self["filelist"].descent()
 			self.updateTarget()
-	
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -152,5 +152,3 @@ class EL_Screen_PathSelector(Screen):
 			self["help"].setText(_("Selected file: %s") %(currFile))
 		else:
 			self["help"].setText(_("Invalid Location"))
-			
-		
