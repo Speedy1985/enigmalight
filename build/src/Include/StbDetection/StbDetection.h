@@ -57,6 +57,7 @@
 #define BRCM7362    7362
 #define BRCM73625   73625
 #define BRCM73465   73465
+#define BRCM73565   73565
 #define GIGABLUE    0//12
 // arm box
 #define BRCM7251   7251
