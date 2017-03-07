@@ -112,9 +112,19 @@ bool CStb::DetectSTB()
  					stb_type = BRCM7346;
  					break;
  				}
+				else if (strstr(buf,"73565"))
+				{
+					stb_type = BRCM73565;
+					break;
+				}
 				else if (strstr(buf,"7356"))
 				{
 					stb_type = BRCM7356;
+					break;
+				}
+				else if (strstr(buf,"73625"))
+				{
+					stb_type = BRCM73625;
 					break;
 				}
 				else if (strstr(buf,"7362"))
@@ -135,11 +145,6 @@ bool CStb::DetectSTB()
 				else if (strstr(buf,"7435"))
 				{
 					stb_type = BRCM7435;
-					break;
-				}
-				else if (strstr(buf,"73625"))
-				{
-					stb_type = BRCM73625;
 					break;
 				}
 				else if (strstr(buf,"7376"))
@@ -197,6 +202,12 @@ bool CStb::DetectSTB()
 				}
 				// Dreambox 900 ARM
 				else if (strcasestr(buf,"DM900"))
+				{
+					stb_type = BRCM7251;
+					break;
+				}
+				// AX 4K HD51
+				else if (strcasestr(buf,"hd51"))
 				{
 					stb_type = BRCM7251;
 					break;
@@ -286,6 +297,7 @@ bool CStb::DetectSTB()
 		case BRCM7251:
 		case BRCM7252:
 		case BRCM7444:
+		case BRCM73565:
 			registeroffset = 0xf0600000;
 			chr_luma_stride = 0x80;
 			chr_luma_register_offset = 0x3c;
