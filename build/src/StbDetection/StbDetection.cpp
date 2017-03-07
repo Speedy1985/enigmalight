@@ -28,7 +28,7 @@ CStb::CStb()
 	stb_type = UNKNOWN;
 
 	chr_luma_stride				= 0x40;
-	chr_luma_register_offset 	= 0;
+	chr_luma_register_offset 		= 0;
 	registeroffset				= 0;
 	mem2memdma_register			= 0;
 }
@@ -56,7 +56,7 @@ bool CStb::DetectSTB()
 
 	if (stb_type == UNKNOWN)
 	{
-		FILE *file = fopen("/proc/stb/info/chipset", "r");
+		FILE *file = fopen("/tmp/cpu", "r");
 		if (file)
 		{
 			char buf[32];
