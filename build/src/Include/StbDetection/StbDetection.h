@@ -59,11 +59,10 @@
 #define BRCM73465   73465
 #define GIGABLUE    0//12
 // arm box
-#define BRCM7251s   7251
-#define BRCM7252s   7252
-#define BRCM7444s   7444
-#define BRCM7376    7376
-#define BRCM7439    7439
+#define BRCM7251   7251
+#define BRCM7252   7252
+#define BRCM7444   7444
+#define BRCM7376   7376
 
 class CStb
 {
