@@ -48,7 +48,7 @@ CGrabber::CGrabber(CGuiServer& g_guiserver, CEnigmaLight* g_enigmalight, CClient
 	m_grabinfo      = false;    // Default
 	m_interval      = 0.1f;     // Default interval is 10ms		
 	
-	stopLoop		= false;
+	stopLoop	= false;
 	m_3d_mode       = 1;        // Normal mode
 	m_delay         = 0;		// Video Delay	
 	m_blackbar_h	= false;	//
