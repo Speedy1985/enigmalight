@@ -146,16 +146,16 @@ bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
     // Get data from decoder, offset, adres and stride(x resolution)
     //
 
-	// if (m_stb.stb_type == BRCM73625 ||m_stb.stb_type == BRCM7252 || m_stb.stb_type == BRCM7251 || m_stb.stb_type == BRCM7376) {
+	if (m_stb.stb_type == BRCM73625 ||m_stb.stb_type == BRCM7252 || m_stb.stb_type == BRCM7251 || m_stb.stb_type == BRCM7376) {
 		
 		// Parameter for ARM
-	//	ofs 	= data[m_stb.chr_luma_register_offset + 24] << 4;      /* luma lines */
-	//	ofs2 	= data[m_stb.chr_luma_register_offset + 28] << 4;    /* chroma lines */	
-	//	adr 	= (data[0x37] << 24 | data[0x36] << 16 | data[0x35] << 8); /* start of videomem */
-	//	adr2 	= (data[m_stb.chr_luma_register_offset + 3] << 24 | data[m_stb.chr_luma_register_offset + 2] << 16 | data[m_stb.chr_luma_register_offset + 1] << 8);	
-	//	stride = data[0x19] << 8 | data[0x18];
+		ofs 	= data[m_stb.chr_luma_register_offset + 24] << 4;      /* luma lines */
+		ofs2 	= data[m_stb.chr_luma_register_offset + 28] << 4;    /* chroma lines */	
+		adr 	= (data[0x37] << 24 | data[0x36] << 16 | data[0x35] << 8); /* start of videomem */
+		adr2 	= (data[m_stb.chr_luma_register_offset + 3] << 24 | data[m_stb.chr_luma_register_offset + 2] << 16 | data[m_stb.chr_luma_register_offset + 1] << 8);	
+		stride = data[0x19] << 8 | data[0x18];
 		
-	// } else {
+	} else {
 		
 		// Parameter for MIPS and PPC	
 		ofs 	= data[m_stb.chr_luma_register_offset + 8] << 4;      /* luma lines */
@@ -163,7 +163,7 @@ bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
 		adr 	= (data[0x1f] << 24 | data[0x1e] << 16 | data[0x1d] << 8); /* start of videomem */
 		adr2 	= (data[m_stb.chr_luma_register_offset + 3] << 24 | data[m_stb.chr_luma_register_offset + 2] << 16 | data[m_stb.chr_luma_register_offset + 1] << 8);	
 		stride = data[0x15] << 8 | data[0x14];
-	// }
+	}
 	
 	// Get actual resolution and save it.
 	//
