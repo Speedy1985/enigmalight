@@ -56,7 +56,7 @@ bool CStb::DetectSTB()
 
 	if (stb_type == UNKNOWN)
 	{
-		FILE *file = fopen("/tmp/cpu", "r");
+		FILE *file = fopen("/proc/stb/info/chipset", "r");
 		if (file)
 		{
 			char buf[32];
