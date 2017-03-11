@@ -135,6 +135,7 @@ bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
 	return true;
 }
 
+bool CFrameGrabber::grabFrameOld(CBitmap* bitmap, int skiplines)
 {
 	m_noVideo = false;
 
