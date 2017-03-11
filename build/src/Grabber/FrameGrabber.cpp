@@ -110,23 +110,32 @@ bool CFrameGrabber::Setup()
 
 bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
 {
-	//if (m_stb.stb_type == BRCM7376 || m_stb.stb_type == BRCM7251s || m_stb.stb_type == BRCM7252s || m_stb.stb_type == BRCM7444s)
-	//{
-	//	int fd_video = open("/dev/dvb/adapter0/video0", O_RDONLY);
-	//	if (fd_video < 0)
-	//	{
-	//		LogError("could not open /dev/dvb/adapter0/video0");
-	//		return false;
-	//	}
-	//	int mallocsize = 0;
-	//	unsigned char *video;
-	//	video = (unsigned char *)malloc(mallocsize*3);
-	//	ssize_t r = read(fd_video, video, 1920 * 1080 * 3);
-	//	close(fd_video);
-	//	int xres = 1920;
-	//	int yres = 1080;
-	//	return true;
-	//}
+	int fd_video = open("/dev/dvb/adapter0/video0", O_RDONLY);
+	if (fd_video < 0) {
+		perror("/dev/dvb/adapter0/video0");
+		return false;
+	}
+	ssize_t r = read(fd_video, bitmap->m_data, 1920 * 1080 * 3);
+	close(fd_video);
+	int xres_orig = 1920;
+	int yres_orig = 1080;
+	int skipres = yres_orig;
+	if(xres_orig > yres_orig)
+		skipres = xres_orig;
+	while(skipres/skiplines > 128){
+		skiplines *= 2;
+	}
+	if (yres_orig%2 == 1)
+		yres_orig--;
+	bitmap->YUV2RGB();
+	bitmap->SetYres(yres_orig/skiplines);
+	bitmap->SetXres(xres_orig/skiplines);
+	bitmap->SetYresOrig(yres_orig);
+	bitmap->SetXresOrig(xres_orig);
+	return true;
+}
+
+{
 	m_noVideo = false;
 
 	int stride = 0;

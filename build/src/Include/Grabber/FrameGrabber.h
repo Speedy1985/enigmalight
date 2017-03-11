@@ -50,10 +50,11 @@ class CFrameGrabber
                 ~CFrameGrabber();
 
                 bool		Setup();
-                bool            grabFrame(CBitmap* bitmap, int skiplines);                
+                bool            grabFrame(CBitmap* bitmap, int skiplines);
+                bool            grabFrameOld(CBitmap* bitmap, int skiplines);
                 bool            CheckRes(CBitmap* bitmap);
                 
-                void            sendBlank(CBitmap* bitmap);                           
+                void            sendBlank(CBitmap* bitmap);
                 void            updateInfo(CBitmap* bitmap, CGuiServer& g_guiserver);
 
                 void            getResolution(CBitmap* bitmap, int stride, long double now);
