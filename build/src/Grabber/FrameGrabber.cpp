@@ -108,7 +108,7 @@ bool CFrameGrabber::Setup()
   	}
 }
 
-bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
+bool CFrameGrabber::grabFrameNew(CBitmap* bitmap, int skiplines)
 {
 	int fd_video = open("/dev/dvb/adapter0/video0", O_RDONLY);
 	if (fd_video < 0) {
@@ -135,7 +135,7 @@ bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
 	return true;
 }
 
-bool CFrameGrabber::grabFrameOld(CBitmap* bitmap, int skiplines)
+bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
 {
 	m_noVideo = false;
 

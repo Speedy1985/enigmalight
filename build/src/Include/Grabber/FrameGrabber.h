@@ -51,7 +51,7 @@ class CFrameGrabber
 
                 bool		Setup();
                 bool            grabFrame(CBitmap* bitmap, int skiplines);
-                bool            grabFrameOld(CBitmap* bitmap, int skiplines);
+                bool            grabFrameNew(CBitmap* bitmap, int skiplines);
                 bool            CheckRes(CBitmap* bitmap);
                 
                 void            sendBlank(CBitmap* bitmap);
