@@ -180,7 +180,7 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7400;
 					break;
 				}
-				else if (strcasestr(buf,"DM7080"))
+				else if (strcasestr(buf, "DM7080") || strcasestr(buf,"DM820"))
 				{
 					stb_type = BRCM7435;
 					break;
