@@ -84,7 +84,7 @@ def_end = mktime(now)
 
 # the currentVersion should be renewed every major update
 enigmalight_config = "/etc/enigma2/enigmalight_config"
-currentVersion  = "0.3-rc0"
+currentVersion  = "0.3-rc1"
 defaultURL  = "http://www.enigmalight.net/updates/"
 defaultUpdateXML= "update.xml"
 crashFile= "/tmp/enigmalight_gui_crash.txt"
