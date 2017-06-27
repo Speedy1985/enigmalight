@@ -28,7 +28,7 @@ CStb::CStb()
 	stb_type = UNKNOWN;
 
 	chr_luma_stride				= 0x40;
-	chr_luma_register_offset 	= 0;
+	chr_luma_register_offset 		= 0;
 	registeroffset				= 0;
 	mem2memdma_register			= 0;
 }
@@ -132,9 +132,29 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7425;
 					break;
 				}
+				else if (strstr(buf,"7251"))
+				{
+					stb_type = BRCM7251;
+					break;
+				}
+				else if (strstr(buf,"7376"))
+				{
+					stb_type = BRCM7376;
+					break;
+				}
+				else if (strstr(buf,"7444"))
+				{
+					stb_type = BRCM7444;
+					break;
+				}
 				else if (strstr(buf,"7435"))
 				{
 					stb_type = BRCM7435;
+					break;
+				}
+				else if (strstr(buf,"73625"))
+				{
+					stb_type = BRCM73625;
 					break;
 				}
 			}
@@ -160,7 +180,7 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7400;
 					break;
 				}
-				else if (strcasestr(buf,"DM7080"))
+				else if (strcasestr(buf, "DM7080") || strcasestr(buf,"DM820"))
 				{
 					stb_type = BRCM7435;
 					break;
@@ -170,11 +190,30 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7401;
 					break;
 				}
+				// Dreambox 900 ARM
+				else if (strcasestr(buf,"DM900"))
+				{
+					stb_type = BRCM7252;
+					break;
+				}
+				// AX 4K HD51
+				else if (strcasestr(buf,"hd51"))
+				{
+					stb_type = BRCM7251;
+					break;
+				}
+				// Gigablue
 				else if (strcasestr(buf,"Gigablue"))
-                {
-                   stb_type = BRCM7335;
-                   break;
-                }
+                		{
+                   			stb_type = BRCM7335;
+                   			break;
+                		}
+				// DM52X
+				else if (strcasestr(buf, "DM520") || strcasestr(buf,"DM525"))
+				{
+					stb_type = BRCM73625;
+					break;
+				}
 			}
 			fclose(file);
 		}
@@ -200,11 +239,6 @@ bool CStb::DetectSTB()
 			mem2memdma_register = 0;
 			break;
 		case BRCM7405:
-			registeroffset = 0x10100000;
-			chr_luma_stride = 0x80;
-			chr_luma_register_offset = 0x20;
-			mem2memdma_register = 0;
-			break;
 		case BRCM7325:
 			registeroffset = 0x10100000;
 			chr_luma_stride = 0x80;
@@ -218,12 +252,8 @@ bool CStb::DetectSTB()
 			mem2memdma_register = 0x10c01000;
 			break;
 		case BRCM7358:
-			registeroffset = 0x10600000;
-			chr_luma_stride = 0x40;
-			chr_luma_register_offset = 0x34;
-			mem2memdma_register = 0;
-			break;
 		case BRCM7362:
+		case BRCM7444:
 			registeroffset = 0x10600000;
 			chr_luma_stride = 0x40;
 			chr_luma_register_offset = 0x34;
@@ -234,15 +264,24 @@ bool CStb::DetectSTB()
 		case BRCM7356:
 		case BRCM7424:
 		case BRCM7425:
+		case BRCM7435:
 			registeroffset = 0x10600000;
 			chr_luma_stride = 0x80;
 			chr_luma_register_offset = 0x34;
 			mem2memdma_register = 0;
 			break;
-		case BRCM7435:
+	       case BRCM73625:
 			registeroffset = 0x10600000;
+			chr_luma_stride = 0x40;
+			chr_luma_register_offset = 0x3C;
+			mem2memdma_register = 0;
+			break;
+		case BRCM7251:
+		case BRCM7376:
+		case BRCM7252:
+			registeroffset = 0xf0600000;
 			chr_luma_stride = 0x80;
-			chr_luma_register_offset = 0x34;
+			chr_luma_register_offset = 0x3C;
 			mem2memdma_register = 0;
 			break;
 		default:
