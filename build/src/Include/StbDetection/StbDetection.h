@@ -64,6 +64,15 @@
 #define BRCM7252   7252
 #define BRCM7444   7444
 #define BRCM7376   7376
+// /tmp/chipset
+#define TEST1    1
+#define TEST2    2
+#define TEST3    3
+#define TEST4    4
+#define TEST5    5
+#define TEST6    6
+#define TEST7    7
+#define TEST8    8
 
 class CStb
 {

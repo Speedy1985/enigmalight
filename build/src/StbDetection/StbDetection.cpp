@@ -51,8 +51,60 @@ bool CStb::DetectSTB()
 		Log("No framebuffer, unknown STB .. quit.");
 		return false;
 	}
-
 	stb_type = UNKNOWN;
+
+	if (stb_type == UNKNOWN)
+	{
+		FILE *file = fopen("/tmp/chipset", "r");
+		if (file)
+		{
+			char buf[32];
+			while (fgets(buf, sizeof(buf), file))
+			{
+				if (strstr(buf,"TEST1"))
+				{
+					stb_type = TEST1;
+					break;
+				}
+				else if (strstr(buf,"TEST2"))
+				{
+					stb_type = TEST2;
+					break;
+				}
+				else if (strstr(buf,"TEST3"))
+				{
+					stb_type = TEST3;
+					break;
+				}
+				else if (strstr(buf,"TEST4"))
+				{
+					stb_type = TEST4;
+					break;
+				}
+				else if (strstr(buf,"TEST5"))
+				{
+					stb_type = TEST5;
+					break;
+				}
+				else if (strstr(buf,"TEST6"))
+				{
+					stb_type = TEST6;
+					break;
+				}
+				else if (strstr(buf,"TEST7"))
+				{
+					stb_type = TEST7;
+					break;
+				}
+				else if (strstr(buf,"TEST8"))
+				{
+					stb_type = TEST8;
+					break;
+				}
+			}
+			fclose(file);
+		}
+	}
 
 	if (stb_type == UNKNOWN)
 	{
@@ -234,6 +286,54 @@ bool CStb::DetectSTB()
 
 	switch (stb_type)
 	{
+		case TEST1:
+			registeroffset = 0xf0600000;
+			chr_luma_stride = 0;
+			chr_luma_register_offset = 0x3C;
+			mem2memdma_register = 0;
+			break;
+		case TEST2:
+			registeroffset = 0xf0600000;
+			chr_luma_stride = 0x20;
+			chr_luma_register_offset = 0x3C;
+			mem2memdma_register = 0;
+			break;
+		case TEST3:
+			registeroffset = 0xf0600000;
+			chr_luma_stride = 0x40;
+			chr_luma_register_offset = 0x3C;
+			mem2memdma_register = 0;
+			break;		
+		case TEST4:
+			registeroffset = 0xf0600000;
+			chr_luma_stride = 0x60;
+			chr_luma_register_offset = 0x3C;
+			mem2memdma_register = 0;
+			break;
+		case TEST5:
+			registeroffset = 0xf0600000;
+			chr_luma_stride = 0x80;
+			chr_luma_register_offset = 0x3C;
+			mem2memdma_register = 0;
+			break;
+		case TEST6:
+			registeroffset = 0xf0600000;
+			chr_luma_stride = 0x120;
+			chr_luma_register_offset = 0x3C;
+			mem2memdma_register = 0;
+			break;
+		case TEST7:
+			registeroffset = 0xf0600000;
+			chr_luma_stride = 0x160;
+			chr_luma_register_offset = 0x3C;
+			mem2memdma_register = 0;
+			break;
+		case TEST8:
+			registeroffset = 0xf0600000;
+			chr_luma_stride = 0x400;
+			chr_luma_register_offset = 0x3C;
+			mem2memdma_register = 0;
+			break;
 		case BRCM7400:
 			registeroffset = 0x10100000;
 			chr_luma_stride = 0x40;
