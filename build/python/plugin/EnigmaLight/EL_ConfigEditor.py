@@ -616,7 +616,11 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				reading = reading.split("LEDS:  ")
 				if len(reading) > 1:
 					prefix = "prefix		"+str(reading[1])
-				#print("[Boblight] Reading prefixfile for "+str(total_lights)+" leds: "+prefix)
+				# Removed the c binary used - moved to using python
+				else:
+					p = self.calc_prefix(int(total_lights))
+					reading = " ".join([format(b, "02x") for b in p])
+					prefix = "prefix		"+str(reading)
 
 			if config.plugins.enigmalight.type.value == "iBelight":
 				type	= "ibelight\n"
@@ -1081,6 +1085,14 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 			self.controller.killEnigmalight(None,self.doTest)
 		else:
 			self.MovetoEtc(True,True)
+
+	def calc_prefix(self, num_leds):
+		prefix = [ord(c) for c in "Ada"]
+		high_byte = ((num_leds - 1) >> 8) & 0xff
+		low_byte = (num_leds - 1) & 0xff
+		checksum = high_byte ^ low_byte ^ 0x55
+		prefix.extend([high_byte, low_byte, checksum])
+		return prefix
 
 	def doTest(self):
 		log("",self,"Test Started...")
