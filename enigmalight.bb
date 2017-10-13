@@ -4,8 +4,9 @@ LICENSE = "GPLv3"
 LIC_FILES_CHKSUM = "file://README;md5=93285fcad54271879db50c1fbf22d98b"
 
 DEPENDS = "libusb1"
+RRECOMMENDS_${PN} = "kernel-module-cdc-acm kernel-module-ftdi-sio"
 
-inherit gitpkgv autotools
+inherit gitpkgv
 
 SRCREV = "${AUTOREV}"
 PV = "1.0+git${SRCPV}"
