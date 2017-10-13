@@ -252,8 +252,8 @@ bool CStb::DetectSTB()
 					stb_type = BRCM7401;
 					break;
 				}
-				// Dreambox 900 ARM
-				else if (strcasestr(buf,"DM900"))
+				// Dreambox 900/920 ARM
+				else if (strcasestr(buf,"DM900") || strcasestr(buf,"DM920"))
 				{
 					stb_type = BRCM7251;
 					break;
