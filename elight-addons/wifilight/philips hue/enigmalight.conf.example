@@ -1,0 +1,40 @@
+#[global]
+ 
+[device]
+name            ambilight
+output          python /home/elight-addons/wifilight/philips_hue/enigmalight_hue_LR.py
+channels        6
+type            popen
+interval        200000
+debug           off
+ 
+[color]
+name    red
+rgb     FF0000
+ 
+[color]
+name    green
+rgb     00FF00
+ 
+[color]
+name    blue
+rgb     0000FF
+ 
+[light]
+position      left
+name          1HU
+color         red     ambilight 1
+color         green   ambilight 2
+color         blue    ambilight 3
+hscan         0 25
+vscan         0 100
+ 
+[light]
+position      right
+name          2HU
+color         red     ambilight 4
+color         green   ambilight 5
+color         blue    ambilight 6
+hscan         75 100
+vscan         0 100
+
