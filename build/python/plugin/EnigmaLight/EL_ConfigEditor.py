@@ -615,12 +615,12 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 
 				reading = reading.split("LEDS:  ")
 				if len(reading) > 1:
-					prefix = "prefix		"+str(reading[1])
+					prefix = "prefix		"+str(reading[1])+"\n"
 				# Removed the c binary used - moved to using python
 				else:
 					p = self.calc_prefix(int(total_lights))
 					reading = " ".join([format(b, "02x") for b in p])
-					prefix = "prefix		"+str(reading)
+					prefix = "prefix		"+str(reading)+"\n"
 
 			if config.plugins.enigmalight.type.value == "iBelight":
 				type	= "ibelight\n"
