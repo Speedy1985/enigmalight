@@ -393,13 +393,13 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 		#Enabled lights
 		log("",self)
 		#self.hideOnOff()
-		self["txt_check"].hide()					
+		self["txt_check"].hide()
 		self["btn_green"].hide()
 		self["txt_green"].hide()
 		self["btn_red"].show()
 		self["txt_red"].show()
 		self.controller.Control("start", "dynamic")
-		
+		self.refreshMenu()
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -421,6 +421,7 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 		self["txt_green"].show()
 
 		self.controller.Control("grabber", "stop")
+		self.refreshMenu()
 
 	#===========================================================================
 	# 
@@ -440,6 +441,7 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 			self.controller.Control("start", "dynamic")
 		else:
 			showMessage(self.session, _("Can't switch mode, Lights are disabled."),"I",3)
+		self.refreshMenu()
 
 	#===========================================================================
 	# 
@@ -472,7 +474,7 @@ class EL_Screen_MainMenu(Screen, EL_Helper_HorizontalMenu):
 
 		self.controller.sendAll()
 		self.controller.writeSettings()
-		
+
 	def key0(self):
 		log("",self)
 		self.hideOnOff()

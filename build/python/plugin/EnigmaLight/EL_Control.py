@@ -37,7 +37,7 @@ from __common__ import EnigmaLight_log as log, rgbToHex, showMessage, showError
 
 from __init__ import getCrashFilePath, _ # _ is translation
 
-elightconf_notfound   = _("File /etc/enigmalight.conf not found.")
+elightconf_notfound = _("File /etc/enigmalight.conf not found.")
 
 class Controller(threading.Thread):
 
@@ -143,7 +143,7 @@ class Controller(threading.Thread):
 				mode = _("[Moodlamp] %s | ColorFader") % ext
 				self.lightsEnabled = True
 			elif(self.current_mode == "5"):
-				mode = _("[Moodlamp] %s | Rainbow" %(ext))
+				mode = _("[Moodlamp] %s | Rainbow") % ext
 				self.lightsEnabled = True
 			else:
 				mode = "Off"
@@ -330,7 +330,7 @@ class Controller(threading.Thread):
 			# getpid and execute command self.checkIfRunning -> DoControl
 			self.checkIfRunningFinisched(control,None)
 		else:
-			showMessage(self.session, _(elightconf_notfound), "W")
+			showMessage(self.session, elightconf_notfound, "W")
 			self.setStatusBarInfo(_("Configfile not found!"))
 
 	def checkIfRunningFinisched(self, control, callback = None):
@@ -374,7 +374,7 @@ class Controller(threading.Thread):
 				pass
 
 	def showResult(self, result):
-		s = showMessage(self.session,_("Error while starting EnigmaLight:\n\n%s") % result,"E",10)
+		s = showMessage(self.session,_("Error while starting EnigmaLight:\n\n%s") % result,"E",15)
 
 	def DoControl(self, result, retval, extra_args = None):
 		log("",self)
@@ -567,12 +567,12 @@ class Controller(threading.Thread):
 			self.setStatusBarInfo(_("Enigmalight killed."))
 
 			if config.plugins.enigmalight.message_onoff.getValue():
-				showMessage(self.session,_("Enigmalight killed.","I"))
+				showMessage(self.session,_("Enigmalight killed."),"I")
 		else:
 			self.setStatusBarInfo(_("Enigmalight not killed!"))
 
 			if config.plugins.enigmalight.message_onoff.getValue():
-				showMessage(self.session,_("Enigmalight not killed\nresult: %s") %(str(result)),"I")
+				showMessage(self.session,_("Enigmalight not killed\nresult: %s") % str(result),"I")
 		if callback != None:
 			if self.callbackArgs != None:
 				callback(self.callbackArgs) # now do callback from saved callback
