@@ -937,7 +937,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 						vScanCurrent = vScanStart
 						hScanCurrent = hScanStart
 
-					if section == "left" or section == "bottom" or section == "bottom-left" or section == "bottom-right":
+					elif section == "left" or section == "bottom" or section == "bottom-left" or section == "bottom-right":
 						vScanStart = vScanCurrent
 						hScanStart = hScanCurrent
 
@@ -986,8 +986,12 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 
 					# Swap end and start if it's clockwise
 					if config.plugins.enigmalight.clockwise.value == str(1):
-						v = vScanEnd;vScanEnd = vScanStart;vScanStart = v;
-						h = hScanEnd;hScanEnd = hScanStart;hScanStart = h;
+						v = vScanEnd
+						vScanEnd = vScanStart
+						vScanStart = v
+						h = hScanEnd
+						hScanEnd = hScanStart
+						hScanStart = h
 
 					# Set hscan and vscan
 					if section == "right":
@@ -1006,26 +1010,32 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 						#print("[Boblight] vScanStart  :  "+str(vs))
 						#print("[Boblight] vScanEnd :  "+str(ve))
 
-					if section == "bottom" or section == "bottom-left" or section == "bottom-right":
+					elif section == "bottom" or section == "bottom-left" or section == "bottom-right":
 						hs = abs(round(hScanStart,2))
 						he = abs(round(hScanEnd,2))
 						vd = 100.00 - scanb
 
 						if self.createfile:
-							fo.write("hscan "+str(hs)+" "+str(he)+"\n")
+							if he > hs:
+								fo.write("hscan "+str(hs)+" "+str(he)+"\n")
+							else:
+								fo.write("hscan "+str(he)+" "+str(hs)+"\n")
 							fo.write("vscan "+str(vd)+" 100\n")
 
 						# Debug
 						#print("[Boblight] hScanStart :  "+str(hs))
 						#print("[Boblight] hScanEnd :  "+str(he))
 
-					if section == "top":
+					elif section == "top":
 						hs = abs(round(hScanStart,2))
 						he = abs(round(hScanEnd,2))
 						vd = scant
 
 						if self.createfile:
-							fo.write("hscan "+str(hs)+" "+str(he)+"\n")
+							if he > hs:
+								fo.write("hscan "+str(hs)+" "+str(he)+"\n")
+							else:
+								fo.write("hscan "+str(he)+" "+str(hs)+"\n")
 							fo.write("vscan 0 "+str(vd)+"\n")
 
 						#self.c.fill(hs*4, 0, 5, 5, RGB(255,000,000))
@@ -1035,7 +1045,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 						#print("[Boblight] hScanStart  :  "+str(hs))
 						#print("[Boblight] hScanEnd	:  "+str(he))
 
-					if section == "left":
+					elif section == "left":
 						vs = abs(round(vScanStart,2))
 						ve = abs(round(vScanEnd,2))
 						hd = scanl
