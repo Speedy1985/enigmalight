@@ -40,6 +40,18 @@ from Components.AVSwitch import AVSwitch
 from EL_Helper_Singleton import Singleton
 from . import _
 
+vu4k = False
+ultimo4k = False
+if os.path.exists("/proc/stb/info/vumodel"):
+	try:
+		f = open("/proc/stb/info/vumodel",'r')
+		model = f.read().strip()
+		ultimo4k = 'ultimo4k' in model
+		vu4k = '4k' in model
+	except:
+		pass
+	f.close()
+
 #===============================================================================
 # import cProfile
 #===============================================================================
@@ -464,6 +476,10 @@ def setSymbolic():
 			LinkFile(binary, "/usr/bin/elighttalk")
 	elif 'armv7l' in arch:
 		binary = "/home/elight-addons/usr/bin/enigmalight_arm"
+		if ultimo4k:
+			file = "/home/elight-addons/usr/bin/enigmalight_arm_ultimo4k"
+			if os.path.exists(file):
+				binary = file
 		if os.path.exists(binary):
 			os.system("chmod 755 %s" % binary)
 			LinkFile(binary, "/usr/bin/enigmalight")
