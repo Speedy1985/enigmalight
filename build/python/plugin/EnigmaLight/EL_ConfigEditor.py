@@ -325,15 +325,17 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 		if self["config"].getCurrent() and self["config"].getCurrent()[1] == config.plugins.enigmalight.type:
 
 			config.plugins.enigmalight.threadpriority.setValue(1)
-
+			output = "/dev/ttyUSB0"
+			if os.path.exists("/dev/ttyACM0"):
+				output = "/dev/ttyACM0"
 			if config.plugins.enigmalight.type.value == "Oktolight":
 				config.plugins.enigmalight.rate.setValue(57600)
 				config.plugins.enigmalight.color_order.setValue("1")
 				config.plugins.enigmalight.output.setValue("/dev/ttyUSB0")
 			elif config.plugins.enigmalight.type.value == "Karatelight":
 				config.plugins.enigmalight.rate.setValue(57600)
-				config.plugins.enigmalight.color_order.setValue("1")
-				config.plugins.enigmalight.output.setValue("/dev/ttyUSB0")
+				config.plugins.enigmalight.color_order.setValue("2")
+				config.plugins.enigmalight.output.setValue(output)
 			elif config.plugins.enigmalight.type.value == "Atmolight":
 				config.plugins.enigmalight.rate.setValue(38400)
 				config.plugins.enigmalight.color_order.setValue("0")
@@ -342,7 +344,7 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				config.plugins.enigmalight.rate.setValue(115200)
 				config.plugins.enigmalight.color_order.setValue("0")
 				config.plugins.enigmalight.threadpriority.setValue(99)
-				config.plugins.enigmalight.output.setValue("/dev/ttyUSB0")
+				config.plugins.enigmalight.output.setValue(output)
 			elif config.plugins.enigmalight.type.value == "Sedulight 5A A0 A5":
 				config.plugins.enigmalight.rate.setValue(500000)
 				config.plugins.enigmalight.output.setValue("/dev/ttyUSB0")
@@ -362,17 +364,17 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 			elif config.plugins.enigmalight.type.value == "WifiLight":
 				config.plugins.enigmalight.output.setValue("/home/elight-addons/wifilight/wifilight.py")
 				config.plugins.enigmalight.lights_left.setValue(0)
-				config.plugins.enigmalight.lights_top.setValue(1)
+				config.plugins.enigmalight.lights_top.setValue(0)
 				config.plugins.enigmalight.lights_right.setValue(0)
 				config.plugins.enigmalight.lights_bottom.setValue(0)
 				config.plugins.enigmalight.lights_bottom_right.setValue(0)
 				config.plugins.enigmalight.lights_bottom_left.setValue(0)
 				config.plugins.enigmalight.lights_bottom_center.setValue(0)
-				config.plugins.enigmalight.scanl.setValue(0)
-				config.plugins.enigmalight.scanr.setValue(0)
-				config.plugins.enigmalight.scant.setValue(100)
-				config.plugins.enigmalight.scanb.setValue(0)
-
+				config.plugins.enigmalight.scanl.setValue(10)
+				config.plugins.enigmalight.scanr.setValue(10)
+				config.plugins.enigmalight.scant.setValue(10)
+				config.plugins.enigmalight.scanb.setValue(10)
+                					 
 		self.setTv()
 
 		self.save()
@@ -482,14 +484,14 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 			#print("[Boblight] Channels: "+str(channels))
  
 			# total step
-			hScanStep = 100 / leds_bottom_total; # 100 / 20 lights = 5
+			hScanStep = 100.0 / leds_bottom_total; # 100 / 20 lights = 5
 			hScan_center = (hScanStep*leds_bottom_center) # total center hscan // floorstand //  emptyplaces*hScanStep = ... 50
 			hScan_right  = (hScanStep*leds_bottom_right) # total right hscan /// light rights*hScanStep = ... 25
  
-			hScanCurrent = 0 + (hScan_center - hScan_right); # 25 
+			hScanCurrent = 0.0 + (hScan_center - hScan_right); # 25 
  
 			hScanBottom_left  = hScanCurrent; # = 25 is plus
-			hScanBottom_right = 100 # = 25 + 50 = 75 is min
+			hScanBottom_right = 100.0 # = 25 + 50 = 75 is min
 
 			# debug
 			#print("[Boblight] hScanBottom_left:"+str(hScanBottom_left)+" hScanBottom_right:"+str(hScanBottom_right))
@@ -502,7 +504,8 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				#print("[Boblight] channels:"+str(channels))
 
 				#total step
- 				hScan_center = (hScanStep*leds_bottom_center) # total center hscan // floorstand //  emptyplaces*hScanStep = ... 50
+ 				hScanStep = 100.0 / leds_bottom_total;				  # 100 / 20 lights = 5
+				hScan_center = (hScanStep*leds_bottom_center) # total center hscan // floorstand //  emptyplaces*hScanStep = ... 50
 				hScan_left = (hScanStep*leds_bottom_left) # total left hscan /// light left*hScanStep = ... 25
 				hScan_right = (hScanStep*leds_bottom_right)
 
@@ -519,23 +522,24 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 
 			if config.plugins.enigmalight.clockwise.value == str(2):
 
-				hScanStep = 100 / leds_bottom;
+				hScanStep = 100.0 / leds_bottom;
 				hScan_left = (hScanStep*leds_bottom) # total left hscan /// light left*hScanStep = ... 25
 				hScan_right = (hScanStep*leds_bottom)
 
 				hScanCurrent = (hScan_left); # 75
 
-				hScanBottom_left = 0.0; # = 75
-				hScanBottom_right = hScanCurrent; # = 75 + 50 = 25
+				hScanBottom_right = 100.0; # = 75
+				hScanBottom_left = hScanCurrent; # = 75 + 50 = 25
+			
 			elif config.plugins.enigmalight.clockwise.value == str(1):
-				hScanStep = 100 / leds_bottom;
+				hScanStep = 100.0 / leds_bottom;
 				hScan_left = (hScanStep*leds_bottom) # total left hscan /// light left*hScanStep = ... 25
 				hScan_right = (hScanStep*leds_bottom)
 
 				hScanCurrent = (hScan_right); # 75
 
-				hScanBottom_left = hScanCurrent; # = 75
-				hScanBottom_right = 100.0; # = 75 + 50 = 25
+				hScanBottom_right = hScanCurrent; # = 75
+				hScanBottom_left = 50.0; # = 75 + 50 = 25
 		#
 		# Atmolight need 4 channels more.
 		#
@@ -587,7 +591,6 @@ class EL_Screen_ConfigEditor(Screen, ConfigListScreen):
 				type = "atmo\n"
 				prefix  = "prefix FF\n"
 				interval= "interval 16000\n"
-				prefix = "\n"
 			if config.plugins.enigmalight.type.value == "Adalight/Momo":
 				type = "momo\n"
 				interval= "interval 20000\n"
