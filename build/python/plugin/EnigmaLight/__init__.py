@@ -84,7 +84,7 @@ def_end = mktime(now)
 
 # the currentVersion should be renewed every major update
 enigmalight_config = "/etc/enigma2/enigmalight_config"
-currentVersion  = "0.3-rc4"
+currentVersion  = "0.4-rc0"
 defaultURL  = "http://www.enigmalight.net/updates/"
 defaultUpdateXML= "update.xml"
 crashFile= "/tmp/enigmalight_gui_crash.txt"
@@ -121,6 +121,10 @@ config.plugins.enigmalight.bintype  = ConfigSelection(default = "enigmalight_oe2
 ("enigmalight_oe20_sf", _("Enigmalight OE2.0")),
 ("enigmalight_oe16_hf", _("Enigmalight OE1.6 with fpu support")),
 ("enigmalight_oe16_sf", _("Enigmalight OE1.6 "))])
+
+config.plugins.enigmalight.bintype_arm  = ConfigSelection(default = "1", choices = [
+("1", _("original")),
+("2", _("experimental") + (" hmmmdada vuplus-support.org"))])
 
 config.plugins.enigmalight.arch = ConfigText(default = "")
 

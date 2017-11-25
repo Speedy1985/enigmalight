@@ -45,6 +45,8 @@ from EL_PathSelector import EL_Screen_PathSelector
 from threading import currentThread
 from EL_ThreadHelper import callOnMainThread
 
+import os
+
 #===============================================================================
 #
 #===============================================================================
@@ -94,6 +96,10 @@ class EL_Screen_Settings(Screen, ConfigListScreen, HelpableScreen):
 		}, -2)
 
 		self["txt_green"].setText(_("Save"))
+		self.arm_box = False
+		arch = os.popen("uname -m").read()
+		if 'armv7l' in arch:
+			self.arm_box = True
 		self.createSetup()
 		
 		log("",self,"Finisch layout...")
@@ -164,6 +170,8 @@ class EL_Screen_Settings(Screen, ConfigListScreen, HelpableScreen):
 
 		# GENERAL SETTINGS
 		self.cfglist.append(getConfigListEntry(_("[ General Settings ]"), config.plugins.enigmalight.about, _(" ")))
+		if self.arm_box:
+			self.cfglist.append(getConfigListEntry(_('- Type of EnigmaLight binary:'),config.plugins.enigmalight.bintype_arm, _(" ")))
 		#self.cfglist.append(getConfigListEntry(_('- Type of EnigmaLight binary:'),config.plugins.enigmalight.bintype, _("Here you can select the type of enigmalight, the most receivers can use the fpu version but some receivers can't. For then use the normal version")))     
 		self.configfilepath = getConfigListEntry(_("- Configuration File"), config.plugins.enigmalight.configfilepath, _("Select your configfile, default /etc/enigmalight.conf will be used "))
 		self.cfglist.append(self.configfilepath)
@@ -240,7 +248,7 @@ class EL_Screen_Settings(Screen, ConfigListScreen, HelpableScreen):
 			else:
 				self.controller.StopServer()
 
-		elif self["config"].getCurrent()[1] == config.plugins.enigmalight.bintype:
+		elif self["config"].getCurrent()[1] == config.plugins.enigmalight.bintype_arm:
 			self.saveAll()
 			self._binTypeChanged = True
 
@@ -336,7 +344,7 @@ class EL_Screen_Settings(Screen, ConfigListScreen, HelpableScreen):
 				message.setTitle(_("Start ?"))
 			else:
 				self.close(None)
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================

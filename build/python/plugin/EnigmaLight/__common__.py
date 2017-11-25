@@ -476,7 +476,7 @@ def setSymbolic():
 			LinkFile(binary, "/usr/bin/elighttalk")
 	elif 'armv7l' in arch:
 		binary = "/home/elight-addons/usr/bin/enigmalight_arm"
-		if ultimo4k:
+		if config.plugins.enigmalight.bintype_arm.value == "2":
 			file = "/home/elight-addons/usr/bin/enigmalight_arm_ultimo4k"
 			if os.path.exists(file):
 				binary = file
