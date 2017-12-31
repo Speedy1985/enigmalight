@@ -25,7 +25,7 @@ You should have received a copy of the GNU General Public License
 from Plugins.Plugin import PluginDescriptor
 
 from Components.config import config, configfile
-
+from . import _
 from __init__ import getCrashFilePath, Prepare, _ # _ is translation
 from __common__ import checkSymbolic, showError, rmFile, EnigmaLight_log as log
 
@@ -58,13 +58,12 @@ checkSymbolic()
 def main(session, **kwargs):
 	log("",None,"plugin::sessionstart()")
 	session.open(EnigmaLight_MainMenu)
-	
-def sessionstart(reason, **kwargs):
 
+def sessionstart(reason, **kwargs):
 	try:
-	    if reason == 0:
-	        timer.setSession(kwargs["session"])
-	        controller.setGlobalSession(kwargs["session"])
+		if reason == 0:
+			timer.setSession(kwargs["session"])
+			controller.setGlobalSession(kwargs["session"])
 	except:
 		from traceback import format_exc
 		log("",None,"plugin::sessionstart() > Error: " +format_exc())
@@ -72,7 +71,7 @@ def sessionstart(reason, **kwargs):
 			open(getCrashFilePath(),"w").write(format_exc())
 		except:
 			pass
-	   
+
 def EnigmaLight_MainMenu(*args, **kwargs):
 	try:
 		log("",None,"plugin::EnigmaLight_MainMenu() > MainMenu..")
@@ -102,13 +101,12 @@ def Autostart(reason, session=None, **kwargs):
 			if config.plugins.enigmalight.autostart.getValue() != str(0):
 				log("",None,"plugin::Autostart(reason, session=None, **kwargs)) > Autostart enigmalight..")
 				
-				if config.plugins.enigmalight.autostart.getValue() == str(1):				
+				if config.plugins.enigmalight.autostart.getValue() == str(1):
 					controller.Control("start", "server")
-				elif config.plugins.enigmalight.autostart.getValue() == str(2):				
+				elif config.plugins.enigmalight.autostart.getValue() == str(2):
 					controller.Control("start", "dynamic")
-				elif config.plugins.enigmalight.autostart.getValue() == str(3):				
+				elif config.plugins.enigmalight.autostart.getValue() == str(3):
 					controller.Control("start", "moodlamp")
-			
 			if config.plugins.enigmalight.remote_server.getValue():
 				controller.StartServer()
 			else:
@@ -130,11 +128,11 @@ def Autostart(reason, session=None, **kwargs):
 def Plugins(**kwargs):
 	try:
 		myList = [PluginDescriptor(where=PluginDescriptor.WHERE_SESSIONSTART, fnc=sessionstart),
-	    PluginDescriptor(name=_('EnigmaLight'), description=_('TV backlight'), where=PluginDescriptor.WHERE_PLUGINMENU, icon='button.png', needsRestart = False, fnc=main),
-	    PluginDescriptor(name=_('EnigmaLight | on/off'), description=_('TV backlight'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, icon='button.png', needsRestart = False, fnc=controller.Toggle),
-	    PluginDescriptor(name=_('EnigmaLight | Settings'), description=_('Enigmalight GUI'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, icon='button.png', needsRestart = False, fnc=main),
-	    PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = Autostart)]
-	    #PluginDescriptor(name=_('EnigmaLight | Switch Mode'), description=_('TV backlight'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, icon='button.png', needsRestart = False, fnc=LightToggle)]
+		PluginDescriptor(name=_('EnigmaLight'), description=_('TV backlight'), where=PluginDescriptor.WHERE_PLUGINMENU, icon='button.png', needsRestart = False, fnc=main),
+		PluginDescriptor(name=_('EnigmaLight | on/off'), description=_('TV backlight'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, icon='button.png', needsRestart = False, fnc=controller.Toggle),
+		PluginDescriptor(name=_('EnigmaLight | Settings'), description=_('Enigmalight GUI'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, icon='button.png', needsRestart = False, fnc=main),
+		PluginDescriptor(where = PluginDescriptor.WHERE_AUTOSTART, fnc = Autostart)]
+		#PluginDescriptor(name=_('EnigmaLight | Switch Mode'), description=_('TV backlight'), where=PluginDescriptor.WHERE_EXTENSIONSMENU, icon='button.png', needsRestart = False, fnc=LightToggle)]
 	except:
 		from traceback import format_exc
 		log("",None,"plugin::Plugins(**kwargs) > Error: " +format_exc())

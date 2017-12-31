@@ -38,6 +38,19 @@ from Components.config import config
 from Components.AVSwitch import AVSwitch
 
 from EL_Helper_Singleton import Singleton
+from . import _
+
+vu4k = False
+ultimo4k = False
+if os.path.exists("/proc/stb/info/vumodel"):
+	try:
+		f = open("/proc/stb/info/vumodel",'r')
+		model = f.read().strip()
+		ultimo4k = 'ultimo4k' in model
+		vu4k = '4k' in model
+	except:
+		pass
+	f.close()
 
 #===============================================================================
 # import cProfile
@@ -75,7 +88,7 @@ def EnigmaLight_log(level="", parent=None,string=""):
 				
 				if len(string) > 0:
 					string = " > " + string
-				
+
 				if len(level) == 0:
 					level = "D" #debug
 
@@ -122,7 +135,7 @@ def testInetConnectivity(target="http://www.google.com"):
 	EnigmaLight_log("",None," __common__::testInetConnectivity()")
 
 	import urllib2
-	from   sys import version_info
+	from sys import version_info
 	import socket
 
 	try:
@@ -160,9 +173,7 @@ def testDaemonConnectivity(ip, port):
 	try:
 		sock.settimeout(5)
 		sock.connect((ip, port))
-		sock.close()
-
-		 
+		sock.close() 
 		return True
 	except socket.error, e:
 		sock.close()
@@ -247,7 +258,7 @@ def getBoxInformation():
 
 	#readboxtype
 
-	fpu	= False
+	fpu = False
 	brand = "Dream Multimedia"
 	model = "unknown"
 	chipset = "unknown"
@@ -334,7 +345,7 @@ def getBoxInformation():
 		elif model.startswith("formuler"):
 			brand = "Formuler"
  		f.close()
-	elif fileExists("/proc/stb/info/vumodel"):
+	elif fileExists("/proc/stb/info/vumodel") and not fileExists("/proc/stb/info/boxtype"):
 		brand = "VuPlus"
 		f = open("/proc/stb/info/vumodel",'r')
 		model = f.readline().strip().lower()
@@ -350,7 +361,15 @@ def getBoxInformation():
 			chipset = "SIGMA 8653"
 		else:
 			chipset = "SIGMA 8634"
-	else:
+	elif fileExists("/proc/stb/info/hwmodel"):
+		f = open("/proc/stb/info/hwmodel",'r')
+		model = f.readline().strip().lower()
+		f.close()
+	elif fileExists("/proc/stb/info/gbmodel"):
+		f = open("/proc/stb/info/gbmodel",'r')
+		model = f.readline().strip().lower()
+		f.close()
+	elif fileExists("/proc/stb/info/model"):
 		f = open("/proc/stb/info/model",'r')
 		model = f.readline().strip().lower()
 		f.close()
@@ -374,8 +393,13 @@ def getBoxInformation():
 
 
 	version = getBoxArch()
+	arch_linux = "mipsel"
+	try:
+		arch_linux = os.popen("uname -m").read()
+	except:
+		pass
 
-	boxData = (brand, model, chipset, "mipsel", version)
+	boxData = (brand, model, chipset, arch_linux, version)
 
 	EnigmaLight_log("",None,"__common__::getBoxInformation() > " + str(boxData))
 
@@ -430,9 +454,9 @@ def checkSymbolic():
 		if arch != "unknown":
 			if not checkBinary():
 				if fpu == True:
-					config.plugins.enigmalight.bintype.setValue("enigmalight_hf") #hardfloat, fpu support
+					config.plugins.enigmalight.bintype.setValue("enigmalight_" + arch + "_hf") #hardfloat, fpu support
 				else:
-					config.plugins.enigmalight.bintype.setValue("enigmalight_sf") #softfloat for receivers without fpu
+					config.plugins.enigmalight.bintype.setValue("enigmalight_" + arch + "_sf") #softfloat for receivers without fpu
 
 				config.plugins.enigmalight.save()
 
@@ -440,9 +464,42 @@ def checkSymbolic():
 
 def setSymbolic():
 	EnigmaLight_log("",None,"__common__::setSymbolic()")
-
-	LinkFile("/home/elight-addons/usr/bin/"+ config.plugins.enigmalight.bintype.getValue(), "/usr/bin/enigmalight")
-
+	arch = os.popen("uname -m").read()
+	if 'mips' in arch:
+		binary = "/home/elight-addons/usr/bin/enigmalight_mips"
+		if os.path.exists(binary):
+			os.system("chmod 755 %s" % binary)
+			LinkFile(binary, "/usr/bin/enigmalight")
+		binary = "/home/elight-addons/usr/bin/elighttalk_mips"
+		if os.path.exists(binary):
+			os.system("chmod 755 %s" % binary)
+			LinkFile(binary, "/usr/bin/elighttalk")
+	elif 'armv7l' in arch:
+		binary = "/home/elight-addons/usr/bin/enigmalight_arm"
+		if config.plugins.enigmalight.bintype_arm.value == "2":
+			file = "/home/elight-addons/usr/bin/enigmalight_arm_ultimo4k"
+			if os.path.exists(file):
+				binary = file
+		if os.path.exists(binary):
+			os.system("chmod 755 %s" % binary)
+			LinkFile(binary, "/usr/bin/enigmalight")
+		binary = "/home/elight-addons/usr/bin/elighttalk_arm"
+		if os.path.exists(binary):
+			os.system("chmod 755 %s" % binary)
+			LinkFile(binary, "/usr/bin/elighttalk")
+	elif 'sh4' in arch:
+		binary = "/home/elight-addons/usr/bin/enigmalight_sh4"
+		if os.path.exists(binary):
+			os.system("chmod 755 %s" % binary)
+			LinkFile(binary, "/usr/bin/enigmalight")
+		binary = "/home/elight-addons/usr/bin/elighttalk_sh4"
+		if os.path.exists(binary):
+			os.system("chmod 755 %s" % binary)
+			binary = "/home/elight-addons/usr/bin/elighttalk_sh4"
+			LinkFile(binary, "/usr/bin/elighttalk")
+	else:
+		EnigmaLight_log("__common__::setSymbolic() > ERROR!")
+	#LinkFile("/home/elight-addons/usr/bin/"+ config.plugins.enigmalight.bintype.getValue(), "/usr/bin/enigmalight")
 
 def LinkFile(src, dst):
 	EnigmaLight_log("",None,"__common__::LinkFile() > Create symlink: "+ src + " >>> " + dst)
@@ -457,14 +514,12 @@ def LinkFile(src, dst):
 	except Exception, e:
 		raise
 
-
-	
 def DeleteLink(dst):
 	try:
 		if os.path.exists(dst):
 			EnigmaLight_log("",None,"__common__::DeleteLink() > Delete symlink. "+ dst)
 			if os.unlink(dst):
-		  		EnigmaLight_log("",None,"__common__::DeleteLink() > Delete Done!")
+					EnigmaLight_log("",None,"__common__::DeleteLink() > Delete Done!")
 	except Exception, e:
 		raise
 
@@ -683,4 +738,4 @@ def showError(session, ex, msg_type, timeout = 10):
 	EnigmaLight_log("",None,"__common__::showError > UNEXPECTED ERROR: %s" %(str(ex)))
 
 	if session != None:
-		session.open(MessageBox, _("UNEXPECTED ERROR: \n" + str(ex) + "\n\nIf this error keeps coming back, please contact me at info@enigmalight.info"), MessageBox.TYPE_ERROR , timeout)
+		session.open(MessageBox, _("UNEXPECTED ERROR: \n\n") + str(ex), MessageBox.TYPE_ERROR , timeout)

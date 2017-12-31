@@ -6,11 +6,11 @@ PREFIX=${BUILD_DIR}"/usr/"
 #check if compiler exists
 clear
 
-OE_PATH=/home/socma/versetc/boxmake/simple3/support/toolchains/arm_dream/bin
+OE_PATH=/opt/toolchain/toolchains/mipsoe20/bin
 printf "Set Compiler Path... '"${OE_PATH}"'\n\n"
 export PATH=$PATH:$OE_PATH
 
-HOST=arm-newnigma2-linux-gnueabihf
+HOST=mipsel-unknown-linux-gnu
 GCC=${HOST}"-gcc"
 GPP=${HOST}"-g++"
 CC=${GCC}
@@ -20,15 +20,6 @@ CPPFLAGS="-mhard-float"
 
 cd build
 
-echo
-echo "###############################################################"
-echo "#                                                             #"
-echo "#                        Build Hard-FPU		            #"
-echo "#                                                             #"
-echo "###############################################################"
-echo ""
-echo ""
-
 sleep 1
 
 echo "[Hardfloat] Clean directory..."
@@ -37,13 +28,24 @@ make clean -i
 echo "[Hardfloat] Configure..."
 ./configure CC=${CC} CXX=${CXX} --host=${HOST} CPPFLAGS="${CPPFLAGS}" --prefix=${PREFIX}
 
+
+echo
+echo "###############################################################"
+echo "#                                                             #"
+echo "#                        Build MIPS             	            #"
+echo "#                                                             #"
+echo "###############################################################"
+echo ""
+echo ""
+
+
 echo "[Hardfloat] Make..."
 make  -j2
 make install
 
 echo "[Hardfloat] >>>> Build Hard-FPU Finisched <<<<"
 
-mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_oe20_hf
+mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_mips
 
 
 

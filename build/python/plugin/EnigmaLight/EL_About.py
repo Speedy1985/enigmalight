@@ -22,6 +22,7 @@ You should have received a copy of the GNU General Public License
 #=================================
 #IMPORT
 #=================================
+from . import _
 from Components.ActionMap import ActionMap
 from Components.Label import Label
 from Components.config import config
@@ -37,7 +38,7 @@ from EL_ThreadHelper import callOnMainThread
 
 #===============================================================================
 #
-#===============================================================================		
+#===============================================================================
 class EL_Screen_About(Screen):
 	_session = None
 
@@ -82,14 +83,14 @@ class EL_Screen_About(Screen):
 		self["content"].setText(self.getContentText())
 
 		boxinfo = getBoxInformation()
-		boxContent = "Brand:\r %s \nModel:\r %s\nChipset:\r %s\nArch:\r %s %s\n" %(str(boxinfo[0]),str(boxinfo[1]),str(boxinfo[2]),str(boxinfo[3]),str(boxinfo[4]))
+		boxContent = ("Model:\r %s\nChipset:\r %s\nArch:\r %s %s\n") %(str(boxinfo[1]),str(boxinfo[2]),str(boxinfo[3]),str(boxinfo[4]))
 		#boxContent = "BoxType:\r %s\nChipset:\r %s\nArch:\r %s %s\n" %(str(boxinfo[0]),str(boxinfo[1]),str(boxinfo[2]),str(boxinfo[3]))
 		self["content2"].setText(boxContent)
 
-		if not config.plugins.enigmalight.showstatusbar.getValue():			
+		if not config.plugins.enigmalight.showstatusbar.getValue():
 			self["statusbar"].hide()
 			self["txt_statusbar"].hide()
-			self["txt_statusbar_info"].hide()			
+			self["txt_statusbar_info"].hide()
 		else:
 			self["statusbar"].show()
 			self["txt_statusbar"].show()
@@ -145,11 +146,9 @@ class EL_Screen_About(Screen):
 		content += "EnigmaLight - Ambilight for Enigma2 \n\n" 
 		content += "Version: \t" + getVersion() + "\n\n"
 		content += "Autors: \t Speedy1985 and Oktay Oeztueter\n"
-		content += "Translations: \t HolyMoly and Speedy1985\n"
+		content += "Translations: \t HolyMoly/Speedy1985/ Dimitrij\n"
 		content += "Some GUI Code: \t DonDavici (c) 2012\n"
 		content += "\n"
 		content += "For support you can send me an email or use the chat function at http://www.enigmalight.net/\n\n"
 		content += "If you like EnigmaLight and want support me, you can buy me a beer :-)"
-		
-		
 		return content

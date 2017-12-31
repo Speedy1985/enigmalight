@@ -20,15 +20,6 @@ CPPFLAGS="-mhard-float"
 
 cd build
 
-echo
-echo "###############################################################"
-echo "#                                                             #"
-echo "#                        Build Hard-FPU		            #"
-echo "#                                                             #"
-echo "###############################################################"
-echo ""
-echo ""
-
 sleep 1
 
 echo "[Hardfloat] Clean directory..."
@@ -37,13 +28,24 @@ make clean -i
 echo "[Hardfloat] Configure..."
 ./configure CC=${CC} CXX=${CXX} --host=${HOST} CPPFLAGS="${CPPFLAGS}" --prefix=${PREFIX}
 
+
+echo
+echo "###############################################################"
+echo "#                                                             #"
+echo "#                        Build ARM              	            #"
+echo "#                                                             #"
+echo "###############################################################"
+echo ""
+echo ""
+
+
 echo "[Hardfloat] Make..."
 make  -j2
 make install
 
 echo "[Hardfloat] >>>> Build Hard-FPU Finisched <<<<"
 
-mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_oe20_hf
+mv $PREFIX/bin/enigmalight $PREFIX/bin/enigmalight_arm
 
 
 

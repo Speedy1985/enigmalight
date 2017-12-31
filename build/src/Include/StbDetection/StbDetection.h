@@ -52,26 +52,40 @@
 #define BRCM7405    7405
 #define BRCM7424    7424
 #define BRCM7425    7425
-#define BRCM7435	7435
-#define BRCM7241	7241
-#define BRCM7362	7362
+#define BRCM7435    7435
+#define BRCM7241    7241
+#define BRCM7362    7362
+#define BRCM73625   73625
+#define BRCM73465   73465
+#define BRCM73565   73565
 #define GIGABLUE    0//12
+// arm box
+#define BRCM7251   7251
+#define BRCM7252   7252
+#define BRCM7444   7444
+#define BRCM7376   7376
+// /tmp/chipset
+#define TEST1    1
+#define TEST2    2
+#define TEST3    3
+#define TEST4    4
+#define TEST5    5
+#define TEST6    6
+#define TEST7    7
+#define TEST8    8
 
 class CStb
 {
 	public:
 		CStb();
 		~CStb();
-
 		bool DetectSTB();
-		
-		int             stb_type;
-
-		int             buffer_size;
-        int             chr_luma_stride;
-        int             chr_luma_register_offset;
-        unsigned int    registeroffset;
-        unsigned int    mem2memdma_register;
+		int stb_type;
+		int buffer_size;
+		int chr_luma_stride;
+		int chr_luma_register_offset;
+		unsigned int registeroffset;
+		unsigned int mem2memdma_register;
 
 	private:
 

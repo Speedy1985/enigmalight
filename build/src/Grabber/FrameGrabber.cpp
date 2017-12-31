@@ -56,8 +56,8 @@ CFrameGrabber::~CFrameGrabber()
 bool CFrameGrabber::Setup()
 {
 	try
-  	{    	
-		//Detect stb	    
+  	{
+		//Detect stb
 		if (!m_stb.DetectSTB()) { //If unknown then return.
 			LogError("STB Detection failed!");
 			return false; //Stop enigmalight
@@ -71,19 +71,19 @@ bool CFrameGrabber::Setup()
 	            Log("DBG -> settings: mem2memdma_register %x", m_stb.mem2memdma_register);
 	        }
 	        
-	        Log("Open memory /dev/mem");                        
+	        Log("Open memory /dev/mem");
 			mem_fd = open("/dev/mem", O_RDWR | O_SYNC);
 			if (mem_fd < 0) {
-			    LogError("Can't open memory....");
+				LogError("Can't open memory....");
 				return false;
-			}			
+			}
 		}
 
 		if(m_grabber->m_3d_mode != 1)
-	    	Log("3D mode: %i",m_grabber->m_3d_mode);		
+	    	Log("3D mode: %i",m_grabber->m_3d_mode);
 		if (m_grabber->m_debug) 
-			Log("Debug mode: enabled");          
-	    	    
+			Log("Debug mode: enabled");
+
 		// Set some vars to default values
 		m_errorGiven = false;
 		m_fps=0;
@@ -105,24 +105,51 @@ bool CFrameGrabber::Setup()
   	{
     	PrintError(error);
     	return false;
-  	}  
+  	}
+}
+
+bool CFrameGrabber::grabFrameNew(CBitmap* bitmap, int skiplines)
+{
+	int fd_video = open("/dev/dvb/adapter0/video0", O_RDONLY);
+	if (fd_video < 0) {
+		perror("/dev/dvb/adapter0/video0");
+		return false;
+	}
+	ssize_t r = read(fd_video, bitmap->m_data, 1920 * 1080 * 3);
+	close(fd_video);
+	int xres_orig = 1920;
+	int yres_orig = 1080;
+	int skipres = yres_orig;
+	if(xres_orig > yres_orig)
+		skipres = xres_orig;
+	while(skipres/skiplines > 128){
+		skiplines *= 2;
+	}
+	if (yres_orig%2 == 1)
+		yres_orig--;
+	bitmap->YUV2RGB();
+	bitmap->SetYres(yres_orig/skiplines);
+	bitmap->SetXres(xres_orig/skiplines);
+	bitmap->SetYresOrig(yres_orig);
+	bitmap->SetXresOrig(xres_orig);
+	return true;
 }
 
 bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
 {
 	m_noVideo = false;
 
-    int stride = 0;
+	int stride = 0;
 
-    unsigned char* memory_tmp;
-    				
+	unsigned char* memory_tmp;
+
 	//grab pic from decoder memory
 	const unsigned char* data = (unsigned char*)mmap(0, 100, PROT_READ, MAP_SHARED, mem_fd, m_stb.registeroffset);
-   
-    if(data == MAP_FAILED){
-	  if(m_errorGiven != true)
-        LogError("Mainmemory data: <Memmapping failed>");
-	  return false;
+
+	if(data == MAP_FAILED){
+		if(m_errorGiven != true)
+			LogError("Mainmemory data: <Memmapping failed>");
+		return false;
 	}
 
     unsigned int adr,adr2,ofs,ofs2,offset,pageoffset,counter=0;
@@ -145,27 +172,37 @@ bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
     //
     // Get data from decoder, offset, adres and stride(x resolution)
     //
-	ofs 	= data[m_stb.chr_luma_register_offset + 8] << 4;      /* luma lines */
-	ofs2 	= data[m_stb.chr_luma_register_offset + 12] << 4;    /* chroma lines */	
-	adr 	= (data[0x1f] << 24 | data[0x1e] << 16 | data[0x1d] << 8); /* start of videomem */
-	adr2 	= (data[m_stb.chr_luma_register_offset + 3] << 24 | data[m_stb.chr_luma_register_offset + 2] << 16 | data[m_stb.chr_luma_register_offset + 1] << 8);	
-	stride 	= data[0x15] << 8 | data[0x14];
-	
-	//
+	if (m_stb.stb_type == BRCM73565 || m_stb.stb_type == BRCM73625 || m_stb.stb_type == BRCM7376 || m_stb.stb_type == BRCM7251 || m_stb.stb_type == BRCM7252 || m_stb.stb_type == BRCM7444 || m_stb.stb_type == TEST1 || m_stb.stb_type == TEST2 || m_stb.stb_type == TEST3 || m_stb.stb_type == TEST4 || m_stb.stb_type == TEST6 || m_stb.stb_type == TEST7 || m_stb.stb_type == TEST8) {
+		// Parameter for ARM
+		ofs 	= data[m_stb.chr_luma_register_offset + 24] << 4;      /* luma lines */
+		ofs2 	= data[m_stb.chr_luma_register_offset + 28] << 4;    /* chroma lines */	
+		adr 	= (data[0x37] << 24 | data[0x36] << 16 | data[0x35] << 8); /* start of videomem */
+		adr2 	= (data[m_stb.chr_luma_register_offset + 3] << 24 | data[m_stb.chr_luma_register_offset + 2] << 16 | data[m_stb.chr_luma_register_offset + 1] << 8);
+		stride = data[0x19] << 8 | data[0x18];
+		
+	} else {
+		// Parameter for MIPS and PPC and TEST5
+		ofs 	= data[m_stb.chr_luma_register_offset + 8] << 4;      /* luma lines */
+		ofs2 	= data[m_stb.chr_luma_register_offset + 12] << 4;    /* chroma lines */	
+		adr 	= (data[0x1f] << 24 | data[0x1e] << 16 | data[0x1d] << 8); /* start of videomem */
+		adr2 	= (data[m_stb.chr_luma_register_offset + 3] << 24 | data[m_stb.chr_luma_register_offset + 2] << 16 | data[m_stb.chr_luma_register_offset + 1] << 8);
+		stride = data[0x15] << 8 | data[0x14];
+	}
+
 	// Get actual resolution and save it.
 	//
-	getResolution(bitmap, stride, GetTimeSec<long double>());	
-    
-    int xres_orig = bitmap->GetXresOrig();
-    int yres_orig = bitmap->GetYresOrig();
+	getResolution(bitmap, stride, GetTimeSec<long double>());
 
-    //
+	int xres_orig = bitmap->GetXresOrig();
+	int yres_orig = bitmap->GetYresOrig();
+
+	//
 	// Set offsets and adres
 	//
 	offset 		= adr2-adr;
-    pageoffset 	= adr & 0xfff;
-    adr 		-= pageoffset;
-    adr2 		-= pageoffset;
+	pageoffset 	= adr & 0xfff;
+	adr 		-= pageoffset;
+	adr2 		-= pageoffset;
 	
 	//
 	// Unmap memory
@@ -191,9 +228,9 @@ bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
         m_noVideo = true;
         
         return false;
-	}			
+	}
 	else if (stride < bitmap->GetXresOrig()/2)
-	{	    
+	{
 	    if(m_errorGiven != true){
 	        if(m_grabber->m_debug)
                 LogError("X-Resolution != stride: %d",stride);
@@ -202,9 +239,9 @@ bool CFrameGrabber::grabFrame(CBitmap* bitmap, int skiplines)
 		m_noVideo = true;
 		return false;
 	}
-	 
+
 	int memory_tmp_size = 0;
-	
+
 	//
 	// set original resolution from stride
 	//
@@ -537,7 +574,7 @@ void CFrameGrabber::updateInfo(CBitmap* bitmap, CGuiServer& g_guiserver)
 		g_guiserver.SetInfo(m_fps,bitmap->GetXres(),bitmap->GetYres(),bitmap->GetXresOrig(),bitmap->GetYresOrig());
 		
 		if(m_grabber->m_debug)
-		{                
+		{
 		    if(!m_noVideo){
 		         Log("DBG -> gFPS:%2.1f | Res:%dx%d (%dx%d)",m_fps,bitmap->GetXres(),bitmap->GetYres(),bitmap->GetXresOrig(),bitmap->GetYresOrig());
 		    }else{

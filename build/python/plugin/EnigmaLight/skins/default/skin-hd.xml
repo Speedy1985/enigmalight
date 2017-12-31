@@ -228,11 +228,11 @@
         <widget name="infoblock" position="700,525" size="462,98" valign="center" halign="center" zPosition="11" foregroundColor="white" transparent="1" font="OpenSans;16"/>
         
         <!-- buttons -->
-        <widget name="btn_green" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/skins/default/hd/buttons/btn_green-fs8.png" zPosition="6" position="135,608" size="22,22" alphatest="blend"/>
-        <widget name="btn_greenText" position="175,600" zPosition="9" size="300,37" font="OpenSans;16" halign="left" valign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1"/>
+        <widget name="btn_green" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/skins/default/hd/buttons/btn_green-fs8.png" zPosition="6" position="135,592" size="22,22" alphatest="blend"/>
+        <widget name="btn_greenText" position="175,584" zPosition="9" size="300,37" font="OpenSans;16" halign="left" valign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1"/>
 
-        <widget name="btn_yellow" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/skins/default/hd/buttons/btn_yellow-fs8.png" zPosition="6" position="355,608" size="22,22" alphatest="blend"/>
-        <widget name="btn_yellowText" position="395,600" zPosition="9" size="200,37" font="OpenSans;16" halign="left" valign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1"/>
+        <widget name="btn_yellow" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/skins/default/hd/buttons/btn_yellow-fs8.png" zPosition="6" position="355,592" size="22,22" alphatest="blend"/>
+        <widget name="btn_yellowText" position="395,591" zPosition="9" size="200,44" font="OpenSans;16" halign="left" valign="center" foregroundColor="#ffffff" backgroundColor="#000000" transparent="1"/>
 
         </screen>
 

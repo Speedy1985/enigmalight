@@ -1,0 +1,1019 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-28 19:54+0100\n"
+"PO-Revision-Date: 2017-03-14 19:55+0200\n"
+"Last-Translator: Dimitrij <Dima-73@inbox.lv>\n"
+"Language-Team: LANGUAGE <Dima-73@inbox.lv>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.9\n"
+"Language: ru\n"
+
+msgid " Min 0.00 | Max 1.00 | Default 0.00"
+msgstr " Мин 0.00 | Макс 1.00 | Дефолт 0.00"
+
+msgid " Min 0.00 | Max 1.00 | Default 1.00"
+msgstr " Мин 0.00 | Макс 1.00 | Дефолт 1.00"
+
+msgid ""
+" Saturation:\n"
+"Simply a strengthening of the average colour planes. The best option is "
+"between 1:00 and 1:20. This is because you are going to reinforce colours "
+"and this is so unnatural. \n"
+"Example:\n"
+" many films have a colour grading over it. A well-known example is a blue "
+"tint. This affects all the colours on the screen so that even a light Gray "
+"sky has some blue tones in it. When you try saturation on 2, it will thus be "
+"seen as good this blue tint twice while it appears white on your screen."
+msgstr ""
+" Насыщеность:\n"
+"Простое усиление средних цветовых плоскостей. Лучшее решение между 1:00 и "
+"1:20. Это потому, что вы собираетесь усилить цвета и это так "
+"неестественно. \n"
+"Пример:\n"
+" Многие фильмы имеют цветокоррекцию над этим. Хорошо известным примером "
+"является синий оттенок. Это влияет на все цвета на экране, так что даже "
+"светло-серый цвет неба, имеет некоторые синие тона в нем. При попытке "
+"насыщения на 2, он будет рассматриваться как хороший синий оттенок, в то "
+"время как он кажется белым на экране."
+
+msgid " Set the order as given in enigmalight.conf."
+msgstr " Установить порядок, как указано в enigmalight.conf."
+
+msgid ""
+" Some tv's are slower then the lights. With this option you can make the "
+"output 1 -> 20 frames later."
+msgstr ""
+" Некоторые ТВ работают медленнее, чем огни. С помощью этой опции, Вы можете "
+"сделать выход 1 -> 20 кадров позже."
+
+msgid " Use moodlamp or lights off in standby."
+msgstr " Используйте moodlamp или выкл. огней в режиме ожидания."
+
+msgid "(Re)start client ?"
+msgstr "(Ре)старт клиента ?"
+
+msgid "- 3D Mode:"
+msgstr "- 3D режим:"
+
+msgid "- Address:"
+msgstr "- Адрес:"
+
+msgid "- Adjust BLUE\t%s"
+msgstr "- Регулировка СИНИЙ\t%s"
+
+msgid "- Adjust BLUE   %s\t   "
+msgstr "- Регулировка СИНИЙ   %s\t   "
+
+msgid "- Adjust BLUE %s\t   "
+msgstr "- Регулировка СИНИЙ  %s\t   "
+
+msgid "- Adjust GREEN\t%s"
+msgstr "- Регулировка ЗЕЛЕНЫЙ\t%s"
+
+msgid "- Adjust GREEN   %s\t   "
+msgstr "- Регулировка ЗЕЛЕНЫЙ   %s\t   "
+
+msgid "- Adjust GREEN %s\t   "
+msgstr "- Регулировка ЗЕЛЕНЫЙ %s\t   "
+
+msgid "- Adjust RED\t%s"
+msgstr "- Регулировка КРАСНЫЙ\t%s"
+
+msgid "- Adjust RED   %s\t   "
+msgstr "- Регулировка КРАСНЫЙ   %s\t   "
+
+msgid "- Adjust RED  %s\t   "
+msgstr "- Регулировка КРАСНЫЙ  %s\t   "
+
+msgid "- Adjust RED %s\t   "
+msgstr "- Регулировка КРАСНЫЙ %s\t   "
+
+msgid "- Ambioder precision:"
+msgstr "- Ambioder точность:"
+
+msgid "- Auto speed:"
+msgstr "- Скорость автоматически:"
+
+msgid "- Blue Adjust:"
+msgstr "- Регулировка синего:"
+
+msgid "- Blue Blacklevel:"
+msgstr "- Синий: уровень черного:"
+
+msgid "- Blue Gamma:"
+msgstr "- Синяя гамма:"
+
+msgid "- Brightness:"
+msgstr "- Яркость:"
+
+msgid "- Bus:"
+msgstr "- Шина:"
+
+msgid "- Clockwise or Backwards:"
+msgstr "- По часовой стрелке или против:"
+
+msgid "- Check for update, press OK"
+msgstr "- Для проверки обновлений, нажмите ОК"
+
+msgid "- Cluster Leds:"
+msgstr "- Кластер светодиоды:"
+
+msgid "- Color BLUE\t: %s"
+msgstr "- Цвет СИНИЙ\t: %s"
+
+msgid "- Color GREEN\t: %s"
+msgstr "- Цвет ЗЕЛЕНЫЙ\t: %s"
+
+msgid "- Color RED\t: %s"
+msgstr "- Цвет КРАСНЫЙ\t: %s"
+
+msgid "- Color order:"
+msgstr "- Заказ цвета:"
+
+msgid "- Color sequence:"
+msgstr "- Последовательность цвета:"
+
+msgid "- Configuration File"
+msgstr "- Файл конфигурации"
+
+msgid "- Daemon port:"
+msgstr "- Порт даймона:"
+
+msgid "- Debug-Logging > /tmp/enigmalight_gui.log:"
+msgstr "- Лог отладки > /tmp/enigmalight_gui.log:"
+
+msgid "- Default lightmode:"
+msgstr "- Дефолтный режим огней:"
+
+msgid "- Delay before remove:"
+msgstr "- Задержка перед удалением:"
+
+msgid "- Delay:"
+msgstr "- Задержка:"
+
+msgid "- Device output:"
+msgstr "- Выход устройства:"
+
+msgid "- Device rate:"
+msgstr "- Скорость устройства:"
+
+msgid "- Device type:"
+msgstr "- Тип устройства:"
+
+msgid "- Disable lights:"
+msgstr "- Отключить огни:"
+
+msgid "- Don't turn lights off/on in standby:"
+msgstr "- Не вкл./выкл. огни в режиме ожидания:"
+
+msgid "- Enable lights on boot:"
+msgstr "- Включать огни при загрузке:"
+
+msgid "- Enable lights:"
+msgstr "- Включить огни:"
+
+msgid "- Enable network mode (connect with other daemon):"
+msgstr "- Включить сетевой режим (подключение к другому даймону):"
+
+msgid "- Fader brightness : %s\t"
+msgstr "- Яркость регулятора: %s\t"
+
+msgid "- Gamma correction 1-10:"
+msgstr "- Коррекция гаммы 1-10:"
+
+msgid "- Green Adjust:"
+msgstr "- Регулировка зеленого:"
+
+msgid "- Green Blacklevel:"
+msgstr "- Зеленый: уровень черного:"
+
+msgid "- Green Gamma:"
+msgstr "- Зеленая гамма:"
+
+msgid "- Host ipaddress:"
+msgstr "- Хост айпи адреса:"
+
+msgid "- How many lights Bottom:"
+msgstr "- Сколько огней снизу:"
+
+msgid "- How many lights Left:"
+msgstr "- Сколько огней слева:"
+
+msgid "- How many lights Right:"
+msgstr "- Сколько огней справо:"
+
+msgid "- How many lights Top:"
+msgstr "- Сколько огней сверху:"
+
+msgid "- Interval:"
+msgstr "- Интервал:"
+
+msgid "- Led speed:"
+msgstr "- Скорость светодиодов:"
+
+msgid "- Maximal Brightness:"
+msgstr "- Максимальная яркость:"
+
+msgid "- Maximal Saturation 0.00-1.00:"
+msgstr "- Максимальная  насыщенность 0.00-1.00:"
+
+msgid "- Minimal Brightness:"
+msgstr "- Минимальная яркость:"
+
+msgid "- Minimal Saturation 0.00-1.00:"
+msgstr "- Минимальная насыщенность 0.00-1.00:"
+
+msgid "- Moodlamp Mode:"
+msgstr "- Режим Moodlamp:"
+
+msgid "- Profile:"
+msgstr "- Профиль:"
+
+msgid "- Red Adjust:"
+msgstr "- Регулировка красного:"
+
+msgid "- Red Blacklevel:"
+msgstr "- Красный: уровень черного:"
+
+msgid "- Red Gamma:"
+msgstr "- Красная гамма:"
+
+msgid "- Remoteserver Port:"
+msgstr "- Порт удаленного сервера:"
+
+msgid "- Remove Blackbars left and right:"
+msgstr "- Удалить черные полосы слева и справа:"
+
+msgid "- Remove Blackbars top and bottom:"
+msgstr "Удалить черные полосы снизу и вверху:"
+
+msgid "- Remove statusbar from tuningscreen:"
+msgstr "- Удалить статус бар с окна тюнинга:"
+
+msgid "- Run EnigmaLight as server when lights are off:"
+msgstr "- Запуск EnigmaLight как сервер при выкл. огней:"
+
+msgid "- Sample picture:"
+msgstr "- Образцы картинок:"
+
+msgid "- Saturation 0-20:"
+msgstr "- Насыщение 0-20:"
+
+msgid "- Scan depth Bottom:"
+msgstr "- Глубина сканирования снизу:"
+
+msgid "- Scan depth Left:"
+msgstr "- Глубина сканирования слева:"
+
+msgid "- Scan depth Right:"
+msgstr "- Глубина сканирования справа:"
+
+msgid "- Scan depth Top:"
+msgstr "- Глубина сканирования сверху:"
+
+msgid "- Serial:"
+msgstr "- COM-порт:"
+
+msgid "- Show background sample picture:"
+msgstr "- Показать фон образца картинки:"
+
+msgid "- Show errormessages:"
+msgstr "- Показать сообщения об ошибках:"
+
+msgid "- Show message when turn on/off lights:"
+msgstr "- Показать сообщение при вкл./выкл. огней:"
+
+msgid "- Show sample pictures:"
+msgstr "- Показать образцы изображения:"
+
+msgid "- Show statusbar on bottom of screen:"
+msgstr "- Показать статус бар в нижней части экрана:"
+
+msgid "- Standby Mode:"
+msgstr "- Режим ожидания:"
+
+msgid "- Standby mode:"
+msgstr "- Режим ожидания:"
+
+msgid "- Threshold:"
+msgstr "- Порог:"
+
+msgid "- Type of EnigmaLight binary:"
+msgstr "- тип бинарника EnigmaLight:"
+
+msgid "- Use ColorAdjust Settings:"
+msgstr "- Использовать настройки изменения цвета:"
+
+msgid "- Use Timer:"
+msgstr "- Использовать таймер:"
+
+msgid "- Use live Adjust Settings:"
+msgstr "- Использовать в живую изменения настроек:"
+
+msgid "- Use remoteserver:"
+msgstr "- Использовать удаленный сервер:"
+
+msgid "- Where starts led 1:"
+msgstr "- Где стартовый светодиод 1:"
+
+msgid "- WifiLight IP:"
+msgstr "- WifiLight айпи:"
+
+msgid "- WifiLight PORT:"
+msgstr "- WifiLight порт:"
+
+msgid "- With (floor) stand:"
+msgstr "- Вместе (этаж) стенд:"
+
+msgid "-- Bottom center (how many places are empty):"
+msgstr "-- Снизу по центру (сколько пустых мест):"
+
+msgid "-- How many lights Bottom-left:"
+msgstr "-- Как много огней снизу слева:"
+
+msgid "-- How many lights Bottom-right:"
+msgstr "-- Как много огней снизу справа:"
+
+msgid "About EnigmaLight / Box information"
+msgstr "Инфо EnigmaLight / Инфо ресивера"
+
+msgid "Automatic"
+msgstr "Автоматически"
+
+msgid "Automatic turn on lights on boot "
+msgstr "Автоматически вкл. огней при загрузке "
+
+msgid "BOTTOM [left]"
+msgstr "НИЗ [слева]"
+
+msgid "BOTTOM [middle]"
+msgstr "НИЗ [центр]"
+
+msgid "BOTTOM [right]"
+msgstr "НИЗ [справа]"
+
+msgid "Backwards"
+msgstr "Назад"
+
+msgid "Bars Test"
+msgstr "Тест полос"
+
+msgid "Blackbar Test (horizontal)"
+msgstr "Тест черных полос (горизонталь)"
+
+msgid "Blackbar Test (vertical)"
+msgstr "Тест черных полос (вертикаль)"
+
+msgid "Blue wallpaper"
+msgstr "Голубые обои"
+
+msgid "Box Info & About"
+msgstr "Информация ресивера"
+
+msgid ""
+"Brightness:\n"
+"This is a nice option, especially even more important than the saturation "
+"setting. Why? Simply because there are colours like brown, turquoise, purple "
+"and eggplant that only exist with the clarity they have. Huh! Well, for "
+"example, a dark brown orange and dark turquoise aqua. So if you set the "
+"brightness to 2.0 then multiply the brightness of the colour you see with "
+"2.0 (I think) and therefore can not show brown Ambilight. A nice value is "
+"1.0 otherwise it quickly distorts the colours."
+msgstr ""
+"Яркость:\n"
+"Это отличная опция,важнее чем, настройка насыщености. Хороший значение 1.0, "
+"в противном случае яркость быстро искажает цвета."
+
+msgid "Busy...."
+msgstr "Занято..."
+
+msgid "Can't switch mode, Lights are disabled."
+msgstr "Невозможно переключить режим, огни выключены."
+
+msgid "Can't get settings from profile..."
+msgstr "Не удается получить настройки из профиля..."
+
+msgid "Can't write settings to /home/elight-addons/wifilight/wifilight.conf..."
+msgstr ""
+"Невозможно записать настройки в /home/elight-addons/wifilight/wifilight."
+"conf..."
+
+msgid "Can't write settings to profile..."
+msgstr "Невозможно записать настройки в профиль..."
+
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "Change mode"
+msgstr "Смена режима"
+
+msgid "Check for update.."
+msgstr "Проверка обновления..."
+
+msgid "Circles"
+msgstr "Круг"
+
+msgid "Clockwise"
+msgstr "По часовой стрелке"
+
+msgid ""
+"Cluster [X] Leds as one led.\n"
+"Default each led had is own color, with this option you can bundle/cluster "
+"this to 2 -> 10 leds."
+msgstr ""
+"Кластер [X] светодиодов как один.\n"
+"По дефолту каждый светодиод имеет собственный цвет, с помощью этой опции Вы "
+"можете связать/кластер из 2 -> 10 светодиодов."
+
+msgid "Color fader"
+msgstr "Цвет регулятора"
+
+msgid "Config Editor"
+msgstr "Редактор конфига"
+
+msgid "Configfile not found!"
+msgstr "Файл конфига не найден!"
+
+msgid "Control EnigmaLight from browser"
+msgstr "Контроль EnigmaLight через браузер"
+
+msgid "Control: Lights disabled."
+msgstr "Контроль: огни выключены."
+
+msgid "Control: Lights enabled, mode[%s]"
+msgstr "Контроль: огни включены, режим[%s]."
+
+msgid "Control: Lights enabled, mode[test]"
+msgstr "Контроль: огни включены, режим[тест]."
+
+msgid "Control: Lights enabled."
+msgstr "Контроль: огни включены."
+
+msgid ""
+"Count from 0 to given number\n"
+"if the blackbars are still there then remove them."
+msgstr ""
+"Количество от 0 до заданного числа\n"
+"Если черные полосы все еще там, удалите их."
+
+msgid ""
+"Count from 0 to given number\n"
+"if the blackbars are still there then remove them.\n"
+"if enigmalight runs on 10fps and you will wait 10sec before remove, then set "
+"it to 100"
+msgstr ""
+"Количество от 0 до заданного числа\n"
+"Если черные полосы все еще там, удалите их.\n"
+"Если enigmalight работает в 10fps, Вы подождите 10 секунд, прежде чем "
+"удалить, а затем установите их в 100"
+
+msgid "Create and Test this config with [RGB Test]"
+msgstr "Создать и тест этого конфига как [RGB тест]"
+
+msgid "Create configfile"
+msgstr "Создать файл конфига"
+
+msgid "Custom Profile 0"
+msgstr "Настраиваемый профиль 0"
+
+msgid "Custom Profile 1"
+msgstr "Настраиваемый профиль 1"
+
+msgid "Custom Profile 2"
+msgstr "Настраиваемый профиль 2"
+
+msgid "Custom Profile 3"
+msgstr "Настраиваемый профиль 3"
+
+msgid "Custom Profile 4"
+msgstr "Настраиваемый профиль 4"
+
+msgid "Custom Profile 5"
+msgstr "Настраиваемый профиль 5"
+
+msgid "Custom Profile 6"
+msgstr "Настраиваемый профиль 6"
+
+msgid "Daemon %s:%s"
+msgstr "Даймон %s:%s"
+
+msgid "Debug -> Console"
+msgstr "Отладка -> консоль"
+
+msgid "Debug -> Console + Logfile"
+msgstr "Отладка -> консоль + лог файл"
+
+msgid "Disabled"
+msgstr "Отключено"
+
+msgid "Disable timer function in standbymode "
+msgstr "Отключить функцию таймера в режиме ожидания"
+
+msgid "Do you want to (re)start the client ?"
+msgstr "Вы хотите выполнить (ре)старт клиента?"
+
+msgid "Do you want to (re)start the client and connect with %s:%s ?"
+msgstr "Вы хотите выполнить (ре)старт клиента и подключится к %s:%s ?"
+
+msgid "Dynamic"
+msgstr "Динамический"
+
+msgid ""
+"Enigma2 must be restarted!\n"
+"Should Enigma2 now restart?"
+msgstr ""
+"Для Enigma2 необходим рестарт!\n"
+"Выполнить рестарт Enigma2 сейчас?"
+
+msgid "EnigmaLight"
+msgstr "EnigmaLight"
+
+msgid "EnigmaLight ConfigEditor"
+msgstr "EnigmaLight - редактор конфига"
+
+msgid "EnigmaLight | Settings"
+msgstr "EnigmaLight | Настройки"
+
+msgid "EnigmaLight | on/off"
+msgstr "EnigmaLight | вкл/выкл"
+
+msgid "Enigmalight GUI"
+msgstr "Enigmalight GUI"
+
+msgid "Enigmalight OE1.6 "
+msgstr "Enigmalight OE1.6 "
+
+msgid "Enigmalight OE1.6 with fpu support"
+msgstr "Enigmalight OE1.6 с поддержкой fpu"
+
+msgid "Enigmalight OE2.0"
+msgstr "Enigmalight OE2.0"
+
+msgid "Enigmalight OE2.0 with fpu support"
+msgstr "Enigmalight OE2.0 с поддержкой fpu"
+
+msgid ""
+"Enigmalight can't connect with %s:%s,\n"
+"check your input and try again."
+msgstr ""
+"Enigmalight не может подключится к %s:%s,\n"
+"проверьте введенные данные и повторите попытку."
+
+msgid "Enigmalight killed."
+msgstr "Процесс Enigmalight прерван."
+
+msgid ""
+"Enigmalight not killed\n"
+"result: %s"
+msgstr ""
+"Процесс Enigmalight не прерван\n"
+"результат: %s"
+
+msgid "Enigmalight not killed!"
+msgstr "Процесс Enigmalight не прерван!"
+
+msgid ""
+"Error while starting EnigmaLight:\n"
+"\n"
+"%s"
+msgstr ""
+"Ошибка при старте EnigmaLight:\n"
+"\n"
+"%s"
+
+msgid "File /etc/enigmalight.conf not found."
+msgstr "Файл /etc/enigmalight.conf не найден."
+
+msgid ""
+"Gamma correction:\n"
+" Set this to 2.2 for default, since this is a default value for movies."
+msgstr ""
+"Коррекция гаммы:\n"
+" Установите 2.2 по дефолту, так как это значение по дефолту для видео."
+
+msgid "Help"
+msgstr "Помощь"
+
+msgid ""
+"Here you can select the type of enigmalight, the most receivers can use the "
+"fpu version but some receivers can't. For then use the normal version"
+msgstr ""
+"Здесь вы можете выбрать тип enigmalight, на большинстве ресиверов можно "
+"использовать fpu версию,но для некотрых ресиверов необходима нормальная "
+"версия."
+
+msgid ""
+"How fast Enigmalight wil run.\n"
+"0.01 = 15 -> 40fps | 0.10 = 10fps | 0.20 = 5fps: "
+msgstr ""
+"Как быстро Enigmalight будет работать.\n"
+"0.01 = 15 -> 40fps | 0.10 = 10fps | 0.20 = 5fps: "
+
+msgid "Info: ["
+msgstr "Инфо: ["
+
+msgid "Infoblock, blablablabla"
+msgstr "Инфоблок, бла-бла-бла"
+
+msgid "Information:\n"
+msgstr "Информация:\n"
+
+msgid "Invalid Location"
+msgstr "Неправильное расположение"
+
+msgid "Ip address %s is not accepted, check your input and try again."
+msgstr "Айпи адрес %s не принимается, проверьте ввод и поробуйте еще раз."
+
+msgid "LEFT [bottom]"
+msgstr "СЛЕВО [низ]"
+
+msgid "LEFT [top]"
+msgstr "СЛЕВО [вверх]"
+
+msgid ""
+"Led speed/fade​​: \n"
+"General setting for the led-speed how fast is changing the colour. 40 is a "
+"nice setting."
+msgstr ""
+"Скорость ленты​​: \n"
+"Общие настройки скорости ленты, насколько быстро меняется цвет. 40 хорошее "
+"значение."
+
+msgid "Lights off"
+msgstr "Выкл. огней"
+
+msgid "LightsOff"
+msgstr "Выкл. огней"
+
+msgid "LightsOn"
+msgstr "Вкл. огней"
+
+msgid "Live coloradjustment"
+msgstr "Регулировка цвета сейчас"
+
+msgid "Local [Wifilight] %s:%s"
+msgstr "Локальный [Wifilight] %s:%s"
+
+msgid "Manual"
+msgstr "В ручную"
+
+msgid ""
+"Minimal Brightness:\n"
+"If you set this as example to 0.01, then the LEDs will not completely dark "
+"is there is black but soft grey"
+msgstr ""
+"Минимальная яркость:\n"
+"Если вы установите это в качестве примера 0.01, то светодиоды не будут "
+"полностью темными, мягкий серый цвет"
+
+msgid "Moodlamp"
+msgstr "Moodlamp"
+
+msgid "Moodlamp configuration"
+msgstr "Конфигурация Moodlamp"
+
+msgid "New update available !!"
+msgstr "Новое обновление доступно!!!"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "No Internetconnection.."
+msgstr "Нет подключения к интернету..."
+
+msgid "No internet connection available or curl is not installed!"
+msgstr "Нет подключения к интернету или curl не установлен!"
+
+msgid "No update available.."
+msgstr "Нет доступных обновлений..."
+
+msgid "Not Running"
+msgstr "Не работает"
+
+msgid "Off"
+msgstr "Выкл."
+
+msgid "Ok"
+msgstr "Ок"
+
+msgid "Press OK to check for update.. "
+msgstr "Нажмите ОК для проверки обновлений..."
+
+msgid ""
+"Profile: \n"
+"Create your own profiles."
+msgstr ""
+"Профиль: \n"
+"Создайте свои собственные профили."
+
+msgid "RGB Test"
+msgstr "RGB тест"
+
+msgid "RGBTest"
+msgstr "RGB тест"
+
+msgid "Rainbow"
+msgstr "Радуга"
+
+msgid "RIGHT [bottom]"
+msgstr "СПРАВО [верх]"
+
+msgid "RIGHT [top]"
+msgstr "СПРАВО [низ]"
+
+msgid ""
+"Red,Green,Blue Test Started.\n"
+"Are the lights on and are color order ok ?"
+msgstr ""
+"Красный,зеленый,синий тест стартовал.\n"
+"Вас устраивает этот цвет огней?"
+
+msgid "Reload configfile ?"
+msgstr "Перезагрузить файл конфига?"
+
+msgid "Remove horizontal blackbars from lights."
+msgstr "Удалить горизонтальные черные полосы от огней."
+
+msgid "Remove the statusbar from colortuning screen"
+msgstr "Удалить строку состояния цвета тюнинга с окна"
+
+msgid "Remove vertical blackbars from lights."
+msgstr "Удалить вертикальные черные полосы от огней."
+
+msgid "Rose"
+msgstr "Роза"
+
+msgid "Run EnigmaLight as Server for Boblight or other clients "
+msgstr "Запуск EnigmaLight как сервер для Bobligh или других клиентов"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Save this configfile to /etc/ ?"
+msgstr "Сохранить этот файла конфига в /etc/ ?"
+
+msgid "Select your configfile, default /etc/enigmalight.conf will be used "
+msgstr ""
+"Выбор Вашего файла конфига, дефолт /etc/enigmalight.conf для использования"
+
+msgid "Selected file: %s"
+msgstr "Выбранный файл: %s"
+
+msgid "Set all values.."
+msgstr "Установить все значения ..."
+
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Show a messagebox when you turn on/off the lights "
+msgstr "Показать сообщение при вкл./выкл. огней"
+
+msgid "Show status at bottomscreen fps, cpu usage and currentmode"
+msgstr "Показать статус (fps, cpu, текущий режим) снизу окна"
+
+msgid "Show status at bottomscreen fps, currentmode and other info"
+msgstr "Показать статус (fps, текущий режим, другая информация) снизу окна"
+
+msgid "SidebySide"
+msgstr "Рядом"
+
+msgid "Solid: Aquamarine"
+msgstr "Массив: аквамарин"
+
+msgid "Solid: Blue"
+msgstr "Массив: синий"
+
+msgid "Solid: Dark yellow"
+msgstr "Массив: темно-желтый"
+
+msgid "Solid: Gray"
+msgstr "Массив: серый"
+
+msgid "Solid: Green"
+msgstr "Массив: зеленый"
+
+msgid "Solid: Lightgray"
+msgstr "Массив: светло-серый"
+
+msgid "Solid: Magenta"
+msgstr "Массив: пурпурный"
+
+msgid "Solid: Red"
+msgstr "Массив: красный"
+
+msgid "Solid: Royalblue"
+msgstr "Массив: королевский синий"
+
+msgid "Solid: White"
+msgstr "Массив: белый"
+
+msgid "Solid: Yellow"
+msgstr "Массив: желтый"
+
+msgid "Start ?"
+msgstr "Старт ?"
+
+msgid "Start Dynamic on boot"
+msgstr "Старт динамического режима при загрузке"
+
+msgid "Start Moodlamp on boot"
+msgstr "Старт Moodlamp при загрузке"
+
+msgid "Start lights.."
+msgstr "Старт огней..."
+
+msgid "Start server on boot"
+msgstr "Старт сервера при загрузке"
+
+msgid "Static color"
+msgstr "Статический цвет"
+
+msgid "Static color:"
+msgstr "Статический цвет:"
+
+msgid "Status: %s | Current mode: %s | FPS: %s"
+msgstr "Статус: %s | Текущий режим: %s | FPS: %s"
+
+msgid "Stop lights.."
+msgstr "Остановка огней..."
+
+msgid "Switch to dynamic mode"
+msgstr "Смена на динамический режим"
+
+msgid "Switch to moodlamp mode"
+msgstr "Смена на режим moodlamp"
+
+msgid "TV backlight"
+msgstr "TV подсветка"
+
+msgid "TOP [left]"
+msgstr "ВЕРХ [слева]"
+
+msgid "TOP [right]"
+msgstr "ВЕРХ [справа]"
+
+msgid "Test Connection with %s:%s, succesfull!"
+msgstr "Проверка подключения к %s:%s, успешна!"
+
+msgid ""
+"Threshold:\n"
+"Filter/Remove the almost dark pixels, 15 is a nice value."
+msgstr ""
+"Порог:\n"
+"Фильтр - удалите почти темные пиксели, 15 является хорошим значением."
+
+msgid "Time when lights go off "
+msgstr "Время выключения огней "
+
+msgid "Time when lights go on "
+msgstr "Время включения огней "
+
+msgid "To reload the configfile EnigmaLight needs a restart, restart now ?"
+msgstr ""
+"Чтобы перезагрузить файл конфига  EnigmaLight необходим рестарт, выполнить "
+"его сейчас?"
+
+msgid "Tuning"
+msgstr "Тонкая регулировка"
+
+msgid "Top and Bottom"
+msgstr "Верх и низ"
+
+msgid "Turn lights on"
+msgstr "Вкл. огней"
+
+msgid "Turn off lights or use moodlamp in standby "
+msgstr "Выключение огней или использовать moodlamp в режиме ожидания "
+
+msgid "Turn on if you want to see error information"
+msgstr "Включить, что бы видеть инфо об ошибках"
+
+msgid "Turn on/off 3D Mode, SBS or TAB"
+msgstr "Вкл./выкл. 3D режима, SBS или TAB"
+
+msgid "Turn on/off lights @ given time "
+msgstr "Вкл./выкл. огней @ заданное время "
+
+msgid "Type of enigmalight has changed, Start this type of Enigmalight ?"
+msgstr "Тип enigmalight был изменен, старт этого типа Enigmalight сейчас?"
+
+msgid ""
+"UNEXPECTED ERROR: \n"
+"\n"
+msgstr ""
+"НЕОЖИДАННАЯ ОШИБКА: \n"
+"\n"
+
+msgid "Unknown option"
+msgstr "Неизвестная опция"
+
+msgid "Use < > to jump with 10 in slider"
+msgstr "Использовать < > переход на 10 позиций"
+
+msgid ""
+"Use enigmalight as client and connect with other daemon over network (not "
+"for local use)"
+msgstr ""
+"Использование enigmalight, как клиента и подключение к другому даймону по "
+"сети (не для локального использования)"
+
+msgid "Write settings."
+msgstr "Запись настроек"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "Your current Version is "
+msgstr "Ваша текущая версия "
+
+msgid "[ Blackbar detection]"
+msgstr "[ Обнаружение черных полос ]"
+
+msgid "[ Blackbars ]"
+msgstr "[ Черные полосы ]"
+
+msgid "[ Color Adjustment, only local ]"
+msgstr "[ Измененение цвета, только локально ]"
+
+msgid "[ Color Tuning ]"
+msgstr "[ Тюнинг цвета ]"
+
+msgid "[ Color ]"
+msgstr "[ Цвет ]"
+
+msgid "[ Device ]"
+msgstr "[ Устройство ]"
+
+msgid "[ General Settings ]"
+msgstr "[ Генеральные настройки ]"
+
+msgid "[ Lights ]"
+msgstr "[ Огни ]"
+
+msgid "[ Misc ]"
+msgstr "[ Разное ]"
+
+msgid "[ Network Settings ]"
+msgstr "[ Сетевые настройки ]"
+
+msgid "[ Remote ]"
+msgstr "[ Удаленный ]"
+
+msgid "[ Timer Settings ]"
+msgstr "[ Настройки таймера ]"
+
+msgid "[ WifiLight ]"
+msgstr "[ WifiLight ]"
+
+msgid "[Dynamic] %s | %s"
+msgstr "[Динамический] %s | %s"
+
+msgid "[Moodlamp] %s | ColorFader"
+msgstr "[Moodlamp] %s | Цвет регулятора"
+
+msgid "[Moodlamp] %s | RGBtest"
+msgstr "[Moodlamp] %s | Тест RGB"
+
+msgid "[Moodlamp] %s | Rainbow"
+msgstr "[Moodlamp] %s | Радуга"
+
+msgid "[Moodlamp] %s | Static color"
+msgstr "[Moodlamp] %s | Статический цвет"
+
+msgid "[Server] Client connected (%s)"
+msgstr "[Сервер] клиент подключен(%s)"
+
+msgid "[Server] Idle"
+msgstr "[Сервер] Бездействие"
+
+msgid "enigmalight.conf succesfull saved in /etc/"
+msgstr "enigmalight.conf успешно сохранен в /etc/"
+
+msgid "killEnigmalight.."
+msgstr "завершить процесс Enigmalight..."
+
+msgid "off"
+msgstr "выкл."
+
+msgid "changeValue"
+msgstr "смена значений"
+
+msgid ""
+"\n"
+"Update to "
+msgstr ""
+"\n"
+"Обновить до "
+
+msgid "writeAdjust"
+msgstr "запись изменений"
+
+msgid "writeDynamic"
+msgstr "запись динамики"
+
+msgid "writeServer"
+msgstr "запись сервера"

@@ -42,8 +42,29 @@ from Components.config import ConfigClock
 from Components.config import ConfigDirectory
 from Components.config import ConfigFile
 from Components.Language import language
-
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SKIN, SCOPE_CURRENT_SKIN, SCOPE_LANGUAGE
+
+def localeInit():
+	#log("",None,"__init__::localeInit()")
+	lang = language.getLanguage()
+	os.environ["LANGUAGE"] = lang[:2]
+	gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
+	gettext.textdomain("enigma2")
+	gettext.bindtextdomain("EnigmaLight", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/EnigmaLight/locale/"))
+
+localeInit()
+language.addCallback(localeInit)
+
+#===============================================================================
+# 
+#===============================================================================
+def _(txt):
+	if len(txt) == 0:
+		return ""
+	text = gettext.dgettext("EnigmaLight", txt)
+	if text == txt:
+		text = gettext.gettext(txt)
+	return text
 
 from EL_Helper_Singleton import Singleton
 
@@ -63,16 +84,20 @@ def_end = mktime(now)
 
 # the currentVersion should be renewed every major update
 enigmalight_config = "/etc/enigma2/enigmalight_config"
-currentVersion  = "0.2-rc1"
+currentVersion  = "0.4-rc0"
 defaultURL  = "http://www.enigmalight.net/updates/"
 defaultUpdateXML= "update.xml"
 crashFile= "/tmp/enigmalight_gui_crash.txt"
 
 defaultPluginFolderPath = resolveFilename(SCOPE_PLUGINS, "Extensions/EnigmaLight/")
 defaultSkinsFolderPath= resolveFilename(SCOPE_PLUGINS, "Extensions/EnigmaLight/skins")
-defaultConfigfilePath   = "/etc/enigmalight.conf"
+defaultConfigfilePath = "/etc/enigmalight.conf"
 
 ###################################################################################################################
+
+#===============================================================================
+# 
+#===============================================================================
 
 config.plugins.enigmalight = ConfigSubsection()
 
@@ -91,9 +116,15 @@ config.plugins.enigmalight.sampleBackground_mvi = ConfigSelection(default = "rgb
 config.plugins.enigmalight.checkForUpdateOnStartup  = ConfigYesNo(default = True)
 config.plugins.enigmalight.version  = ConfigText(default = currentVersion)
 
-config.plugins.enigmalight.bintype  = ConfigSelection(default = "enigmalight_hf", choices = [
-("enigmalight_hf", _("Enigmalight with fpu support")),
-("enigmalight_sf", _("Enigmalight softfloat"))])
+config.plugins.enigmalight.bintype  = ConfigSelection(default = "enigmalight_oe20_hf", choices = [
+("enigmalight_oe20_hf", _("Enigmalight OE2.0 with fpu support")),
+("enigmalight_oe20_sf", _("Enigmalight OE2.0")),
+("enigmalight_oe16_hf", _("Enigmalight OE1.6 with fpu support")),
+("enigmalight_oe16_sf", _("Enigmalight OE1.6 "))])
+
+config.plugins.enigmalight.bintype_arm  = ConfigSelection(default = "1", choices = [
+("1", _("original")),
+("2", _("experimental") + (" hmmmdada vuplus-support.org"))])
 
 config.plugins.enigmalight.arch = ConfigText(default = "")
 
@@ -340,20 +371,20 @@ config.plugins.enigmalight.scanb  = ConfigInteger(10,(0, 100))
 
 config.plugins.enigmalight.color_order  = ConfigSelection(default = "0", choices = [("0", "RGB"), ("1", "BGR"), ("2", "GBR"), ("3", "GRB"), ("4", "BRG"), ("5", "RBG")])
 
-config.plugins.enigmalight.begincount_cw = ConfigSelection(default = "left-bottom", choices = [("left-bottom", "LEFT [bottom]"), ("top-left", "TOP [left]"),
-("right-top", "RIGHT [top]"), ("bottom-right", "BOTTOM [right]"), ("bottom-middle-left", "BOTTOM [middle]")])
+config.plugins.enigmalight.begincount_cw = ConfigSelection(default = "left-bottom", choices = [("left-bottom", _("LEFT [bottom]")), ("top-left", _("TOP [left]")),
+("right-top", _("RIGHT [top]")), ("bottom-right", _("BOTTOM [right]")), ("bottom-middle-left", _("BOTTOM [middle]"))])
 
-config.plugins.enigmalight.begincount_bw = ConfigSelection(default = "bottom-left", choices = [("bottom-left", "BOTTOM [left]"), ("right-bottom", "RIGHT [bottom]"), 
-("top-right", "TOP [right]"),("left-top", "LEFT [top]"), ("bottom-middle-right", "BOTTOM [middle]")])
+config.plugins.enigmalight.begincount_bw = ConfigSelection(default = "bottom-left", choices = [("bottom-left", _("BOTTOM [left]")), ("right-bottom", _("RIGHT [bottom]")), 
+("top-right", _("TOP [right]")),("left-top", _("LEFT [top]")), ("bottom-middle-right", _("BOTTOM [middle]"))])
 
-config.plugins.enigmalight.clockwise  = ConfigSelection(default = "1", choices = [("1", "Clockwise"), ("2", "Backwards")])
-config.plugins.enigmalight.floorstand = ConfigSelection(default = "1", choices = [("1", "No"), ("2", "Yes")])
+config.plugins.enigmalight.clockwise  = ConfigSelection(default = "1", choices = [("1", _("Clockwise")), ("2", _("Backwards"))])
+config.plugins.enigmalight.floorstand = ConfigSelection(default = "1", choices = [("1", _("No")), ("2", _("Yes"))])
 config.plugins.enigmalight.blacklevel = ConfigFloat(default = [0,0], limits = [(0,9),(0,99)])
 config.plugins.enigmalight.overlap= ConfigOnOff(default=False)
 config.plugins.enigmalight.precision  = ConfigInteger(255,(0, 255))
 
 config.plugins.enigmalight.lastmode   = ConfigText(default = "-", fixed_size=10)
-config.plugins.enigmalight.m_3dmode   = ConfigSelection(default = "1", choices = [("1", "Disabled"), ("2", "Top and Bottom"), ("3", "SidebySide")])
+config.plugins.enigmalight.m_3dmode   = ConfigSelection(default = "1", choices = [("1", _("Disabled")), ("2", _("Top and Bottom")), ("3", _("SidebySide"))])
 
 config.plugins.enigmalight.config_r_adjust = ConfigFloat(default = [1,00], limits = [(0,9),(00,99)])
 config.plugins.enigmalight.config_r_gamma  = ConfigFloat(default = [0,91], limits = [(0,9),(00,99)])
@@ -417,30 +448,9 @@ def registerSkinParamsInstance():
 	log("",None,"__init__::registerSkinParamsInstance()")
 
 	configXml = getXmlContent("/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/skins/default/params")
-	
+
 	Singleton().getSkinParamsInstance(configXml)
 
-#===============================================================================
-# 
-#===============================================================================
-def localeInit():
-	log("",None,"__init__::localeInit()")
-	lang = language.getLanguage()
-	os.environ["LANGUAGE"] = lang[:2]
-	gettext.bindtextdomain("enigma2", resolveFilename(SCOPE_LANGUAGE))
-	gettext.textdomain("enigma2")
-	gettext.bindtextdomain("EnigmaLight", "%s%s" % (resolveFilename(SCOPE_PLUGINS), "Extensions/EnigmaLight/locale/"))
-
-#===============================================================================
-# 
-#===============================================================================
-def _(txt):
-	if len(txt) == 0:
-		return ""
-	text = gettext.dgettext("EnigmaLight", txt)
-	if text == txt:
-		text = gettext.gettext(txt)
-	return text
 
 #===============================================================================
 # EXECUTE ON STARTUP
@@ -448,9 +458,8 @@ def _(txt):
 def Prepare():
 	try:
 		log("",None,"__init__::Prepare()")
-		
 		getBoxInformation()
-		localeInit()
+		#localeInit()
 		registerSkinParamsInstance()
 		loadEnigmalightSkin()
 		registerEnigmalightFonts()

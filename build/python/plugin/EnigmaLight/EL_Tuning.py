@@ -19,6 +19,7 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 """
+from . import _
 import thread, os
 from enigma import eListboxPythonMultiContent, gFont, RT_HALIGN_LEFT, RT_VALIGN_CENTER
 
@@ -56,10 +57,8 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 	def __init__(self, session):
 		Screen.__init__(self, session)
 		HelpableScreen.__init__(self)
-		
 		self.cfglist = []
 		ConfigListScreen.__init__(self, self.cfglist, session, on_change = self._changed)
-		
 		self._session = session
 		self._hasChanged = False
 		self.version = getVersion()
@@ -68,27 +67,21 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 		self.sampleUse = False
 		self.aspect = getAspect()
 		self.old_service = self.session.nav.getCurrentlyPlayingServiceReference()	
-			
 		self["txt_green"] = Label()
 		self["btn_green"] = Pixmap()
-
 		self["statusbar"] = Pixmap()
 		self["txt_arrows"] = Label()
 		self["txt_statusbar"] = Label()
 		self["txt_statusbar_info"] = Label()
-
 		self["version"] = StaticText()
-
 		self["txt_green"].setText(_("Save"))
 		self["txt_arrows"].setText(_("Use < > to jump with 10 in slider"))
 		self["version"].text = self.version
-		
 		# Disable OSD Transparency
 		try:
 			self.can_osd_alpha = open("/proc/stb/video/alpha", "r") and True or False
 		except:
 			self.can_osd_alpha = False
-		
 		if config.plugins.enigmalight.sampleBackground.getValue() == True:
 			self.showBackground()
 
@@ -106,7 +99,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 		}, -2)
 
 		self.createSetup()
-		
+
 		log("",self,"Finisch layout..")
 
 		#self["config"].onSelectionChanged.append(self.updateHelp)
@@ -128,13 +121,12 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 			if config.plugins.enigmalight.showstatusbar_tuning.getValue():
 				self["statusbar"].hide()
 				self["txt_statusbar"].hide()
-				self["txt_statusbar_info"].hide()			
+				self["txt_statusbar_info"].hide()
 			else:
 				self["statusbar"].show()
 				self["txt_statusbar"].show()
 				self["txt_statusbar_info"].show()
 
-	
 	#==========================================================================
 	# Functions for use from others thread
 	#==========================================================================	
@@ -170,7 +162,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 	#===========================================================================
 	def createSetup(self):
 		separator = "".ljust(120,"_")
-		
+
 		self.cfglist = []
 
 		# COLOR SETTINGS
@@ -180,17 +172,16 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 		self.cfglist.append(getConfigListEntry(_('- Led speed:'), config.plugins.enigmalight.speed,_("Led speed/fade​​: \nGeneral setting for the led-speed how fast is changing the colour. 40 is a nice setting.")))
 		self.cfglist.append(getConfigListEntry(_('- Auto speed:'),config.plugins.enigmalight.autospeed, _(" ")))
 		self.cfglist.append(getConfigListEntry(_('- Brightness:'),config.plugins.enigmalight.value, _("Brightness:\nThis is a nice option, especially even more important than the saturation setting. Why? Simply because there are colours like brown, turquoise, purple and eggplant that only exist with the clarity they have. Huh! Well, for example, a dark brown orange and dark turquoise aqua. So if you set the brightness to 2.0 then multiply the brightness of the colour you see with 2.0 (I think) and therefore can not show brown Ambilight. A nice value is 1.0 otherwise it quickly distorts the colours.")))
-		self.cfglist.append(getConfigListEntry(_('- Minimal Brightness:\r'),config.plugins.enigmalight.valuemin, _(" Min 0.00 | Max 1.00 | Default 0.00")))
-		self.cfglist.append(getConfigListEntry(_('- Maximal Brightness:\r'),config.plugins.enigmalight.valuemax, _(" Min 0.00 | Max 1.00 | Default 1.00")))
+		self.cfglist.append(getConfigListEntry(_('- Minimal Brightness:'),config.plugins.enigmalight.valuemin, _(" Min 0.00 | Max 1.00 | Default 0.00")))
+		self.cfglist.append(getConfigListEntry(_('- Maximal Brightness:'),config.plugins.enigmalight.valuemax, _(" Min 0.00 | Max 1.00 | Default 1.00")))
 		self.cfglist.append(getConfigListEntry(_('- Saturation 0-20:'),config.plugins.enigmalight.saturation, _(" Saturation:\nSimply a strengthening of the average colour planes. The best option is between 1:00 and 1:20. This is because you are going to reinforce colours and this is so unnatural. \nExample:\n many films have a colour grading over it. A well-known example is a blue tint. This affects all the colours on the screen so that even a light Gray sky has some blue tones in it. When you try saturation on 2, it will thus be seen as good this blue tint twice while it appears white on your screen.")))
-		self.cfglist.append(getConfigListEntry(_('- Minimal Saturation 0.00-1.00:\r'),config.plugins.enigmalight.saturationmin, _("Minimal Brightness:\nIf you set this as example to 0.01, then the LEDs will not completely dark is there is black but soft grey")))
-		self.cfglist.append(getConfigListEntry(_('- Maximal Saturation 0.00-1.00:\r'),config.plugins.enigmalight.saturationmax, _(" ")))
-		self.cfglist.append(getConfigListEntry(_('- Gamma correction 1-10:\r'),config.plugins.enigmalight.gamma, _("Gamma correction:\n Set this to 2.2 for default, since this is a default value for movies.")))
-		self.cfglist.append(getConfigListEntry(_('- Threshold: \r') ,config.plugins.enigmalight.threshold, _("Threshold:\nFilter/Remove the almost dark pixels, 15 is a nice value.")))		
-		
+		self.cfglist.append(getConfigListEntry(_('- Minimal Saturation 0.00-1.00:'),config.plugins.enigmalight.saturationmin, _("Minimal Brightness:\nIf you set this as example to 0.01, then the LEDs will not completely dark is there is black but soft grey")))
+		self.cfglist.append(getConfigListEntry(_('- Maximal Saturation 0.00-1.00:'),config.plugins.enigmalight.saturationmax, _(" ")))
+		self.cfglist.append(getConfigListEntry(_('- Gamma correction 1-10:'),config.plugins.enigmalight.gamma, _("Gamma correction:\n Set this to 2.2 for default, since this is a default value for movies.")))
+		self.cfglist.append(getConfigListEntry(_('- Threshold:') ,config.plugins.enigmalight.threshold, _("Threshold:\nFilter/Remove the almost dark pixels, 15 is a nice value.")))		
 
 		self.cfglist.append(getConfigListEntry(_("[ Color Adjustment, only local ]") + separator, config.plugins.enigmalight.about, _(" ")))
-		self.cfglist.append(getConfigListEntry(_('- Use ColorAdjust Settings:'), config.plugins.enigmalight.use_live_adjust))		
+		self.cfglist.append(getConfigListEntry(_('- Use ColorAdjust Settings:'), config.plugins.enigmalight.use_live_adjust))
 
 		if config.plugins.enigmalight.use_live_adjust.getValue() == str("true"):
 
@@ -228,19 +219,19 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 			self.cfglist.append(getConfigListEntry(_('- Sample picture:'), config.plugins.enigmalight.sampleBackground_mvi))
 
 		self.cfglist.append(getConfigListEntry(_("[ Blackbar detection]") + separator, config.plugins.enigmalight.about, _(" ")))
-		self.cfglist.append(getConfigListEntry(_('- Remove Blackbars top and bottom:\r'),config.plugins.enigmalight.blackbar_h, _("Remove horizontal blackbars from lights.")))
-		self.cfglist.append(getConfigListEntry(_('- Remove Blackbars left and right:\r'),config.plugins.enigmalight.blackbar_v, _("Remove vertical blackbars from lights.")))
-		self.cfglist.append(getConfigListEntry(_('- Delay before remove:\r'), config.plugins.enigmalight.blackbar_f, _("Count from 0 to given number\nif the blackbars are still there then remove them.")))
-		
+		self.cfglist.append(getConfigListEntry(_('- Remove Blackbars top and bottom:'),config.plugins.enigmalight.blackbar_h, _("Remove horizontal blackbars from lights.")))
+		self.cfglist.append(getConfigListEntry(_('- Remove Blackbars left and right:'),config.plugins.enigmalight.blackbar_v, _("Remove vertical blackbars from lights.")))
+		self.cfglist.append(getConfigListEntry(_('- Delay before remove:'), config.plugins.enigmalight.blackbar_f, _("Count from 0 to given number\nif the blackbars are still there then remove them.")))
+
 		self["config"].list = self.cfglist
-		
+
 		self.selected = self["config"].getCurrent()[1]
-		
+
 		#save profile
 
 		if self.selected == config.plugins.enigmalight.presets:
 			self.getCustom(config.plugins.enigmalight.presets.getValue());
-			
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -251,7 +242,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 			fo = open("/usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/profiles/custom_%s.profile" %(str(profilenr)), "r")
 			customsettings = fo.read(256)
 			fo.close()
-			
+
 			customsettings = customsettings.split("|")
 			config.plugins.enigmalight.saturation.setValue(customsettings[0])
 			config.plugins.enigmalight.value.setValue(customsettings[1])
@@ -275,8 +266,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 				showMessage(self._session,_("Can't get settings from profile...", "W", timeout = 10))
 			except:
 				pass
-			
-	
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -311,7 +301,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 	# 
 	#===========================================================================
 
-	def _changed(self):			
+	def _changed(self):
 		self._hasChanged = True
 
 		self.selected = self["config"].getCurrent()[1]
@@ -323,7 +313,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 		#get profile
 		if self.selected == config.plugins.enigmalight.presets:
 			self.getCustom(config.plugins.enigmalight.presets.getValue());
-		
+
 			#refresch
 			self.createSetup()
 
@@ -338,7 +328,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 			self.createSetup()
 
 		self.controller.changeValue(self.selected)
-	
+
 	def showOldService(self):
 		log("",self)
 		# Restart old service
@@ -360,7 +350,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 
 	def showBackground(self):
 		log("",self)
-		### TEST ###	
+		### TEST ###
 		self.session.nav.stopService()
 
 		# Disable OSD Transparency
@@ -368,13 +358,13 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 			self.can_osd_alpha = open("/proc/stb/video/alpha", "r") and True or False
 		except:
 			self.can_osd_alpha = False
-		
+
 		if self.can_osd_alpha:
 			open("/proc/stb/video/alpha", "w").write(str("255"))
-		
+
 		# Show Background MVI
 		os.system("/usr/bin/showiframe /usr/lib/enigma2/python/Plugins/Extensions/EnigmaLight/mvi/"+str(config.plugins.enigmalight.sampleBackground_mvi.getValue())+".mvi &")
-		
+
 		self.sampleUse = True
 		### END TEST ###
 
@@ -383,7 +373,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 	#===========================================================================
 	def ok(self):
 		cur = self["config"].getCurrent()
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -399,7 +389,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 		self.selected = self["config"].getCurrent()[1]
 		if self.selected is config.plugins.enigmalight.use_live_adjust or self.selected is config.plugins.enigmalight.adjustr or self.selected is config.plugins.enigmalight.adjustg or self.selected is config.plugins.enigmalight.adjustb or self.selected is config.plugins.enigmalight.color_order:
 			self.createSetup()
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -414,8 +404,7 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 	#===========================================================================
 	def keyBouquetUp(self):
 		self["config"].instance.moveSelection(self["config"].instance.pageUp)
-		
-		
+
 	#===========================================================================
 	# 
 	#===========================================================================
@@ -453,7 +442,6 @@ class EL_Screen_Tuning(Screen, ConfigListScreen, HelpableScreen):
 		self._changed()
 
 	def exitTuning(self):
-
 		if self.sampleUse:
 			self.showOldService()
 		self.close(None)

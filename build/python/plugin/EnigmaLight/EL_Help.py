@@ -30,13 +30,14 @@ from Components.Pixmap import Pixmap
 from Screens.Screen import Screen
 
 from __common__ import EnigmaLight_log as log
+from . import _
 from __init__ import _ # _ is translation
 
 from threading import currentThread
 from EL_ThreadHelper import callOnMainThread
 #===============================================================================
 #
-#===============================================================================		
+#===============================================================================
 class EL_Screen_Help(Screen):
 	_session = None
 
@@ -71,10 +72,10 @@ class EL_Screen_Help(Screen):
 
 		self["content"].setText(self.getContentText())
 
-		if not config.plugins.enigmalight.showstatusbar.getValue():			
+		if not config.plugins.enigmalight.showstatusbar.getValue():
 			self["statusbar"].hide()
 			self["txt_statusbar"].hide()
-			self["txt_statusbar_info"].hide()			
+			self["txt_statusbar_info"].hide()
 		else:
 			self["statusbar"].show()
 			self["txt_statusbar"].show()

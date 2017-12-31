@@ -41,14 +41,15 @@ from Screens.Console import Console as SConsole
 
 from __common__ import showMessage, getBoxArch, EnigmaLight_log as log, testInetConnectivity
 
+from . import _
 from __init__ import getCrashFilePath, getVersion, _ # _ is translation
 
 import urllib2
 # Unfortunaly not everyone has twisted installed ...
 try:
-    from twisted.web.microdom import parseString
+	from twisted.web.microdom import parseString
 except Exception, e:
-    print("import twisted.web.microdom failed")
+	print("import twisted.web.microdom failed")
 
 #===============================================================================
 #
@@ -93,14 +94,14 @@ class EL_Screen_Check(object):
 
 				self.remoteurl = ""
 				for url in urls:
-				    self.remoteurl = url.childNodes[0].data
+					self.remoteurl = url.childNodes[0].data
 
 				#print("""Version: %s - URL: %s""" % (remoteversion, self.remoteurl))
 				if currentbeta < remotebeta:
 					self.latestVersion = remoteversion
 					self.controller.setStatusBarInfo(_("New update available !!"))
 					#if self.session != None:
-					self.session.openWithCallback(self.startUpdate, MessageBox,_("Your current Version is " + str(currentversion) + "\nUpdate to " + str(remoteversion) + " found!\n\nDo you want to update now?"), MessageBox.TYPE_YESNO)
+					self.session.openWithCallback(self.startUpdate, MessageBox,_("Your current Version is ") + str(currentversion) + _("\nUpdate to ") + str(remoteversion) + _(" found!\n\nDo you want to update now?"), MessageBox.TYPE_YESNO)
 				else:
 					self.controller.setStatusBarInfo(_("No update available.."))
 					#if self.session != None:
@@ -118,7 +119,6 @@ class EL_Screen_Check(object):
 			self.controller.setStatusBarInfo(_("No Internetconnection.."))
 			self.session.openWithCallback(self.close, MessageBox,_("No internet connection available or curl is not installed!"), MessageBox.TYPE_INFO)
 
-		
 
 	def startUpdate(self, answer):
 		if answer is True:

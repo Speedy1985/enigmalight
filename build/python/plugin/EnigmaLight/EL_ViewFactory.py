@@ -35,7 +35,7 @@ def translateValues(value):
 
 	if value == "false" or value == "False":
 		value = False
-	
+
 	return value
 
 #===========================================================================

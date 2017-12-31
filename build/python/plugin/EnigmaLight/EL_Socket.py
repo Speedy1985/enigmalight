@@ -34,16 +34,16 @@ HOST = '127.0.0.1' #Local
 PORT = 6767
 
 class EL_Socket(object):
-	
-	def __init__ (self):		
-		self.error			= None
-		self.hostip			= -1
-		self.hostport		= None
-		self.sock 			= None
-		self.connected 		= False
+
+	def __init__ (self):
+		self.error = None
+		self.hostip = -1
+		self.hostport = None
+		self.sock = None
+		self.connected = False
 
 	def checkDaemon(self,host,port):
-		
+
 		if config.plugins.enigmalight.network_onoff.value is True:
 
 			log("",self,"Check daemon on address: %s:%s" %(str(host), str(port)))
@@ -78,7 +78,7 @@ class EL_Socket(object):
 			try:
 				self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 				self.sock.settimeout(2)
-				self.sock.connect((HOST, PORT))			
+				self.sock.connect((HOST, PORT))
 				self.connected = True
 			except socket.error, msg:
 				log("E",self,"Exception(" + str(type(msg)) + "): " + str(msg))

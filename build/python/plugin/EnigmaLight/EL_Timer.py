@@ -19,7 +19,7 @@ from __common__ import EnigmaLight_log as log
 from __init__ import _ # _ is translation
 
 class ELightTimer(threading.Thread):
-	
+
 	def __init__(self):
 		log("",self)
 		threading.Thread.__init__(self)
@@ -37,13 +37,13 @@ class ELightTimer(threading.Thread):
 		self.isStandby = False
 		self.setDaemon(True)
 		self.controller = None
-			
+
 	def run(self):
 		log("",self)
 		try:
 			if self.timer_running == False:
 				log("",self,"Timer thread started..")
-				
+
 				while(self.thread_running):
 					#check if timer is true
 					self.timer = config.plugins.enigmalight.timer_onoff.value
@@ -90,7 +90,7 @@ class ELightTimer(threading.Thread):
 										log("",self,"Timer, Stop lights..")
 										if self.controller.connectedAddres == None:
 											self.controller.Control("grabber", "stop")
-										
+
 							#update timer true or false
 							self.timer = config.plugins.enigmalight.timer_onoff.value
 							time.sleep(1)
@@ -116,5 +116,3 @@ class ELightTimer(threading.Thread):
 	def setController(self, controller):
 		log("",self,"")
 		self.controller = controller
-		
-
