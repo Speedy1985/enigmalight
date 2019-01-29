@@ -57,8 +57,8 @@ CBlackbarDetection::CBlackbarDetection(CBitmap* bitmapObject)
 	minBrightnessTreshold = 5;
 
 	topScanStartFraction = 0.3;
-	topScanEndFraction = 0.3;
-	bottomScanEndFraction = 0.3;
+	topScanEndFraction = 0.7;
+	bottomScanEndFraction = 0.7;
 	bottomScanStartFraction = 0.3;
 
 	leftScanStartFraction = 0.3;
